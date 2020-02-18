@@ -22,6 +22,27 @@ def convert_date(x):
     return last_modified.replace(day=last_modified.day - days_ago)
 
 
+def get_drop_times(x):
+    # pre-filtered on drop_post == True
+    drop_times = re.findall(r'([0-9]{1,2}:[0-9]{2}\s*[apAP]?[mM]?|[0-9]{1,2}\s*[apAP][mM])', x)
+    # the notion of time is missing from some of the older posts
+    if len(drop_times) == 0:
+        return nan
+
+    drop_times_as_datetime = []
+    for t in drop_times:
+        info = list(re.search(r'([0-9]{1,2}):?([0-9]{0,2})\s*([apAP]?[mM]?)', t).groups())
+        if len(info[1]) == 0:
+            info[1] = "00"
+        if len(info[2]) == 0:
+            info[2] = ("am" if int(info[0]) < 12 else "pm")
+        if len(info[2]) == 1:
+            info[2] = info[2] + "m"
+        dt = datetime.strptime(info[0] + ":" + info[1] + " " + info[2], "%I:%M %p")
+        drop_times_as_datetime.append(dt)
+    return sorted(drop_times_as_datetime)
+            
+
 ###
 df = pandas.read_csv(csv_file, index_col="id")
 df.dropna(how="all", subset=["age", "likes", "post_text"], inplace=True)
@@ -35,4 +56,8 @@ df["post_year"] = df["post_date"].apply(lambda x : x.year)
 df["drop_post"] = df["post_text"].apply(lambda x : (True if type(x) is str
                                                     and re.search(r'\bsold\s+out\b', x, re.I)
                                                     else False))
-print(df["drop_post"].value_counts())
+df["times"] = df.apply(lambda x : (get_drop_times(x["post_text"]) if x["drop_post"] else nan), axis=1)
+df["drop_start"] = df["times"].apply(lambda x : (x[0] if type(x) is list else nan))
+df["drop_end"] = df["times"].apply(lambda x : (x[-1] if type(x) is list else nan))
+del df["times"]
+print(df)
