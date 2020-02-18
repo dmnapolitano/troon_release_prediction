@@ -53,4 +53,5 @@ for url in post_urls:
     df = df.append(data, ignore_index=True)
     sleep(10)
 
+df.index.name = "id"
 df.to_csv("troon_instagram_raw_post_data.csv")
