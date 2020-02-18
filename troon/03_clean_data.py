@@ -51,13 +51,27 @@ df["post_date"] = df["age"].apply(convert_date)
 del df["age"]
 df["post_weekday"] = df["post_date"].apply(lambda x : weekdays[x.weekday()])
 df["post_month"] = df["post_date"].apply(lambda x : "{0:%B}".format(x))
+df["post_day"] = df["post_date"].apply(lambda x : x.day)
 df["post_year"] = df["post_date"].apply(lambda x : x.year)
+del df["post_date"]
 
 df["drop_post"] = df["post_text"].apply(lambda x : (True if type(x) is str
                                                     and re.search(r'\bsold\s+out\b', x, re.I)
                                                     else False))
+
 df["times"] = df.apply(lambda x : (get_drop_times(x["post_text"]) if x["drop_post"] else nan), axis=1)
 df["drop_start"] = df["times"].apply(lambda x : (x[0] if type(x) is list else nan))
 df["drop_end"] = df["times"].apply(lambda x : (x[-1] if type(x) is list else nan))
 del df["times"]
-print(df)
+df["drop_duration_min"] = df["drop_end"] - df["drop_start"]
+df["drop_duration_min"] = df["drop_duration_min"].apply(lambda x : x.total_seconds() / 60)
+df["drop_start_hour_24"] = df["drop_start"].apply(lambda x : x.hour)
+df["drop_end_hour_24"] = df["drop_end"].apply(lambda x : x.hour)
+del df["drop_start"]
+del df["drop_end"]
+
+del df["post_text"]
+
+print(df[df["drop_post"] == True]["post_weekday"].value_counts())
+
+df.to_csv("troon_instagram_clean_post_data.csv")
