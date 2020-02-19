@@ -42,16 +42,16 @@ def get_data(url):
     return {"URL" : url, "likes" : likes, "age" : age, "post_text" : comment}
 
 
-###
-with open(sys.argv[1], 'r') as fh:
-    post_urls = [line.strip() for line in fh]
+if __name__ == "__main__":
+    with open(sys.argv[1], 'r') as fh:
+        post_urls = [line.strip() for line in fh]
 
-df = pandas.DataFrame()
-for url in post_urls:
-    data = get_data(url)
-    print(data)
-    df = df.append(data, ignore_index=True)
-    sleep(10)
+    df = pandas.DataFrame()
+    for url in post_urls:
+        data = get_data(url)
+        print(data)
+        df = df.append(data, ignore_index=True)
+        sleep(10)
 
-df.index.name = "id"
-df.to_csv("troon_instagram_raw_post_data.csv")
+    df.index.name = "id"
+    df.to_csv("troon_instagram_raw_post_data.csv")
