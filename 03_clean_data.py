@@ -21,8 +21,12 @@ def convert_date(x):
         return datetime.strptime(x, "%B %d, %Y")
     elif re.search(r'[A-Z]+\s[0-9]+', x):
         return datetime.strptime(x + ", 2020", "%B %d, %Y")
-    days_ago = int(re.search(r'([0-9]+) DAYS AGO', x).groups(0)[0])
-    return last_modified.replace(day=last_modified.day - days_ago)
+
+    if "DAYS" in x:
+        days_ago = int(re.search(r'([0-9]+) DAYS AGO', x).groups(0)[0])
+        return last_modified.replace(day=last_modified.day - days_ago)
+    #hours_ago = int(re.search(r'([0-9]+) HOURS AGO', x).groups(0)[0])
+    return last_modified
 
 
 def get_release_times(x):
@@ -38,7 +42,7 @@ def get_release_times(x):
         info = list(re.search(r'([0-9]{1,2}):?([0-9]{0,2})\s*([apAP]?[mM]?)', t).groups())
         if len(info[1]) == 0:
             info[1] = "00"
-        if len(info[2]) == 0:
+        if len(info[2]) == 0 or info[2] == "m":
             info[2] = ("am" if int(info[0]) >= 9 and int(info[0]) < 12 else "pm")
         if len(info[2]) == 1:
             info[2] = info[2] + "m"
