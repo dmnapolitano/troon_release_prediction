@@ -1,12 +1,13 @@
 import re
 from datetime import datetime
 from os.path import getmtime
+from collections import Counter
 
 import pandas
 from numpy import nan
-
-
-# TODO: try to extract the number of cans per release and the per-person allotment.
+import spacy
+from nltk.corpus import stopwords
+from nltk.util import ngrams
 
 
 csv_file = "troon_instagram_raw_post_data.csv"
@@ -14,6 +15,15 @@ last_modified = datetime.utcfromtimestamp(float(getmtime(csv_file)))
 last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
 
 weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+nlp = spacy.load("en_core_web_sm", disable=["parser"])
+nlp.add_pipe(nlp.create_pipe("sentencizer"))
+tokenizer = nlp.Defaults.create_tokenizer(nlp)
+
+stopwords_list = (stopwords.words("english") +
+                  ["n't", "'s", "'re", "'ll", "-pron-", "'m", "'d"] +
+                  [":", ".", ",", "!", "/", "-", "?", "*", "(",
+                   ")", "#", '"', "'ve", "...", "$", "+", "wo"])
 
 
 def convert_date(x):
@@ -25,6 +35,7 @@ def convert_date(x):
     if "DAYS" in x:
         days_ago = int(re.search(r'([0-9]+) DAYS AGO', x).groups(0)[0])
         return last_modified.replace(day=last_modified.day - days_ago)
+    # TODO: when we become interested in exact release times
     #hours_ago = int(re.search(r'([0-9]+) HOURS AGO', x).groups(0)[0])
     return last_modified
 
@@ -49,6 +60,49 @@ def get_release_times(x):
         dt = datetime.strptime(info[0] + ":" + info[1] + " " + info[2], "%I:%M %p")
         release_times_as_datetime.append(dt)
     return sorted(release_times_as_datetime)
+
+
+def tokenize(x): 
+    if type(x) is str: 
+        doc = nlp(x) 
+        tokens = [] 
+        for s in doc.sents: 
+            t = [y.text.lower() for y in tokenizer(re.sub(r"can't", r'can not', s.text, re.I))]
+            tokens += [y for y in t if y not in stopwords_list and len(y.strip()) > 0]
+        return tokens 
+    return []
+
+
+def get_cans(x):
+    found = []
+    for (a, b) in x:
+        if re.search(r'[0-9]+', a):
+            found.append(int(a.replace("ish", "")))
+        # it's never in b lol
+    if len(found) > 0:
+        return max(found)
+    return nan
+
+
+def get_pp(x):
+    # usually 1-3 pp
+    if len(x) == 0:
+        return nan
+    if len(x) == 1 and x[0][1] == "pp" and re.search(r'[0-9]+', x[0][0]):
+        return int(x[0][0])
+    found = []
+    for (a, b) in x:
+        if re.search(r'[0-9]+pp', a):
+            found.append(int(re.search(r'([0-9]+)pp', a).groups(0)[0]))
+        elif re.search(r'[0-9]+pp', b):
+            found.append(int(re.search(r'([0-9]+)pp', b).groups(0)[0]))
+        elif b == "pp" and re.search(r'[0-9]+', a):
+            found.append(int(a))
+        #else:
+        #    print(">" + a + "<", "[" + b + "]")
+    if len(found) > 0:
+        return max([f for f in found if f < 10])
+    return nan
             
 
 ###
@@ -78,9 +132,24 @@ if __name__ == "__main__":
     df["release_end_hour_24"] = df["release_end"].apply(lambda x : x.hour)
     del df["release_start"]
     del df["release_end"]
-    
+
+    df["post_tokens"] = df["post_text"].apply(tokenize)
+    df["post_bigrams"] = df["post_tokens"].apply(lambda x : list(ngrams(x, 2)))
+    df["release_pp_tokens"] = df["post_bigrams"].apply(lambda x : [b for b in x if b[1].endswith("pp")])
+    df["release_cans_tokens"] = df["post_bigrams"].apply(lambda x : [b for b in x if b[1] == "cans"])
     del df["post_text"]
-    
+    del df["post_bigrams"]
+    df["release_cans"] = df["release_cans_tokens"].apply(get_cans)
+    del df["release_cans_tokens"]
+    df["release_pp"] = df["release_pp_tokens"].apply(get_pp)
+    del df["release_pp_tokens"]
+
+    # TODO: for additional analysis of post texts
+    #counts = dict(Counter([t for (i, row) in df.iterrows() for t in row["post_tokens"]]))
+    #counts = {c : counts[c] for c in counts if counts[c] > 3}
+    #print(sorted(counts.items(), key=lambda x : x[1], reverse=True))
+
     print(df[df["release_post"] == True]["post_weekday"].value_counts())
-    
+
+    del df["post_tokens"]
     df.to_csv("troon_instagram_clean_post_data.csv")
