@@ -3,6 +3,7 @@
 
 from time import sleep
 import sys
+from os.path import exists
 
 from selenium.webdriver import Chrome
 import pandas
@@ -42,16 +43,29 @@ def get_data(url):
     return {"URL" : url, "likes" : likes, "age" : age, "post_text" : comment}
 
 
-if __name__ == "__main__":
-    with open(sys.argv[1], 'r') as fh:
-        post_urls = [line.strip() for line in fh]
-
-    df = pandas.DataFrame()
+def go(post_urls, df):
     for url in post_urls:
         data = get_data(url)
         print(data)
         df = df.append(data, ignore_index=True)
         sleep(10)
 
-    df.index.name = "id"
-    df.to_csv("troon_instagram_raw_post_data.csv")
+    return df
+
+
+if __name__ == "__main__":
+    with open(sys.argv[1], 'r') as fh:
+        post_urls = [line.strip() for line in fh]
+
+    output_file = "troon_instagram_raw_post_data.csv"
+
+    if exists(output_file):
+        df = pandas.read_csv(output_file, index_col="id")
+        new_urls = set(post_urls).difference(set(df["URL"]))
+        df = go(new_urls, df)
+    else:
+        df = pandas.DataFrame()
+        df = go(post_urls, df)
+        df.index.name = "id"
+
+    df.to_csv(output_file)
