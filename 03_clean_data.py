@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 from os.path import getmtime
 from collections import Counter
+from calendar import month_name
 
 import pandas
 from numpy import nan
@@ -103,7 +104,18 @@ def get_pp(x):
     if len(found) > 0:
         return max([f for f in found if f < 10])
     return nan
-            
+
+
+def to_datetime(row):
+    try:
+        return datetime(year=row["post_year"],
+                        month=list(month_name).index(row["post_month"]),
+                        day=row["post_day"],
+                        hour=row["release_start"].hour,
+                        minute=row["release_start"].minute,
+                        second=row["release_start"].second)
+    except:
+        return nan
 
 ###
 if __name__ == "__main__":
@@ -114,8 +126,8 @@ if __name__ == "__main__":
     del df["age"]
     df["post_weekday"] = df["post_date"].apply(lambda x : weekdays[x.weekday()])
     df["post_month"] = df["post_date"].apply(lambda x : "{0:%B}".format(x))
-    df["post_day"] = df["post_date"].apply(lambda x : x.day)
-    df["post_year"] = df["post_date"].apply(lambda x : x.year)
+    df["post_day"] = df["post_date"].apply(lambda x : int(x.day))
+    df["post_year"] = df["post_date"].apply(lambda x : int(x.year))
     del df["post_date"]
 
     df["release_post"] = df["post_text"].apply(lambda x : (True if type(x) is str
@@ -126,11 +138,19 @@ if __name__ == "__main__":
     df["release_start"] = df["times"].apply(lambda x : (x[0] if type(x) is list else nan))
     df["release_end"] = df["times"].apply(lambda x : (x[-1] if type(x) is list else nan))
     del df["times"]
+    
     df["release_duration_min"] = df["release_end"] - df["release_start"]
     df["release_duration_min"] = df["release_duration_min"].apply(lambda x : x.total_seconds() / 60)
     df["release_start_hour_24"] = df["release_start"].apply(lambda x : x.hour)
     df["release_end_hour_24"] = df["release_end"].apply(lambda x : x.hour)
+
+    df["release_start"] = df.apply(to_datetime, axis=1)
+    df.sort_values(by="release_start", inplace=True)
+    df["release_start_diff"] = df["release_start"].diff(periods=1)
+    df["days_since_previous_release"] = df["release_start_diff"].apply(lambda x : x.days)
+    
     del df["release_start"]
+    del df["release_start_diff"]
     del df["release_end"]
 
     df["post_tokens"] = df["post_text"].apply(tokenize)
