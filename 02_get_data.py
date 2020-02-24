@@ -66,6 +66,6 @@ if __name__ == "__main__":
     else:
         df = pandas.DataFrame()
         df = go(post_urls, df)
-        df.index.name = "id"
 
+    df.index.name = "id"
     df.to_csv(output_file)
