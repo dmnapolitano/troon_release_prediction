@@ -1,7 +1,6 @@
 import re
 from datetime import datetime
 from os.path import getmtime
-from collections import Counter
 from calendar import month_name
 
 import pandas
@@ -24,7 +23,8 @@ tokenizer = nlp.Defaults.create_tokenizer(nlp)
 stopwords_list = (stopwords.words("english") +
                   ["n't", "'s", "'re", "'ll", "-pron-", "'m", "'d"] +
                   [":", ".", ",", "!", "/", "-", "?", "*", "(",
-                   ")", "#", '"', "'ve", "...", "$", "+", "wo"])
+                   ")", "#", '"', "'ve", "...", "$", "+", "wo", "'"])
+stopwords_list.remove("out")
 
 
 def convert_date(x):
@@ -164,11 +164,6 @@ if __name__ == "__main__":
     del df["release_cans_tokens"]
     df["release_pp"] = df["release_pp_tokens"].apply(get_pp)
     del df["release_pp_tokens"]
-
-    # TODO: for additional analysis of post texts
-    #counts = dict(Counter([t for (i, row) in df.iterrows() for t in row["post_tokens"]]))
-    #counts = {c : counts[c] for c in counts if counts[c] > 3}
-    #print(sorted(counts.items(), key=lambda x : x[1], reverse=True))
 
     print(df[df["release_post"] == True]["post_weekday"].value_counts())
 
