@@ -62,6 +62,10 @@ if __name__ == "__main__":
     if exists(output_file):
         df = pandas.read_csv(output_file, index_col="id")
         new_urls = set(post_urls).difference(set(df["URL"]))
+        df["age"] = df["age"].fillna("AGO")
+        stale_date_URLs = df[df["age"].str.contains("AGO")]["URL"]
+        new_urls = new_urls.union(set(stale_date_URLs))
+        df = df[~df["URL"].isin(stale_date_URLs)]
         df = go(new_urls, df)
     else:
         df = pandas.DataFrame()
