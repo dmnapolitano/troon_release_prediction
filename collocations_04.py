@@ -13,22 +13,7 @@ from nltk.util import ngrams
 from clean_data_03 import tokenize
 
 
-csv_file = "troon_instagram_raw_post_data.csv"
-ngram_size = 3
-
-
-###
-if __name__ == "__main__":
-    df = pandas.read_csv(csv_file, index_col="id")
-    df.dropna(how="all", subset=["age", "likes", "post_text"], inplace=True)
-
-    df["post_tokens"] = df["post_text"].apply(tokenize)
-    df["post_ngrams"] = df["post_tokens"].apply(lambda x : list(ngrams(x, ngram_size)))
-
-    counts = dict(Counter([t for (i, row) in df.iterrows() for t in row["post_tokens"]]))
-    total_tokens = sum(counts.values())
-    #print(sorted(counts.items(), key=lambda x : x[1], reverse=True))
-
+def go(df, ngram_size, counts, total_tokens):
     ngrams = dict(Counter([b for (i, row) in df.iterrows() for b in row["post_ngrams"]]))
     total_ngrams = sum(ngrams.values())
 
@@ -38,6 +23,7 @@ if __name__ == "__main__":
     for i in range(0, ngram_size):
         ngrams_df["w" + str(i + 1) + "_raw_freq"] = ngrams_df["ngram"].apply(lambda x : counts[x[i]])
         ngrams_df["w" + str(i + 1) + "_rel_freq"] = ngrams_df["w" + str(i + 1) + "_raw_freq"] / total_tokens
+        del ngrams_df["w" + str(i + 1) + "_raw_freq"]
 
     ngrams_df["ngram"] = ngrams_df["ngram"].apply(lambda x : " ".join(x))
 
@@ -49,4 +35,22 @@ if __name__ == "__main__":
 
     ngrams_df.sort_values(by="t", ascending=False, inplace=True)
 
-    print(ngrams_df[ngrams_df["raw_freq"] > 1])
+    print(ngrams_df)
+    
+
+###
+if __name__ == "__main__":
+    csv_file = "troon_instagram_raw_post_data.csv"
+    ngram_size = 8
+    
+    df = pandas.read_csv(csv_file, index_col="id")
+    df.dropna(how="all", subset=["age", "likes", "post_text"], inplace=True)
+
+    df["post_tokens"] = df["post_text"].apply(tokenize)
+    df["post_ngrams"] = df["post_tokens"].apply(lambda x : list(ngrams(x, ngram_size)))
+
+    counts = dict(Counter([t for (i, row) in df.iterrows() for t in row["post_tokens"]]))
+    total_tokens = sum(counts.values())
+    #print(sorted(counts.items(), key=lambda x : x[1], reverse=True))
+
+    go(df, ngram_size, counts, total_tokens)
