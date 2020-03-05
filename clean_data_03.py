@@ -158,7 +158,6 @@ if __name__ == "__main__":
     df["post_bigrams"] = df["post_tokens"].apply(lambda x : list(ngrams(x, 2)))
     df["release_pp_tokens"] = df["post_bigrams"].apply(lambda x : [b for b in x if b[1].endswith("pp")])
     df["release_cans_tokens"] = df["post_bigrams"].apply(lambda x : [b for b in x if b[1] == "cans"])
-    del df["post_text"]
     del df["post_bigrams"]
     df["release_cans"] = df["release_cans_tokens"].apply(get_cans)
     del df["release_cans_tokens"]
@@ -168,4 +167,11 @@ if __name__ == "__main__":
     print(df[df["release_post"] == True]["post_weekday"].value_counts())
 
     del df["post_tokens"]
+
+    # some work on getting the beer's name, ABV, and description
+    for (i, row) in df.iterrows():
+        if type(row["post_text"]) is str and "%-" in row["post_text"]:
+            print(re.search(r'(\n|^)(.+?)\s*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+?\.)', row["post_text"]).groups()[1:])
+
+    del df["post_text"]
     df.to_csv("troon_instagram_clean_post_data.csv")
