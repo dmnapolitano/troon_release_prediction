@@ -1,5 +1,5 @@
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from os.path import getmtime
 from calendar import month_name
 
@@ -35,7 +35,13 @@ def convert_date(x):
 
     if "DAYS" in x:
         days_ago = int(re.search(r'([0-9]+) DAYS AGO', x).groups(0)[0])
-        return last_modified.replace(day=last_modified.day - days_ago)
+        return last_modified - timedelta(days=days_ago)
+    if re.search(r'[0-9]+[dD]', x):
+        days_ago = int(re.search(r'([0-9]+)[dD]', x).groups(0)[0])
+        return last_modified - timedelta(days=days_ago)
+    if re.search(r'[0-9]+[wW]', x):
+        weeks_ago = int(re.search(r'([0-9]+)[wW]', x).groups(0)[0])
+        return last_modified - timedelta(weeks=weeks_ago)
     # TODO: when we become interested in exact release times
     #hours_ago = int(re.search(r'([0-9]+) HOURS AGO', x).groups(0)[0])
     return last_modified
