@@ -143,7 +143,6 @@ def go(input_file, output_file):
     df["post_month"] = df["post_date"].apply(lambda x : "{0:%B}".format(x))
     df["post_day"] = df["post_date"].apply(lambda x : int(x.day))
     df["post_year"] = df["post_date"].apply(lambda x : int(x.year))
-    del df["post_date"]
 
     df["release_post"] = df["post_text"].apply(lambda x : (True if type(x) is str
                                                            and (re.search(r'\bsold\s+out\b', x, re.I) or
@@ -151,8 +150,15 @@ def go(input_file, output_file):
                                                            else False))
     
     df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
+    # pandemic times lol
+    df["times"] = df.apply(lambda x : ([x["post_date"], x["post_date"] + timedelta(0, 30)]
+                                       if x["release_post"] and (type(x["times"]) is not list or len(set(x["times"])) == 1)
+                                       and x["post_year"] == 2020 else x["times"]), axis=1)
+        
     df["release_start"] = df["times"].apply(lambda x : (x[0] if type(x) is list else nan))
     df["release_end"] = df["times"].apply(lambda x : (x[-1] if type(x) is list else nan))
+
+    del df["post_date"]
     del df["times"]
     
     df["release_duration_min"] = df["release_end"] - df["release_start"]
