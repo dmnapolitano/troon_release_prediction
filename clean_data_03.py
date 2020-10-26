@@ -10,10 +10,6 @@ from nltk.corpus import stopwords
 from nltk.util import ngrams
 
 
-csv_file = "troon_instagram_raw_post_data.csv"
-last_modified = datetime.utcfromtimestamp(float(getmtime(csv_file)))
-last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
-
 weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 nlp = spacy.load("en_core_web_sm", disable=["parser"])
@@ -27,7 +23,10 @@ stopwords_list = (stopwords.words("english") +
 stopwords_list.remove("out")
 
 
-def convert_date(x):
+def get_date_from_age(x, last_modified):
+    if type(x) is not str:
+        return nan
+    
     if re.search(r'[A-Z]+\s[0-9]+,\s20[0-9]{2}', x):
         return datetime.strptime(x, "%B %d, %Y")
     elif re.search(r'[A-Z]+\s[0-9]+', x):
@@ -123,13 +122,23 @@ def to_datetime(row):
     except:
         return nan
 
-###
-if __name__ == "__main__":
-    df = pandas.read_csv(csv_file, index_col="id")
+    
+def go(input_file, output_file):
+    df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64"})
     df.dropna(how="all", subset=["age", "likes", "post_text"], inplace=True)
 
-    df["post_date"] = df["age"].apply(convert_date)
+    last_modified = datetime.utcfromtimestamp(float(getmtime(input_file)))
+    last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    if "post_date" in df.columns:
+        df["post_date"] = df["post_date"].apply(lambda x : nan if type(x) is not str else datetime.fromisoformat(x))
+        
+    df["post_date_from_age"] = df["age"].apply(lambda x : get_date_from_age(x, last_modified))
     del df["age"]
+
+    df["post_date"] = df["post_date"].fillna(df["post_date_from_age"])
+    del df["post_date_from_age"]
+
     df["post_weekday"] = df["post_date"].apply(lambda x : weekdays[x.weekday()])
     df["post_month"] = df["post_date"].apply(lambda x : "{0:%B}".format(x))
     df["post_day"] = df["post_date"].apply(lambda x : int(x.day))
@@ -177,7 +186,15 @@ if __name__ == "__main__":
     # some work on getting the beer's name, ABV, and description
     for (i, row) in df.iterrows():
         if type(row["post_text"]) is str and "%-" in row["post_text"]:
-            print(re.search(r'(\n|^)(.+?)\s*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+?\.)', row["post_text"]).groups()[1:])
+            (name, abv, description) = re.search(r'(\n|^)(.+?)\s*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+?\.)',
+                                                 row["post_text"]).groups()[1:]
+            # TODO
 
     del df["post_text"]
-    df.to_csv("troon_instagram_clean_post_data.csv")
+    df.to_csv(output_file)
+
+
+if __name__ == "__main__":
+    input_csv_file = "troon_instagram_raw_post_data.csv"
+    output_csv_file = "troon_instagram_clean_post_data.csv"
+    go(input_csv_file, output_csv_file)
