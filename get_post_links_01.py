@@ -3,6 +3,7 @@
 from time import sleep
 from datetime import datetime
 
+import chromedriver_binary
 from selenium.webdriver import Chrome
 
 
