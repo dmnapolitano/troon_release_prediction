@@ -4,7 +4,9 @@
 from time import sleep
 import sys
 from os.path import exists
+from html import unescape
 
+import chromedriver_binary
 from selenium.webdriver import Chrome
 import pandas
 from numpy import nan
@@ -14,33 +16,36 @@ def get_data(url):
     browser = Chrome()
     browser.get(url)
 
+    likes = nan
+    age = nan
+    comment = nan
+    post_date = nan
+
     try:
         # This captures the standard like count. 
         likes = browser.find_element_by_xpath(
             """//*[@id="react-root"]/section/main/div/div/
             article/div[2]/section[2]/div/div/button""").text.split()[0]
         likes = int(likes.replace(",", ""))
-    except:
-        # probably a video
-        likes = nan
 
-    try:
         age = browser.find_element_by_css_selector("a time").text
-    except:
-        # TODO
-        age = nan
 
-    try:
-        comment = browser.find_element_by_xpath(
+        comment = unescape(browser.find_element_by_xpath(
             """//*[@id="react-root"]/section/main/div/div/
-            article/div[2]/div[1]/ul/div/li/div/div/div[2]/span""").text
+            article/div[2]/div[1]/ul/div/li/div/div/div[2]/span""").text)
     except:
-        # TODO
-        comment = nan
+        from bs4 import BeautifulSoup
+        import json
+        soup = BeautifulSoup(browser.page_source, features="html5lib")
+        info = json.loads(soup.findAll("script", type="application/ld+json")[0].text)
+        comment = unescape(info["caption"])
+        post_date = info["uploadDate"]
+        likes = int(info["interactionStatistic"]["userInteractionCount"])
 
     browser.close()
 
-    return {"URL" : url, "likes" : likes, "age" : age, "post_text" : comment}
+    return {"URL" : url, "likes" : likes, "age" : age,
+            "post_text" : comment, "post_date" : post_date}
 
 
 def go(post_urls, df):
