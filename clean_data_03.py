@@ -123,6 +123,14 @@ def to_datetime(row):
         return nan
 
     
+def get_name_desc_and_abv(post_text):
+    if type(post_text) is str and "%-" in post_text:
+        (name, abv, description) = re.search(r'(\n|^)(.+?)[,\s]*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+?\.)',
+                                             post_text).groups()[1:]
+        return (name, abv, description)
+    return (nan, nan, nan)
+
+    
 def go(input_file, output_file):
     df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64"})
     df.dropna(how="all", subset=["age", "likes", "post_text"], inplace=True)
@@ -178,6 +186,7 @@ def go(input_file, output_file):
     del df["release_start_diff"]
     del df["release_end"]
 
+    # TODO: do more with these tokens and ngrams
     df["post_tokens"] = df["post_text"].apply(tokenize)
     df["post_bigrams"] = df["post_tokens"].apply(lambda x : list(ngrams(x, 2)))
     df["release_pp_tokens"] = df["post_bigrams"].apply(lambda x : [b for b in x if b[1].endswith("pp")])
@@ -188,18 +197,18 @@ def go(input_file, output_file):
     df["release_pp"] = df["release_pp_tokens"].apply(get_pp)
     del df["release_pp_tokens"]
 
-    print(df[df["release_post"] == True]["post_weekday"].value_counts())
-
     del df["post_tokens"]
 
-    # some work on getting the beer's name, ABV, and description
-    for (i, row) in df.iterrows():
-        if type(row["post_text"]) is str and "%-" in row["post_text"]:
-            (name, abv, description) = re.search(r'(\n|^)(.+?)\s*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+?\.)',
-                                                 row["post_text"]).groups()[1:]
-            # TODO
-
+    df["beer_info"] = df["post_text"].apply(get_name_desc_and_abv)
     del df["post_text"]
+    df["beer_name"] = df["beer_info"].apply(lambda x : x[0])
+    df["beer_abv"] = df["beer_info"].apply(lambda x : float(x[1].replace("%", ""))
+                                           if type(x[1]) is str else x[1])
+    df["beer_description"] = df["beer_info"].apply(lambda x : x[2])
+    del df["beer_info"]
+
+    print(df[df["release_post"] == True]["post_weekday"].value_counts())
+
     df.to_csv(output_file)
 
 
