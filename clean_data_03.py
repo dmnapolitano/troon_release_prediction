@@ -152,8 +152,11 @@ def go(input_file, output_file):
     df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
     # pandemic times lol
     df["times"] = df.apply(lambda x : ([x["post_date"], x["post_date"] + timedelta(0, 30)]
-                                       if x["release_post"] and (type(x["times"]) is not list or len(set(x["times"])) == 1)
-                                       and x["post_year"] == 2020 else x["times"]), axis=1)
+                                       if x["release_post"] and
+                                       (type(x["times"]) is not list or len(set(x["times"])) == 1) and
+                                       ((x["post_year"] == 2020 and x["post_month"] not in ["January", "February"])
+                                        or x["post_year"] > 2020)
+                                       else x["times"]), axis=1)
         
     df["release_start"] = df["times"].apply(lambda x : (x[0] if type(x) is list else nan))
     df["release_end"] = df["times"].apply(lambda x : (x[-1] if type(x) is list else nan))
