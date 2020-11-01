@@ -55,19 +55,18 @@ input_file = "troon_instagram_clean_post_data.csv"
 input_df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64", "id" : "Int64"})
 
 df = pandas.read_csv("troon_instagram_post_beer_attributes.csv", dtype={"id" : "Int64"})
-
-known_characteristics = {tuple(c.split(" ")) : 0 for c in df.columns}
+known_characteristics = {tuple(r["attribute"].split(" ")) : r["count"] for (i, r) in
+                         df.groupby(["attribute"]).agg({"count" : sum}).reset_index().iterrows()}
 
 to_consider = []
 for (i, row) in input_df[~input_df.index.isin(df["id"])].iterrows():
     tokens = [re.sub(r'[/+]$', '', t) for t in tokenize(row["beer_description"]) if
               len(t) > 1 and not re.search(r'^[0-9]+$', t) and "bbl" not in t]
-    new_row = {" ".join(c) : 0 for c in known_characteristics}
-    new_row["id"] = i
     for l in [1, 2, 3]:
-        for ngram in ngrams(tokens, l):
+        for (ngram, c) in Counter(ngrams(tokens, l)).items():
             if ngram in known_characteristics:
-                new_row[" ".join(ngram)] += 1
+                new_row = {"id" : i, "attribute" : " ".join(ngram), "count" : c}
+                df = df.append(new_row, ignore_index=True)
             else:
                 ngram_stopwords = [t for t in ngram if t in more_stopwords]
                 if len(ngram_stopwords) < len(ngram):
@@ -75,7 +74,6 @@ for (i, row) in input_df[~input_df.index.isin(df["id"])].iterrows():
                                  len([t for t in ngram if t in known]) > 0]
                     if len(substring) == 0:
                         to_consider.append(ngram)
-    df = df.append(new_row, ignore_index=True)
                     
 if len(to_consider) == 0:
     df = df.set_index("id")
