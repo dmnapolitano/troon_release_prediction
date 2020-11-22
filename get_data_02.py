@@ -2,7 +2,7 @@
 # and https://github.com/jnawjux/web_scraping_corgis/blob/master/insta_scrape.py
 
 from time import sleep
-import sys
+import argparse
 from os.path import exists
 from html import unescape
 
@@ -59,7 +59,16 @@ def go(post_urls, df):
 
 
 if __name__ == "__main__":
-    with open(sys.argv[1], 'r') as fh:
+    parser = argparse.ArgumentParser(description=("Scrape data from TROON Instagram posts.  "
+                                                  + "Will either create or append to "
+                                                  + "troon_instagram_raw_post_data.csv."))
+    parser.add_argument("url_file", help=("Path to a file containing a list of TROON Instagram "
+                                          + "post URLs, one per line, typicaly created by "
+                                          + "get_post_links_01.py.  URLs in this file that "
+                                          + "have already been scraped will be skipped."))
+    args = parser.parse_args()
+    
+    with open(args.url_file, 'r') as fh:
         post_urls = [line.strip() for line in fh]
 
     output_file = "troon_instagram_raw_post_data.csv"
