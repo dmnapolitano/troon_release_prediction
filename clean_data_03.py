@@ -207,8 +207,12 @@ def go(input_file, output_file):
     df["beer_description"] = df["beer_info"].apply(lambda x : x[2])
     del df["beer_info"]
 
+    df["release_post"] = df.apply(lambda x : (True if x["release_post"] or
+                                              type(x["beer_name"]) is str else False), axis=1)
+
     print(df[df["release_post"] == True]["post_weekday"].value_counts())
 
+    df = df.sort_index()
     df.to_csv(output_file)
 
 
