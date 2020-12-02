@@ -512,13 +512,12 @@ id,attribute,count
 179,kettle soured,1
 179,kettle soured ale,1
 179,lactose,1
-179,lemon,1
+179,lemon zest,1
 179,mango,1
 179,refermented,1
 179,soured,1
 179,soured ale,1
 179,strawberry,1
-179,zest,1
 228,ale,1
 228,hoppy,1
 228,hoppy ale,1
@@ -611,9 +610,8 @@ id,attribute,count
 253,hoppy ale,1
 253,lactose,1
 253,madagascar vanilla,1
-253,orange,1
+253,orange zest,1
 253,vanilla,1
-253,zest,1
 259,ale,1
 259,cherry,1
 259,cinnamon,1
@@ -711,11 +709,10 @@ id,attribute,count
 235,grapefruit,1
 235,hopped,1
 235,lager,1
-235,lime,1
+235,lime zest,1
 235,motueka,1
 235,salt,1
 235,sea salt,1
-235,zest,1
 233,ale,1
 233,hoppy,1
 233,hoppy ale,1
@@ -870,9 +867,8 @@ id,attribute,count
 120,juice,1
 120,key lime,1
 120,lactose,1
-120,lime,2
+120,lime zest,2
 120,toasted,1
-120,zest,1
 128,citra,1
 128,enigma,1
 128,hopped,1
@@ -1001,3 +997,13 @@ id,attribute,count
 265,hoppy,1
 265,ale,1
 265,hoppy ale,1
+266,hoppy,1
+266,ale,1
+266,lactose,1
+266,conditioned,1
+266,coconut,1
+266,fresh,1
+266,lemon zest,1
+266,vanilla,1
+266,hoppy ale,1
+266,madagascar vanilla,1
