@@ -2,6 +2,7 @@ import re
 from datetime import datetime, timedelta
 from os.path import getmtime
 from calendar import month_name
+import argparse
 
 import pandas
 from numpy import nan
@@ -131,9 +132,15 @@ def get_name_desc_and_abv(post_text):
     return (nan, nan, nan)
 
     
-def go(input_file, output_file):
+def go(input_file, output_file, update_existing_data=False):
     df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64"})
     df.dropna(how="all", subset=["age", "likes", "post_text"], inplace=True)
+
+    if not update_existing_data:
+        out_df = pandas.read_csv(output_file, index_col="id", dtype={"likes" : "Int64"})
+        df = df[~df.index.isin(out_df.index)]
+        if len(df) == 0:
+            return
 
     last_modified = datetime.utcfromtimestamp(float(getmtime(input_file)))
     last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
@@ -213,10 +220,18 @@ def go(input_file, output_file):
     print(df[df["release_post"] == True]["post_weekday"].value_counts())
 
     df = df.sort_index()
-    df.to_csv(output_file)
+    if update_existing_data:
+        df.to_csv(output_file)
+    else:
+        df.to_csv(output_file, mode="a")
 
 
 if __name__ == "__main__":
     input_csv_file = "troon_instagram_raw_post_data.csv"
     output_csv_file = "troon_instagram_clean_post_data.csv"
-    go(input_csv_file, output_csv_file)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--update_existing_clean_data", action="store_true", default=False)
+    args = parser.parse_args()
+    
+    go(input_csv_file, output_csv_file, update_existing_data=args.update_existing_clean_data)
