@@ -223,7 +223,7 @@ def go(input_file, output_file, update_existing_data=False):
     if update_existing_data:
         df.to_csv(output_file)
     else:
-        df.to_csv(output_file, mode="a")
+        df.to_csv(output_file, mode="a", header=False)
 
 
 if __name__ == "__main__":
