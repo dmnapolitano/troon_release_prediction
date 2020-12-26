@@ -8,4 +8,9 @@ This arrangement, along with Troon's size, create a few issues for craft beer fa
 
 The goal of this project is collect data surrounding Troon releases scraped from Instagram and to attempt to predict when--date and time--how much, and possibly what type of beer will be released.
 
-Please explore what's here so far and view the data/features collected and aggregated via the Tableau visualizations linked above.  And please make suggestions, of course. :beers:
+Please explore what's here so far and view the data/features collected and aggregated via the Tableau visualizations linked above.  And please make suggestions and pull requests, of course. :beers:
+
+## Collaborators
+
+* [Me!](https://github.com/dmnapolitano)
+* [Jeremy Biggs](https://github.com/jbiggsets)
