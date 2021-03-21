@@ -6,16 +6,16 @@ import argparse
 
 import pandas
 from numpy import nan
-import spacy
+from spacy.lang.en import English
 from nltk.corpus import stopwords
 from nltk.util import ngrams
 
 
 weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-nlp = spacy.load("en_core_web_sm", disable=["parser"])
-nlp.add_pipe(nlp.create_pipe("sentencizer"))
-tokenizer = nlp.Defaults.create_tokenizer(nlp)
+nlp = English()
+nlp.add_pipe('sentencizer')
+tokenizer = nlp.tokenizer
 
 stopwords_list = (stopwords.words("english") +
                   ["n't", "'s", "'re", "'ll", "-pron-", "'m", "'d"] +
