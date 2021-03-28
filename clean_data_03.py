@@ -161,7 +161,8 @@ def go(input_file, output_file, update_existing_data=False):
 
     df["release_post"] = df["post_text"].apply(lambda x : (True if type(x) is str
                                                            and (re.search(r'\bsold\s+out\b', x, re.I) or
-                                                                re.search(r'\bcans\s+are\s+gone\b', x, re.I))
+                                                                re.search(r'\bcans\s+are\s+gone\b', x, re.I) or
+                                                                re.search(r'\bclosing\s+up\s+shop\b', x, re.I))
                                                            else False))
     
     df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
