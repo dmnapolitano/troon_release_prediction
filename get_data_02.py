@@ -85,4 +85,5 @@ if __name__ == "__main__":
         df = go(post_urls, df)
 
     df.index.name = "id"
+    df["likes"] = df["likes"].astype("Int64")
     df.to_csv(output_file)
