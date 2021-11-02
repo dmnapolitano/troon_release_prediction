@@ -186,7 +186,7 @@ def go(input_file, output_file, update_existing_data=False):
     df["release_end_hour_24"] = df["release_end"].apply(lambda x : x.hour)
 
     df["release_start"] = df.apply(to_datetime, axis=1)
-    df.sort_values(by="release_start", inplace=True)
+    df = df.sort_values(by=["release_start"])
     df["release_start_diff"] = df["release_start"].diff(periods=1)
     df["days_since_previous_release"] = df["release_start_diff"].apply(lambda x : x.days)
     
