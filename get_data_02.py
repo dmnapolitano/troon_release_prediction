@@ -37,7 +37,7 @@ def get_data(url):
         from bs4 import BeautifulSoup
         import json
         soup = BeautifulSoup(browser.page_source, features="html5lib")
-        info = json.loads(soup.findAll("script", type="application/ld+json")[0].text)
+        info = json.loads(soup.findAll("script", type="application/ld+json")[0].string)
         comment = unescape(info["caption"])
         post_date = info["uploadDate"]
         likes = int(info["interactionStatistic"]["userInteractionCount"])
