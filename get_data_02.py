@@ -8,7 +8,6 @@ from html import unescape
 
 import chromedriver_binary
 from selenium.webdriver import Chrome
-from selenium.common.exceptions import NoSuchElementException
 import pandas
 from numpy import nan
 
@@ -56,7 +55,7 @@ def go(post_urls, df):
             print(data)
             df = df.append(data, ignore_index=True)
             sleep(10)
-        except NoSuchElementException as e:
+        except IndexError as e:
             break
 
     return df
