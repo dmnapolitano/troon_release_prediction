@@ -3,8 +3,8 @@
 from time import sleep
 from datetime import datetime
 
-import chromedriver_binary
 from selenium.webdriver import Chrome
+from selenium.webdriver.common.by import By
 
 
 url = "https://www.instagram.com/troonbrewing/"
@@ -18,7 +18,7 @@ browser.get(url)
 
 post_links = set([])
 while True:
-    links = [a.get_attribute("href") for a in browser.find_elements_by_tag_name("a")]
+    links = [a.get_attribute("href") for a in browser.find_elements(By.NAME, "a")]
     new_links = set([link for link in links if post_url_base in link and link not in post_links])
     if new_links.issubset(post_links):
         break
