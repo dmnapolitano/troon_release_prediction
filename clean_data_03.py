@@ -155,6 +155,7 @@ def go(input_file, output_file, update_existing_data=False):
 
     df["post_date"] = df["post_date"].fillna(df["post_date_from_age"])
     del df["post_date_from_age"]
+    df["post_date"] = df["post_date"].dt.tz_convert("US/Eastern")
 
     df["post_weekday"] = df["post_date"].apply(lambda x : weekdays[x.weekday()])
     df["post_month"] = df["post_date"].apply(lambda x : "{0:%B}".format(x))
