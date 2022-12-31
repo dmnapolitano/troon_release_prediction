@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 __pycache__/
 troon_instagram_post_links_*.lst
+.DS_Store
