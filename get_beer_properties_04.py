@@ -49,7 +49,8 @@ more_stopwords = ['amounts', 'especial', 'pink', 'weekend', 'amount', 'busiest',
                   'weeks', 'merely', 'literal', 'lots', 'mind', 'come', 'process', 'bar', 'childhood',
                   'sexy', 'abdon', 'line', 'boatload', 'brett', 'room', 'dose', 'bludgeoningly',
                   'phenomenal', 'help', 'troon', 'huge', 'malted', 'everyone', 'application',
-                  'primarily', 'batch', 'massive', 'oiliest', 'day', 'one', 'friends', 'monstrous']
+                  'primarily', 'batch', 'massive', 'oiliest', 'day', 'one', 'friends', 'monstrous',
+                  'many', 'friends', 'great']
 
 input_file = "troon_instagram_clean_post_data.csv"
 input_df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64"})
@@ -66,7 +67,7 @@ for (i, row) in input_df[~input_df.index.isin(df["id"])].iterrows():
         for (ngram, c) in Counter(ngrams(tokens, l)).items():
             if ngram in known_characteristics:
                 new_row = {"id" : i, "attribute" : " ".join(ngram), "count" : c}
-                df = df.append(new_row, ignore_index=True)
+                df = pandas.concat([df, pandas.DataFrame([new_row])], ignore_index=True)
             else:
                 ngram_stopwords = [t for t in ngram if t in more_stopwords]
                 if len(ngram_stopwords) < len(ngram):
@@ -78,6 +79,7 @@ for (i, row) in input_df[~input_df.index.isin(df["id"])].iterrows():
 if len(to_consider) == 0:
     df = df.set_index("id")
     df.index = df.index.astype("Int64")
+    df["count"] = df["count"].astype("Int64")
     df.to_csv("troon_instagram_post_beer_attributes.csv")
 else:
     print(Counter(to_consider))
