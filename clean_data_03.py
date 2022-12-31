@@ -126,7 +126,7 @@ def to_datetime(row):
     
 def get_name_desc_and_abv(post_text):
     if type(post_text) is str and "%-" in post_text:
-        (name, abv, description) = re.search(r'(\n|^)(.+?)[,\s]*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+?\.)',
+        (name, abv, description) = re.search(r'(\n|^)(.+?)[,\s]*([0-9]{1,2}\.?[0-9]?[0-9]?%)-\s*(.+)',
                                              post_text).groups()[1:]
         return (name, abv, description)
     return (nan, nan, nan)
@@ -146,7 +146,9 @@ def go(input_file, output_file, update_existing_data=False):
     last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
 
     if "post_date" in df.columns:
-        df["post_date"] = df["post_date"].apply(lambda x : nan if type(x) is not str else datetime.fromisoformat(x))
+        df["post_date"] = df["post_date"].apply(lambda x : nan if type(x) is not str else
+                                                (datetime.fromisoformat(x.rstrip("Z") + "+00:00")
+                                                 if x.endswith(".000Z") else datetime.fromisoformat(x)))
         
     df["post_date_from_age"] = df["age"].apply(lambda x : get_date_from_age(x, last_modified))
     del df["age"]
@@ -165,34 +167,36 @@ def go(input_file, output_file, update_existing_data=False):
                                                                 re.search(r'\bclosing\s+up\s+shop\b', x, re.I))
                                                            else False))
     
-    df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
+    # TODO: Troon posts don't seem to contain the time at which they sold out anymore :(
+    # df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
     # pandemic times lol
-    df["times"] = df.apply(lambda x : ([x["post_date"], x["post_date"] + timedelta(0, 30)]
-                                       if x["release_post"] and
-                                       (type(x["times"]) is not list or len(set(x["times"])) == 1) and
-                                       ((x["post_year"] == 2020 and x["post_month"] not in ["January", "February"])
-                                        or x["post_year"] > 2020)
-                                       else x["times"]), axis=1)
+    df["times"] = df.apply(lambda x : [x["post_date"], x["post_date"] + timedelta(0, 30)]
+                           if x["release_post"] and ".square.site" in x["post_text"] else
+                           ([x["post_date"], x["post_date"] + timedelta(0, 60)] if x["release_post"] else nan),
+                           axis=1) #else x["times"]), axis=1)
         
     df["release_start"] = df["times"].apply(lambda x : (x[0] if type(x) is list else nan))
     df["release_end"] = df["times"].apply(lambda x : (x[-1] if type(x) is list else nan))
 
-    del df["post_date"]
     del df["times"]
     
     df["release_duration_min"] = df["release_end"] - df["release_start"]
-    df["release_duration_min"] = df["release_duration_min"].apply(lambda x : x.total_seconds() / 60)
-    df["release_start_hour_24"] = df["release_start"].apply(lambda x : x.hour)
-    df["release_end_hour_24"] = df["release_end"].apply(lambda x : x.hour)
+    df["release_duration_min"] = df["release_duration_min"].apply(lambda x : x.total_seconds() / 60
+                                                                  if type(x) is not float else nan)
+    df["release_start_hour_24"] = df["release_start"].apply(lambda x : x.hour
+                                                            if type(x) is not float else nan)
+    df["release_end_hour_24"] = df["release_end"].apply(lambda x : x.hour
+                                                        if type(x) is not float else nan)
 
-    df["release_start"] = df.apply(to_datetime, axis=1)
-    df = df.sort_values(by=["release_start"])
-    df["release_start_diff"] = df["release_start"].diff(periods=1)
+    df["release_start"] = pandas.to_datetime(df["release_start"])
+    df = df.sort_values(by=["post_date"])
+    df["release_start_diff"] = df["post_date"].diff(periods=1)
     df["days_since_previous_release"] = df["release_start_diff"].apply(lambda x : x.days)
     
     del df["release_start"]
     del df["release_start_diff"]
     del df["release_end"]
+    del df["post_date"]
 
     # TODO: do more with these tokens and ngrams
     df["post_tokens"] = df["post_text"].apply(tokenize)
