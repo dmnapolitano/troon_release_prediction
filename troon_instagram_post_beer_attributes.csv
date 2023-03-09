@@ -1610,18 +1610,6 @@ id,attribute,count
 389,hoppy,1
 389,ale,1
 389,hoppy ale,1
-392,imperial,1
-392,imperial milk stout,1
-392,milk stout,1
-392,bourbon barrels,1
-392,bourbon,2
-392,vanilla,1
-392,bourbon barrel aged,1
-392,bourbon barrel aged maple syrup,1
-392,maple syrup,1
-392,indonesian,1
-392,indonesian cinnamon,1
-392,cinnamon,1
 390,hoppy,1
 390,ale,1
 390,hoppy ale,1
@@ -1641,6 +1629,18 @@ id,attribute,count
 391,bourbon barrels,1
 391,vanilla beans,1
 391,imperial milk stout,1
-393,hoppy,1
-393,ale,1
-393,hoppy ale,1
+391,imperial,1
+391,imperial milk stout,1
+391,milk stout,1
+391,bourbon barrels,1
+391,bourbon,2
+391,vanilla,1
+391,bourbon barrel aged,1
+391,bourbon barrel aged maple syrup,1
+391,maple syrup,1
+391,indonesian,1
+391,indonesian cinnamon,1
+391,cinnamon,1
+392,hoppy,1
+392,ale,1
+392,hoppy ale,1
