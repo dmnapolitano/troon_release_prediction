@@ -12,3 +12,7 @@ Please feel free to explore what's here so far and view the data/features/visual
 
 * [Me!](https://github.com/dmnapolitano)
 * [Jeremy Biggs](https://github.com/jbiggsets)
+
+## "Wins" with the Current Model
+
+* 7/10/2023 with a probability of 61% :tada:
