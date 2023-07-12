@@ -16,3 +16,7 @@ Please feel free to explore what's here so far and view the data/features/visual
 ## "Wins" with the Current Model
 
 * 7/10/2023 with a probability of 61% :tada:
+
+## "Losses" with the Current Model
+
+* 7/12/2022 with a probabilty of 22% :confused:
