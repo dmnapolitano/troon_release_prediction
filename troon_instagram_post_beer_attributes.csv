@@ -1717,7 +1717,7 @@ id,attribute,count
 410,lactose,1
 410,refermented,1
 410,mamgo,1
-410,conditioned,
+410,conditioned,1
 410,vanilla,1
 410,west papua vanilla,1
 410,west wapua,1
@@ -1735,3 +1735,6 @@ id,attribute,count
 414,hoppy,1
 414,ale,1
 414,hoppy ale,1
+415,hoppy,1
+415,ale,1
+415,hoppy ale,1
