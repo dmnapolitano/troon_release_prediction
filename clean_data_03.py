@@ -152,9 +152,9 @@ def go(input_file, output_file, update_existing_data=False):
         
     df["post_date_from_age"] = df["age"].apply(lambda x : get_date_from_age(x, last_modified))
     del df["age"]
-
     df["post_date"] = df["post_date"].fillna(df["post_date_from_age"])
     del df["post_date_from_age"]
+    
     df["post_date"] = df["post_date"].dt.tz_convert("US/Eastern")
 
     df["post_weekday"] = df["post_date"].apply(lambda x : weekdays[x.weekday()])
@@ -189,13 +189,12 @@ def go(input_file, output_file, update_existing_data=False):
     df["release_end_hour_24"] = df["release_end"].apply(lambda x : x.hour
                                                         if type(x) is not float else nan)
 
+    df["post_date"] = pandas.to_datetime(df["post_date"].dt.date)
     df["release_start"] = pandas.to_datetime(df["release_start"])
     df = df.sort_values(by=["post_date"])
-    df["release_start_diff"] = df["post_date"].diff(periods=1)
-    df["days_since_previous_release"] = df["release_start_diff"].apply(lambda x : x.days)
+    df["days_since_previous_release"] = df["post_date"].diff(periods=1).dt.days
     
     del df["release_start"]
-    del df["release_start_diff"]
     del df["release_end"]
     del df["post_date"]
 
@@ -225,7 +224,6 @@ def go(input_file, output_file, update_existing_data=False):
 
     print(df[df["release_post"] == True]["post_weekday"].value_counts())
 
-    df = df.sort_index()
     if update_existing_data:
         df.to_csv(output_file)
     else:
