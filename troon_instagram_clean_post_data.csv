@@ -1,20 +1,20 @@
 id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_duration_min,release_start_hour_24,release_end_hour_24,days_since_previous_release,release_cans,release_pp,beer_name,beer_abv,beer_description
 50,https://www.instagram.com/p/BB0U1rPowyS/,22,Monday,February,15,2016,False,,,,,,,,,
+153,https://www.instagram.com/p/BB0P-GwIw21/,24,Monday,February,15,2016,False,,,,,,,,,
+133,https://www.instagram.com/p/BB0T3qgowwC/,24,Monday,February,15,2016,False,,,,,,,,,
 123,https://www.instagram.com/p/BB0UHrNIwwr/,19,Monday,February,15,2016,False,,,,,,,,,
 173,https://www.instagram.com/p/BB0Q2WCIw5E/,26,Monday,February,15,2016,False,,,,,,,,,
 156,https://www.instagram.com/p/BB0S_VUow-A/,21,Monday,February,15,2016,False,,,,,,,,,
-133,https://www.instagram.com/p/BB0T3qgowwC/,24,Monday,February,15,2016,False,,,,,,,,,
-153,https://www.instagram.com/p/BB0P-GwIw21/,24,Monday,February,15,2016,False,,,,,,,,,
-114,https://www.instagram.com/p/BHyRrvyhH58/,32,Tuesday,July,12,2016,False,,,,,,,,,
 40,https://www.instagram.com/p/BHyVPoEhSVV/,21,Tuesday,July,12,2016,False,,,,,,,,,
 118,https://www.instagram.com/p/BHv0uAnh4Jm/,33,Tuesday,July,12,2016,False,,,,,,,,,
+114,https://www.instagram.com/p/BHyRrvyhH58/,32,Tuesday,July,12,2016,False,,,,,,,,,
 30,https://www.instagram.com/p/BKell8-AdWR/,31,Saturday,September,17,2016,False,,,,,,,,,
 66,https://www.instagram.com/p/BKefK4lgUtR/,39,Saturday,September,17,2016,False,,,,,,,,,
 190,https://www.instagram.com/p/BKoS81KAqcq/,25,Wednesday,September,21,2016,False,,,,,,,,,
 35,https://www.instagram.com/p/BKyYGrUhoW5/,46,Sunday,September,25,2016,False,,,,,,,,,
 34,https://www.instagram.com/p/BK6sifhhM-P/,37,Wednesday,September,28,2016,False,,,,,,,,,
-28,https://www.instagram.com/p/BLFEcE_hmGk/,51,Sunday,October,2,2016,False,,,,,,,,,
 220,https://www.instagram.com/p/BLE_kFChQEu/,27,Sunday,October,2,2016,False,,,,,,,,,
+28,https://www.instagram.com/p/BLFEcE_hmGk/,51,Sunday,October,2,2016,False,,,,,,,,,
 51,https://www.instagram.com/p/BLM7gvMBp1H/,60,Wednesday,October,5,2016,False,,,,,,,,,
 155,https://www.instagram.com/p/BLOjJP9BD80/,40,Thursday,October,6,2016,False,,,,,,,,,
 39,https://www.instagram.com/p/BLU80v8AFj5/,38,Saturday,October,8,2016,False,,,,,,,,,
@@ -23,8 +23,8 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 171,https://www.instagram.com/p/BL-FPRhA5B-/,64,Monday,October,24,2016,False,,,,,,,,,
 126,https://www.instagram.com/p/BMckdUjgHmc/,33,Saturday,November,5,2016,False,,,,,,,,,
 175,https://www.instagram.com/p/BMcjIPPAnFU/,52,Saturday,November,5,2016,False,,,,,,,,,
-166,https://www.instagram.com/p/BMxEhT_g-Qi/,56,Sunday,November,13,2016,False,,,,,,,,,
 62,https://www.instagram.com/p/BMxEy-pAmHY/,37,Sunday,November,13,2016,False,,,,,,,,,
+166,https://www.instagram.com/p/BMxEhT_g-Qi/,56,Sunday,November,13,2016,False,,,,,,,,,
 164,https://www.instagram.com/p/BM94nzhBgGQ/,58,Friday,November,18,2016,False,,,,,,,,,
 91,https://www.instagram.com/p/BM93aJIhfZ-/,79,Friday,November,18,2016,False,,,,,,,,,
 135,https://www.instagram.com/p/BNAXz75Bn_g/,62,Saturday,November,19,2016,False,,,,,,,,,
@@ -48,7 +48,7 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 226,https://www.instagram.com/p/BQToOXHA45R/,126,Thursday,February,9,2017,False,,,,,,,,,
 65,https://www.instagram.com/p/BQWEOaFg5Qq/,92,Friday,February,10,2017,False,,,,,,,,,
 132,https://www.instagram.com/p/BQooIucBSMt/,152,Friday,February,17,2017,False,,,,,,,,,
-183,https://www.instagram.com/p/BQoomidh5yf/,136,Friday,February,17,2017,True,,,,0.0,,,Sweating Through Your Coconut Bra,8.8,An imperial milk stout conditioned on a whole bunch of organic coconut.
+183,https://www.instagram.com/p/BQoomidh5yf/,136,Friday,February,17,2017,True,,,,,,,Sweating Through Your Coconut Bra,8.8,An imperial milk stout conditioned on a whole bunch of organic coconut.
 197,https://www.instagram.com/p/BQ_aMoSBezH/,214,Sunday,February,26,2017,True,,,,9.0,,,Phone Tag,7.2,An IPA with a creamy texture and loaded with a totally befuddling combination of our favorite hops.
 214,https://www.instagram.com/p/BRch1mzBUgp/,201,Friday,March,10,2017,False,,,,,,,,,
 92,https://www.instagram.com/p/BRfFDr2BlVR/,154,Saturday,March,11,2017,False,,,,,,,,,
@@ -59,18 +59,18 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 196,https://www.instagram.com/p/BSSIALWhodj/,178,Thursday,March,30,2017,True,,,,6.0,,,Born Without Your Spine,6.0,15% of total sugars from wildflower honey and fermented a little drier than usual.
 210,https://www.instagram.com/p/BSWUeduhWI1/,238,Saturday,April,1,2017,False,,,,,,,,,
 13,https://www.instagram.com/p/BSZntMbh-il/,124,Sunday,April,2,2017,False,,,,,,,,,
-224,https://www.instagram.com/p/BSnJt-0B5KB/,139,Saturday,April,8,2017,True,,,,7.0,,,Adjective Abuse,7.5,"Our hoppiest beer (by weight) to date, but arguably the most delicate too."
+224,https://www.instagram.com/p/BSnJt-0B5KB/,139,Saturday,April,8,2017,True,,,,9.0,,,Adjective Abuse,7.5,"Our hoppiest beer (by weight) to date, but arguably the most delicate too."
 60,https://www.instagram.com/p/BS19EL9BwzZ/,128,Thursday,April,13,2017,False,,,,,,,,,
 11,https://www.instagram.com/p/BS8_aOUh6vn/,203,Sunday,April,16,2017,True,,,,8.0,,,We are OPEN today until 5pm. Our new beer this weekend is Inspirational Quote,7.0,a beguiling ale brewed with lactose and chamomile and then dry-hopped heavily with some fruity varieties and more chamomile flowers.
 96,https://www.instagram.com/p/BTKlqXphqa0/,235,Friday,April,21,2017,True,,,,5.0,,,Apocalyptic Visions,8.0,"A revelatory, heavenly missive of a DIPA."
 195,https://www.instagram.com/p/BTMjxu2hM1y/,105,Saturday,April,22,2017,True,,,,1.0,,,,,
 204,https://www.instagram.com/p/BTT0mg9hkOT/,274,Tuesday,April,25,2017,False,,,,,,,,,
 58,https://www.instagram.com/p/BTptwTEhDE7/,189,Wednesday,May,3,2017,False,,,,,,,,,
-159,https://www.instagram.com/p/BTuExtPBzoY/,248,Friday,May,5,2017,True,,,,14.0,,,Sweating Through Your Sombrero,9.0,"Imperial Milk Porter with immoderate amounts of vanilla beans, cinnamon, hot peppers and coffee."
-23,https://www.instagram.com/p/BUEDMrmh_Aj/,180,Sunday,May,14,2017,True,,,,2.0,,,,,
+159,https://www.instagram.com/p/BTuExtPBzoY/,248,Friday,May,5,2017,True,,,,13.0,,,Sweating Through Your Sombrero,9.0,"Imperial Milk Porter with immoderate amounts of vanilla beans, cinnamon, hot peppers and coffee."
+23,https://www.instagram.com/p/BUEDMrmh_Aj/,180,Sunday,May,14,2017,True,,,,9.0,,,,,
 137,https://www.instagram.com/p/BURthRgBaDi/,137,Friday,May,19,2017,False,,,,,,,,,
-131,https://www.instagram.com/p/BUj6lnvB94l/,235,Friday,May,26,2017,False,,,,,,,,,
 95,https://www.instagram.com/p/BUk22Kghf9K/,175,Friday,May,26,2017,True,,,,12.0,,,Witch House,7.0,A new session IPA just in time for the holiday! Dry-hopped with Mosaic pellets and then further hopped with Mosaic lupulin powder.
+131,https://www.instagram.com/p/BUj6lnvB94l/,235,Friday,May,26,2017,False,,,,,,,,,
 31,https://www.instagram.com/p/BUqFxtHB__C/,240,Sunday,May,28,2017,False,,,,,,,,,
 10,https://www.instagram.com/p/BU3HVtdBbjP/,378,Friday,June,2,2017,True,,,,7.0,,,Placebo Effect,6.2,IPA with 50% of the grist comprised of those organic malted oats grown in NJ that I posted about previously.
 22,https://www.instagram.com/p/BU5BGtvBJsf/,229,Saturday,June,3,2017,True,,,,1.0,,,,,
@@ -94,7 +94,7 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 177,https://www.instagram.com/p/BX6r2L9B3zQ/,169,Thursday,August,17,2017,False,,,,,,,,,
 8,https://www.instagram.com/p/BYOxRdcBWcy/,360,Friday,August,25,2017,True,,,,14.0,600.0,,"Don't fear the reaper, feed it. We are all plodding towards an inexorable demise, the least we can do is make amends with Death before it visits. Our new glass will make you fast friends, with convenient viewing panels to ensure that he is well provisioned with Troon beer. On the right is an illustration of that concept, and on the left is the back of the glass featuring this weekend's can: Ageless Witticism",9.5,Fruit smoothie ale brewed with lactose and refermented on a whole bunch of raspberry and cherry.
 189,https://www.instagram.com/p/BYWfMKXBWh1/,218,Monday,August,28,2017,False,,,,,,,,,
-168,https://www.instagram.com/p/BYgvab5hvGt/,439,Friday,September,1,2017,True,,,,6.0,,,Chained to the Bottom of the Ocean,8.3,Spelt DIPA.
+168,https://www.instagram.com/p/BYgvab5hvGt/,439,Friday,September,1,2017,True,,,,7.0,,,Chained to the Bottom of the Ocean,8.3,Spelt DIPA.
 120,https://www.instagram.com/p/BYyxSGCBT8G/,298,Friday,September,8,2017,True,,,,7.0,300.0,,Dragged Into Autumn,7.4,Dessert ale brewed with lactose and conditioned on key lime and lime juice + zest as well as coconut that we toasted with the help of our friends @brickfarmmarket.
 209,https://www.instagram.com/p/BZEeAuKhsyj/,409,Friday,September,15,2017,True,,,,7.0,,2.0,Grammar Gaffe,8.6,Ipa hopped 100% with Citra.
 77,https://www.instagram.com/p/BZWz4ozh6_g/,284,Friday,September,22,2017,True,,,,7.0,200.0,,Catharism,9.6,"Purify your body and prepare for the end with this Consolamentum-style ale, hopped intensely with both Mosaic lupulin powder and Galaxy."
@@ -106,15 +106,15 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 119,https://www.instagram.com/p/BaJwZz-BNoy/,146,Thursday,October,12,2017,False,,,,,,,,,
 223,https://www.instagram.com/p/BaW3-8JhUYL/,365,Tuesday,October,17,2017,True,0.0,18.0,18.0,10.0,500.0,,Illegible Metal Font,9.0,"If you can read the billing, it's not fucking metal."
 27,https://www.instagram.com/p/BaclTZtB0ZO/,206,Thursday,October,19,2017,False,,,,,,,,,
-141,https://www.instagram.com/p/Bag9GcLhKsc/,453,Saturday,October,21,2017,True,0.0,17.0,17.0,3.0,,,Permanent Purgatory,8.8,Another offering for those of you who are sick of beer.
+141,https://www.instagram.com/p/Bag9GcLhKsc/,453,Saturday,October,21,2017,True,0.0,17.0,17.0,4.0,,,Permanent Purgatory,8.8,Another offering for those of you who are sick of beer.
 86,https://www.instagram.com/p/BarojYvFB-Y/,159,Wednesday,October,25,2017,False,,,,,,,,,
 21,https://www.instagram.com/p/Ba9rvZXB-7y/,295,Wednesday,November,1,2017,True,,,,11.0,500.0,,Calan Gaeaf,7.6,"Session IPA hopped with a ghoulish amount of Vic Secret, Azacca and Simcoe lupulin powder."
 151,https://www.instagram.com/p/BbUu8KsB7kx/,394,Friday,November,10,2017,True,,,,9.0,,,Argle-bargle,7.2,Extra pale ale hopped with Huell Melon and Galaxy.
-12,https://www.instagram.com/p/BbpExDFBCUV/,455,Saturday,November,18,2017,True,,,,7.0,,,Let the Devil In,10.0,"Imperial milk stout with vanilla bean, maple syrup and cinnamon."
+12,https://www.instagram.com/p/BbpExDFBCUV/,455,Saturday,November,18,2017,True,,,,8.0,,,Let the Devil In,10.0,"Imperial milk stout with vanilla bean, maple syrup and cinnamon."
 117,https://www.instagram.com/p/BbxxaqfBRq9/,463,Tuesday,November,21,2017,True,,,,3.0,500.0,3.0,Morose and Lugubrious,6.4,"Triple IPA hopped with Citra, Mosaic and Amarillo."
 128,https://www.instagram.com/p/BcK32eDhiPf/,961,Friday,December,1,2017,True,,,,10.0,550.0,3.0,Can't Be Bothered,8.8,IPA hopped with a whole lot of Citra and Enigma.
 4,https://www.instagram.com/p/BcYX5JolZxX/,475,Wednesday,December,6,2017,False,,,,5.0,,2.0,,,
-207,https://www.instagram.com/p/BchmkpthUJR/,473,Sunday,December,10,2017,True,0.0,11.0,11.0,4.0,250.0,1.0,Impaled Northern Moonforest,12.0,Our first barrel aged beer just in time for our first anniversary! This sessionable stout was aged in rye and whisky barrels for 7 months and then cold conditioned for many weeks before packaging.
+207,https://www.instagram.com/p/BchmkpthUJR/,473,Sunday,December,10,2017,True,0.0,11.0,11.0,9.0,250.0,1.0,Impaled Northern Moonforest,12.0,Our first barrel aged beer just in time for our first anniversary! This sessionable stout was aged in rye and whisky barrels for 7 months and then cold conditioned for many weeks before packaging.
 49,https://www.instagram.com/p/BcxWTa-BqNF/,470,Saturday,December,16,2017,True,,,,6.0,550.0,3.0,Crust Punk Dog,9.0,"Hopped entirely, and heavily, with lupulin powder."
 53,https://www.instagram.com/p/Bc72OZjBrHW/,358,Wednesday,December,20,2017,False,,,,,,,,,
 139,https://www.instagram.com/p/BdG5ogeBmfh/,400,Sunday,December,24,2017,False,,,,,,,,,
@@ -136,47 +136,47 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 36,https://www.instagram.com/p/BhcZsOplxYF/,851,Wednesday,April,11,2018,True,0.0,18.0,18.0,10.0,500.0,3.0,Corpsair,10.0,"Pastrywine brewed with lactose and conditioned on cacao nibs + Abdon Quilla Ochochoque coffee, a gorgeous bean from our good friends @rojosroastery."
 87,https://www.instagram.com/p/BhxH5ShFkWA/,967,Thursday,April,19,2018,True,,,,8.0,420.0,3.0,Weed Joke,8.4,Hopped a lot.
 154,https://www.instagram.com/p/BiKWDnZlIIg/,1143,Sunday,April,29,2018,True,0.0,14.0,14.0,10.0,550.0,4.0,Fleeting Fulfillment,10.0,"Our take on a mango lassi, this is a continuation of our line of smoothie ales for those of you out there who don't want your beer to taste like beer."
-33,https://www.instagram.com/p/BicVUqGFdmI/,875,Sunday,May,6,2018,True,0.0,13.0,13.0,6.0,300.0,2.0,Human Recycling,9.2,Hopped with a stupefying amount of all the trendy varieties on the market.
+33,https://www.instagram.com/p/BicVUqGFdmI/,875,Sunday,May,6,2018,True,0.0,13.0,13.0,7.0,300.0,2.0,Human Recycling,9.2,Hopped with a stupefying amount of all the trendy varieties on the market.
 116,https://www.instagram.com/p/Bi2o26-lA-A/,805,Wednesday,May,16,2018,True,0.0,18.0,18.0,10.0,300.0,2.0,Insidious Irony,8.0,Hopped singularly and intensely (around 7#/bbl) with Enigma.
-52,https://www.instagram.com/p/BjPvDq7leGo/,626,Saturday,May,26,2018,True,0.0,13.0,13.0,9.0,200.0,1.0,Frightened Rabbit,9.7,Imperial milk porter conditioned on 6#/ bbl of organic toasted coconut.
+52,https://www.instagram.com/p/BjPvDq7leGo/,626,Saturday,May,26,2018,True,0.0,13.0,13.0,10.0,200.0,1.0,Frightened Rabbit,9.7,Imperial milk porter conditioned on 6#/ bbl of organic toasted coconut.
 46,https://www.instagram.com/p/Bjav2KPFNUz/,893,Wednesday,May,30,2018,True,0.0,19.0,19.0,4.0,500.0,3.0,I Am the Leviathan,11.0,Imperial Milk Stout conditioned on the most beautiful @rojosroastery (duh) coffee and an extraordinary amount of Madagascar vanilla.
-112,https://www.instagram.com/p/BjsqqkSF6lH/,923,Wednesday,June,6,2018,True,0.0,18.0,18.0,6.0,325.0,2.0,Kernel Kenning,8.25,"Flower-spiced solely with Vic Secret from this year's bine bashing ceremony, at a rate of 7lbs/ bbl."
+112,https://www.instagram.com/p/BjsqqkSF6lH/,923,Wednesday,June,6,2018,True,0.0,18.0,18.0,7.0,325.0,2.0,Kernel Kenning,8.25,"Flower-spiced solely with Vic Secret from this year's bine bashing ceremony, at a rate of 7lbs/ bbl."
 162,https://www.instagram.com/p/Bj-tp9Ml1Ql/,749,Wednesday,June,13,2018,True,,,,7.0,300.0,2.0,Claim Preclusion,5.8,Keller Pilsner hopped judiciously with Medusa and Kohatu.
 32,https://www.instagram.com/p/Bkagp_zFje8/,853,Sunday,June,24,2018,True,0.0,13.0,13.0,11.0,425.0,2.0,Hunger Pangs,7.9,"Hopped primarily with outrageous amounts of fresh Amarillo, followed by a smattering of our other favorite American varietals."
 14,https://www.instagram.com/p/Bk3WXYOFMsT/,661,Thursday,July,5,2018,True,88.0,17.0,18.0,11.0,325.0,2.0,Reusable Bags,8.0,Hopped at 8#/bbl with Azacca and El Dorado.
 111,https://www.instagram.com/p/BlGzbceF9ut/,886,Wednesday,July,11,2018,True,64.0,17.0,18.0,6.0,180.0,1.0,Feral Faun,8.4,Hoppy ale with phenomenal amounts of both Citra and Galaxy.
-80,https://www.instagram.com/p/BlgC9ewlchP/,731,Saturday,July,21,2018,True,62.0,12.0,13.0,9.0,350.0,2.0,Facultative Scavenger,9.4,Very hoppy ale.
-143,https://www.instagram.com/p/BlyB5zPFlPz/,1103,Saturday,July,28,2018,True,108.0,12.0,14.0,6.0,450.0,2.0,Vernal Vicissitudes,8.9,Our newest smoothie ale crafted specifically for the folks who don't want any beer flavor when they're drinking beer.
+80,https://www.instagram.com/p/BlgC9ewlchP/,731,Saturday,July,21,2018,True,62.0,12.0,13.0,10.0,350.0,2.0,Facultative Scavenger,9.4,Very hoppy ale.
+143,https://www.instagram.com/p/BlyB5zPFlPz/,1103,Saturday,July,28,2018,True,108.0,12.0,14.0,7.0,450.0,2.0,Vernal Vicissitudes,8.9,Our newest smoothie ale crafted specifically for the folks who don't want any beer flavor when they're drinking beer.
 38,https://www.instagram.com/p/BmO9BIalxEE/,1104,Wednesday,August,8,2018,True,0.0,19.0,19.0,11.0,275.0,,Bathos,8.6,Hoppy ale.
 174,https://www.instagram.com/p/BmOnZp-lJ15/,745,Wednesday,August,8,2018,False,,,,,,,,,
-97,https://www.instagram.com/p/Bm1g_aJl4ea/,928,Thursday,August,23,2018,True,85.0,17.0,18.0,14.0,450.0,2.0,Surfeit,7.5,Kettle soured wheat ale refermented with a 50/50 blend of NJ peaches and nectarines processed by us in house.
-61,https://www.instagram.com/p/Bm6LZExFQaK/,757,Saturday,August,25,2018,True,165.0,12.0,15.0,1.0,450.0,2.0,Panicked Hare,11.5,Imperial Milk Porter conditioned on toasted coconut (perpetual thanks to @brickfarmmarket for letting us use their ovens) and a healthy dose of Madagascar vanilla.
+97,https://www.instagram.com/p/Bm1g_aJl4ea/,928,Thursday,August,23,2018,True,85.0,17.0,18.0,15.0,450.0,2.0,Surfeit,7.5,Kettle soured wheat ale refermented with a 50/50 blend of NJ peaches and nectarines processed by us in house.
+61,https://www.instagram.com/p/Bm6LZExFQaK/,757,Saturday,August,25,2018,True,165.0,12.0,15.0,2.0,450.0,2.0,Panicked Hare,11.5,Imperial Milk Porter conditioned on toasted coconut (perpetual thanks to @brickfarmmarket for letting us use their ovens) and a healthy dose of Madagascar vanilla.
 193,https://www.instagram.com/p/BnZlE0OlmFA/,972,Thursday,September,6,2018,True,68.0,17.0,18.0,12.0,375.0,2.0,Malicious Malaprop,7.6,"Hopped at over 6#/bbl with Denali, and only Denali."
-176,https://www.instagram.com/p/Bn4cgGMlQuV/,886,Tuesday,September,18,2018,True,54.0,17.0,18.0,11.0,275.0,2.0,Fustigated,7.5,A bludgeoningly hoppy ale.
+176,https://www.instagram.com/p/Bn4cgGMlQuV/,886,Tuesday,September,18,2018,True,54.0,17.0,18.0,12.0,275.0,2.0,Fustigated,7.5,A bludgeoningly hoppy ale.
 199,https://www.instagram.com/p/BoKf4cWlXTX/,1093,Tuesday,September,25,2018,True,,,,7.0,450.0,,Athazagoraphobia,9.0,Kettle-soured ale brewed with a sensible amount of lactose and then refermented with a mind-numbing amount of an equal mix of passion fruit and mango.
-82,https://www.instagram.com/p/BoPqsxyldW8/,802,Thursday,September,27,2018,True,0.0,18.0,18.0,9.0,300.0,1.0,Spit Fountain,9.25,"Our hoppiest ever, by weight, hoppy ale."
-182,https://www.instagram.com/p/BokNs6rleQI/,919,Friday,October,5,2018,True,107.0,17.0,18.0,7.0,325.0,2.0,Sacrificial Lamb,8.25,"Kettle-soured ale brewed with lactose and an immoderate amount of beautiful hibiscus before being dry-hopped judiciously with Nelson Sauvin, Summer and Motueka."
+82,https://www.instagram.com/p/BoPqsxyldW8/,802,Thursday,September,27,2018,True,0.0,18.0,18.0,2.0,300.0,1.0,Spit Fountain,9.25,"Our hoppiest ever, by weight, hoppy ale."
+182,https://www.instagram.com/p/BokNs6rleQI/,919,Friday,October,5,2018,True,107.0,17.0,18.0,8.0,325.0,2.0,Sacrificial Lamb,8.25,"Kettle-soured ale brewed with lactose and an immoderate amount of beautiful hibiscus before being dry-hopped judiciously with Nelson Sauvin, Summer and Motueka."
 73,https://www.instagram.com/p/BpFtUMJFoj9/,990,Thursday,October,18,2018,True,61.0,17.0,18.0,13.0,350.0,,Sentenced to Live,8.0,Hoppy ale w/ quite a lot of hops in it.
 43,https://www.instagram.com/p/BpXvtczALWP/,867,Thursday,October,25,2018,True,74.0,17.0,18.0,7.0,400.0,2.0,Ego Dissolution,8.0,Hoppy ale.
-211,https://www.instagram.com/p/Bp2v8CzgZv_/,839,Tuesday,November,6,2018,True,100.0,17.0,19.0,11.0,450.0,2.0,I'm to Blame for the Rain,12.0,"Imperial milk stout brewed with coffee, cinnamon and five different kinds of peppers."
+211,https://www.instagram.com/p/Bp2v8CzgZv_/,839,Tuesday,November,6,2018,True,100.0,17.0,19.0,12.0,450.0,2.0,I'm to Blame for the Rain,12.0,"Imperial milk stout brewed with coffee, cinnamon and five different kinds of peppers."
 213,https://www.instagram.com/p/Bp-e6e2AL2p/,956,Friday,November,9,2018,True,66.0,17.0,18.0,3.0,480.0,3.0,Brain Lint,8.2,Hoppy ale.
-18,https://www.instagram.com/p/BqQdgyaACCv/,934,Friday,November,16,2018,True,62.0,17.0,18.0,6.0,400.0,2.0,Eternal Regret,8.25,Hoppy ale.
+18,https://www.instagram.com/p/BqQdgyaACCv/,934,Friday,November,16,2018,True,62.0,17.0,18.0,7.0,400.0,2.0,Eternal Regret,8.25,Hoppy ale.
 63,https://www.instagram.com/p/Bqx9s-zAfIU/,1073,Thursday,November,29,2018,True,72.0,17.0,18.0,13.0,525.0,3.0,Onomatophobia,9.0,"Kettle-soured ale brewed with lactose, refermented on an absurd amount of raspberry (25% by volume), and then conditioned on a judicious amount of freshly zested lemon peel."
-158,https://www.instagram.com/p/BrGjdtxg1IH/,700,Friday,December,7,2018,True,98.0,17.0,18.0,7.0,450.0,2.0,Two Worlds Become One,10.0,Hoppy ale.
+158,https://www.instagram.com/p/BrGjdtxg1IH/,700,Friday,December,7,2018,True,98.0,17.0,18.0,8.0,450.0,2.0,Two Worlds Become One,10.0,Hoppy ale.
 206,https://www.instagram.com/p/BrLL5_XA1Hc/,1028,Sunday,December,9,2018,True,,,,2.0,,1.0,Disputation,9.0,Mixed fermentation golden ale.
-48,https://www.instagram.com/p/BroBiITgvQn/,904,Thursday,December,20,2018,True,80.0,17.0,18.0,12.0,550.0,3.0,Up 2 No Good Again,11.0,"Imperial milk stout brewed with lactose and then conditioned on beautiful E Timor beans from @rojosroastery as well as twice the amount of coconut as Panicked Hare, but this time left untoasted to lend more of a confectionery vibe."
-89,https://www.instagram.com/p/BrvP5UsA1uD/,1096,Sunday,December,23,2018,True,46.0,12.0,13.0,2.0,300.0,2.0,"O Russell, Where Art Thou?",9.0,Hoppy ale refermented with lots of wildflower honey and then creamed with 7#/bbl of Russell's favorite hops.
+48,https://www.instagram.com/p/BroBiITgvQn/,904,Thursday,December,20,2018,True,80.0,17.0,18.0,11.0,550.0,3.0,Up 2 No Good Again,11.0,"Imperial milk stout brewed with lactose and then conditioned on beautiful E Timor beans from @rojosroastery as well as twice the amount of coconut as Panicked Hare, but this time left untoasted to lend more of a confectionery vibe."
+89,https://www.instagram.com/p/BrvP5UsA1uD/,1096,Sunday,December,23,2018,True,46.0,12.0,13.0,3.0,300.0,2.0,"O Russell, Where Art Thou?",9.0,Hoppy ale refermented with lots of wildflower honey and then creamed with 7#/bbl of Russell's favorite hops.
 76,https://www.instagram.com/p/BsjEPo3guHY/,1086,Saturday,January,12,2019,True,88.0,15.0,16.0,20.0,300.0,1.0,Words That Solve Problems,8.2,Hoppy Ale.
 121,https://www.instagram.com/p/BstkAR3A9YM/,1027,Wednesday,January,16,2019,True,110.0,17.0,19.0,4.0,,3.0,Metamorphosis: Caterpillar,12.5,Modern American Barleywine Style Ale.
 149,https://www.instagram.com/p/Bs_nBPug7Dx/,1098,Wednesday,January,23,2019,True,72.0,17.0,18.0,7.0,350.0,2.0,Lifelong Litotes,9.0,Hoppy Session Ale with 100% Galaxy.
-186,https://www.instagram.com/p/BtGyfWmAQ4j/,1051,Saturday,January,26,2019,True,54.0,12.0,13.0,2.0,450.0,3.0,Extreme Unction,9.5,Hoppy ale utilizing only the oiliest flowers available.
+186,https://www.instagram.com/p/BtGyfWmAQ4j/,1051,Saturday,January,26,2019,True,54.0,12.0,13.0,3.0,450.0,3.0,Extreme Unction,9.5,Hoppy ale utilizing only the oiliest flowers available.
 217,https://www.instagram.com/p/Bt1pIGKlfz6/,1453,Wednesday,February,13,2019,True,62.0,17.0,18.0,18.0,525.0,3.0,Bacillophobia,10.3,Kettle-soured ale brewed with lactose and then refermented with an absurd amount of mango before being conditioned on a tasteful amount of both Tahitian and Madagascar vanilla.
 56,https://www.instagram.com/p/Bt6zTv3lwiV/,1127,Friday,February,15,2019,True,52.0,17.0,18.0,2.0,400.0,2.0,Damnation's Bringer,10.0,Hoppy ale brewed with a judicious amount of lactose.
 24,https://www.instagram.com/p/BuXJJLqFCCM/,1414,Tuesday,February,26,2019,True,54.0,17.0,18.0,11.0,325.0,2.0,Skull Cup,8.5,Hoppy ale.
-41,https://www.instagram.com/p/Burt99tlRTN/,849,Wednesday,March,6,2019,True,62.0,17.0,18.0,7.0,350.0,2.0,Profanation,7.5,"Hybrid Hoppy Ale fermented with a blend of our house yeast and a classic, more neutral West Coast strain."
+41,https://www.instagram.com/p/Burt99tlRTN/,849,Wednesday,March,6,2019,True,62.0,17.0,18.0,8.0,350.0,2.0,Profanation,7.5,"Hybrid Hoppy Ale fermented with a blend of our house yeast and a classic, more neutral West Coast strain."
 55,https://www.instagram.com/p/BuuU2rVlIsH/,1214,Thursday,March,7,2019,True,64.0,17.0,18.0,1.0,,2.0,Inspissated,12.0,Imperial Milk Stout brewed with lactose and boiled for many hours before being conditioned on a blend of gorgeous E.
 160,https://www.instagram.com/p/Bu82_rTFoBI/,542,Wednesday,March,13,2019,False,,,,,,,,,
-78,https://www.instagram.com/p/BvAMxvyFsfY/,1329,Thursday,March,14,2019,True,55.0,17.0,17.0,6.0,400.0,2.0,Anthropophobia,8.0,Kettle-soured ale brewed with just a touch of lactose and then refermented on unreasonable amounts of pink guava and passion fruit.
+78,https://www.instagram.com/p/BvAMxvyFsfY/,1329,Thursday,March,14,2019,True,55.0,17.0,17.0,7.0,400.0,2.0,Anthropophobia,8.0,Kettle-soured ale brewed with just a touch of lactose and then refermented on unreasonable amounts of pink guava and passion fruit.
 72,https://www.instagram.com/p/BvPr41-lonV/,1373,Wednesday,March,20,2019,True,144.0,17.0,19.0,6.0,450.0,2.0,Telepathic Transmission,7.9,Hoppy ale.
 107,https://www.instagram.com/p/BvumbwJFvpo/,1465,Monday,April,1,2019,True,,,,12.0,,,Fractal Fiend,8.3,"Hoppy ale conditioned on a literal ton of everyone's favorite childhood confection: Corn syrup, Sugar, Hydrogenated Palm Kernel Oil, Fruit Juice From Concentrate, Citric Acid, Dextrin, Gelatin, Modified Food Starch, Natural and Artificial Flavors, Ascorbic Acid, as well as gobs of the most luscious yellow 6 and blue 1."
 45,https://www.instagram.com/p/Bvzu54XFcJm/,1137,Wednesday,April,3,2019,True,48.0,17.0,18.0,2.0,450.0,2.0,Empty and Unfeeling,6.8,Hoppy ale.
@@ -185,10 +185,10 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 130,https://www.instagram.com/p/BwfBhT_lMES/,1031,Saturday,April,20,2019,True,60.0,12.0,13.0,3.0,500.0,3.0,Fumiphobia,8.0,Kettle-soured ale brewed with lactose and refermented with a ludicrous (20% by volume) amount of pineapple before conditioning on a tasteful quantity of untoasted coconut.
 3,https://www.instagram.com/p/Bw-aDxhFO5B/,1193,Thursday,May,2,2019,True,58.0,17.0,18.0,12.0,400.0,2.0,Remorseless,10.5,Hoppy ale brewed with honey.
 192,https://www.instagram.com/p/BxDUdF9lQw4/,1110,Saturday,May,4,2019,True,94.0,15.0,16.0,2.0,415.0,2.0,Unilateral,7.8,Sessionable hoppy ale.
-26,https://www.instagram.com/p/BxVJ3dRlvkH/,1118,Saturday,May,11,2019,True,175.0,13.0,16.0,6.0,420.0,2.0,Dispensation,7.6,Keller Pils dry hopped with some of our favorite Southern Hemisphere and American varietals.
+26,https://www.instagram.com/p/BxVJ3dRlvkH/,1118,Saturday,May,11,2019,True,175.0,13.0,16.0,7.0,420.0,2.0,Dispensation,7.6,Keller Pils dry hopped with some of our favorite Southern Hemisphere and American varietals.
 67,https://www.instagram.com/p/BxidG_uF4ti/,1755,Thursday,May,16,2019,True,194.0,17.0,20.0,5.0,475.0,2.0,Haggard and Hoary,8.9,Hoppy ale.
 180,https://www.instagram.com/p/ByBXC8ZlGtO/,1065,Tuesday,May,28,2019,True,152.0,17.0,19.0,12.0,440.0,2.0,Delinquent Urges,10.5,Hoppy ale.
-75,https://www.instagram.com/p/ByYgS9OlwO7/,1307,Thursday,June,6,2019,True,80.0,17.0,18.0,8.0,400.0,2.0,Disconsolate,8.3,Hoppy Ale.
+75,https://www.instagram.com/p/ByYgS9OlwO7/,1307,Thursday,June,6,2019,True,80.0,17.0,18.0,9.0,400.0,2.0,Disconsolate,8.3,Hoppy Ale.
 181,https://www.instagram.com/p/ByqkVTKFlid/,1123,Thursday,June,13,2019,True,116.0,17.0,19.0,7.0,420.0,2.0,Daily Ablutions,5.4,Minuscule Hoppy Ale composed of nearly 50% oats.
 104,https://www.instagram.com/p/ByvQ_TbFURe/,1041,Saturday,June,15,2019,True,78.0,13.0,14.0,2.0,465.0,2.0,Malignant Horror,12.2,Hoppy ale brewed with lots of honey.
 201,https://www.instagram.com/p/Bzbc9yDl8j4/,1378,Tuesday,July,2,2019,True,106.0,17.0,18.0,17.0,450.0,2.0,Ergophobia,9.4,"Kettle-soured ale brewed with lactose then refermented on enormous amounts of strawberry and a touch of blackberry, before conditioning on balanced quantities of both Tahitian and Madagascar vanilla."
@@ -196,75 +196,75 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 64,https://www.instagram.com/p/Bz6ALttl71x/,1461,Sunday,July,14,2019,True,66.0,13.0,15.0,2.0,,2.0,Grandma's Famous Oatmeal Cookies,9.5,"Hoppy ale brewed with lactose and honey, and then conditioned on Madagascar vanilla and maple granola."
 69,https://www.instagram.com/p/B0UJz7clduZ/,1127,Wednesday,July,24,2019,True,68.0,17.0,18.0,10.0,440.0,2.0,Get Me the Hell Home,8.7,Hoppy ale.
 212,https://www.instagram.com/p/B0d8cyuF9aM/,1112,Sunday,July,28,2019,True,116.0,12.0,14.0,4.0,460.0,2.0,Demonic Invocation,14.5,Imperial Milk Stout conditioned on @rojosroastery Oaxaca Yaitepec Especial coffee.
-6,https://www.instagram.com/p/B0v6XioJ3lx/,1253,Sunday,August,4,2019,True,112.0,12.0,14.0,6.0,460.0,2.0,First and Foremost,9.4,Hoppy ale brewed with lactose and refermented with peach.
+6,https://www.instagram.com/p/B0v6XioJ3lx/,1253,Sunday,August,4,2019,True,112.0,12.0,14.0,7.0,460.0,2.0,First and Foremost,9.4,Hoppy ale brewed with lactose and refermented with peach.
 29,https://www.instagram.com/p/B1ZnqYKlQQp/,1380,Tuesday,August,20,2019,True,52.0,17.0,17.0,16.0,350.0,2.0,There Is No Planet B,6.4,Hoppy Ale.
 88,https://www.instagram.com/p/B1rrD-sFwEj/,1503,Tuesday,August,27,2019,True,74.0,17.0,18.0,7.0,460.0,2.0,Cainophobia,8.9,Kettle-soured ale brewed with lactose and refermented on 3.
-165,https://www.instagram.com/p/B1zX_jDlrMw/,1134,Friday,August,30,2019,True,68.0,17.0,18.0,2.0,460.0,2.0,A Waxen Sea,8.0,Hoppy Ale.
-221,https://www.instagram.com/p/B2AO05Flr3R/,1167,Wednesday,September,4,2019,True,66.0,17.0,18.0,4.0,400.0,2.0,Friable,9.2,Hoppy Ale.
-16,https://www.instagram.com/p/B2SQGnrlyPP/,964,Wednesday,September,11,2019,True,92.0,16.0,18.0,6.0,450.0,2.0,Et in Arcadia ego,9.4,Hoppy Ale.
+165,https://www.instagram.com/p/B1zX_jDlrMw/,1134,Friday,August,30,2019,True,68.0,17.0,18.0,3.0,460.0,2.0,A Waxen Sea,8.0,Hoppy Ale.
+221,https://www.instagram.com/p/B2AO05Flr3R/,1167,Wednesday,September,4,2019,True,66.0,17.0,18.0,5.0,400.0,2.0,Friable,9.2,Hoppy Ale.
+16,https://www.instagram.com/p/B2SQGnrlyPP/,964,Wednesday,September,11,2019,True,92.0,16.0,18.0,7.0,450.0,2.0,Et in Arcadia ego,9.4,Hoppy Ale.
 187,https://www.instagram.com/p/B2m4B7BlU3r/,1240,Thursday,September,19,2019,True,60.0,17.0,18.0,8.0,460.0,2.0,Baptized in Flames,9.3,Hoppy ale.
-145,https://www.instagram.com/p/B2zuijWFRaV/,1433,Tuesday,September,24,2019,True,72.0,16.0,18.0,4.0,460.0,2.0,As the Sun Descends,9.1,"Hoppy ale brewed with lactose, refermented with strawberry and then conditioned on Madagascar vanilla bean."
+145,https://www.instagram.com/p/B2zuijWFRaV/,1433,Tuesday,September,24,2019,True,72.0,16.0,18.0,5.0,460.0,2.0,As the Sun Descends,9.1,"Hoppy ale brewed with lactose, refermented with strawberry and then conditioned on Madagascar vanilla bean."
 90,https://www.instagram.com/p/B3NereZFRfa/,1098,Friday,October,4,2019,True,68.0,17.0,18.0,10.0,445.0,2.0,Condemn and Move On,9.5,Hoppy ale.
 93,https://www.instagram.com/p/B3aW9oTlV8b/,1498,Wednesday,October,9,2019,True,64.0,17.0,18.0,5.0,455.0,2.0,Big Doinks in Amish,14.0,"Imperial sweet stout brewed with lactose, boiled overnight, then conditioned on large amounts of gorgeous @rojosroastery Sumatra coffee, maple syrup and just a touch of Autumnal spices/ Tahitian vanilla to round it out."
 157,https://www.instagram.com/p/B3pz-bmlYkg/,1387,Tuesday,October,15,2019,True,100.0,17.0,18.0,6.0,500.0,2.0,Wiccaphobia,9.7,"Kettle-soured ale brewed with lactose, refermented on massive amounts of mango and guava, then conditioned on a tasteful amount of untoasted coconut."
 229,https://www.instagram.com/p/B3718qCp2RS/,1179,Tuesday,October,22,2019,True,52.0,17.0,18.0,7.0,420.0,2.0,Whither Goest Thou?,7.7,Hoppy ale.
-44,https://www.instagram.com/p/B4A_CHjJISX/,1236,Thursday,October,24,2019,True,126.0,17.0,19.0,1.0,360.0,2.0,We Are All Pals Here,7.5,Hoppy Ale.
+44,https://www.instagram.com/p/B4A_CHjJISX/,1236,Thursday,October,24,2019,True,126.0,17.0,19.0,2.0,360.0,2.0,We Are All Pals Here,7.5,Hoppy Ale.
 216,https://www.instagram.com/p/B4QcnNElsK-/,1859,Wednesday,October,30,2019,True,137.0,17.0,19.0,6.0,420.0,2.0,Ain't That The Truth,7.1,Hoppy ale.
-101,https://www.instagram.com/p/B4ikesPFvHK/,1220,Wednesday,November,6,2019,True,62.0,17.0,18.0,6.0,480.0,2.0,Why Am I Still Alive?,13.5,"Imperial Milk Stout brewed with lactose and then conditioned on cacao nibs, half a dozen pepper varieties, Tahitian vanilla and cinnamon."
-184,https://www.instagram.com/p/B43KmgdloB2/,1136,Thursday,November,14,2019,True,66.0,17.0,18.0,7.0,420.0,2.0,Sounds About Right,8.4,Hoppy Ale.
-100,https://www.instagram.com/p/B4-WcQKlOZZ/,1302,Sunday,November,17,2019,True,68.0,12.0,13.0,2.0,,2.0,Taller Than The Sky,9.4,Hoppy Ale.
+101,https://www.instagram.com/p/B4ikesPFvHK/,1220,Wednesday,November,6,2019,True,62.0,17.0,18.0,7.0,480.0,2.0,Why Am I Still Alive?,13.5,"Imperial Milk Stout brewed with lactose and then conditioned on cacao nibs, half a dozen pepper varieties, Tahitian vanilla and cinnamon."
+184,https://www.instagram.com/p/B43KmgdloB2/,1136,Thursday,November,14,2019,True,66.0,17.0,18.0,8.0,420.0,2.0,Sounds About Right,8.4,Hoppy Ale.
+100,https://www.instagram.com/p/B4-WcQKlOZZ/,1302,Sunday,November,17,2019,True,68.0,12.0,13.0,3.0,,2.0,Taller Than The Sky,9.4,Hoppy Ale.
 15,https://www.instagram.com/p/B5Yo5LJF8Hb/,1143,Wednesday,November,27,2019,True,50.0,17.0,17.0,10.0,420.0,2.0,Go Easy On Yourself,8.3,Hoppy Ale fermented with a blend of yeasts.
 0,https://www.instagram.com/p/B5tPcWUFa6b/,1375,Thursday,December,5,2019,True,74.0,17.0,18.0,8.0,420.0,2.0,No Trash In The Bins,8.6,Hoppy Ale.
 218,https://www.instagram.com/p/B50mkEUFxlb/,1663,Sunday,December,8,2019,True,,,,3.0,,,In Defiance Of The Sages,15.0,"Imperial Milk Stout aged in beautiful, freshly dumped 7 year @lairdsapplejack barrels."
 79,https://www.instagram.com/p/B6Ota7Mp6Ki/,1325,Wednesday,December,18,2019,True,100.0,17.0,18.0,10.0,,2.0,Another Stale Joke,8.5,Hoppy Ale.
 68,https://www.instagram.com/p/B6T0jtUpNfz/,1413,Friday,December,20,2019,True,,,,2.0,360.0,5.0,Our Sentiments. Exactly.,10.5,Old Ale brewed with caramel + tarragon + a tiny amount of lactose then fermented on figs with a mix of TH English ale yeast and a favorite strain of Brett.
 148,https://www.instagram.com/p/B6bm8gcp0E2/,1533,Monday,December,23,2019,True,82.0,17.0,18.0,3.0,480.0,2.0,Acerophobia,9.8,"Kettle-soured ale brewed with lactose, refermented on a massive quantity of cherry+ raspberry + blueberry + boysenberry and then conditioned on Tahitian vanilla and just the slightest, lightest tough of cinnamon."
-142,https://www.instagram.com/p/B6wNO_4JC9K/,1274,Tuesday,December,31,2019,True,52.0,17.0,18.0,7.0,,2.0,Shitty Self-Esteem,7.9,Hoppy Ale.
-84,https://www.instagram.com/p/B6_oJMjp4FE/,1347,Monday,January,6,2020,True,0.0,16.0,16.0,5.0,480.0,2.0,Hello? Are You There?,9.3,Hoppy Ale.
+142,https://www.instagram.com/p/B6wNO_4JC9K/,1274,Tuesday,December,31,2019,True,52.0,17.0,18.0,8.0,,2.0,Shitty Self-Esteem,7.9,Hoppy Ale.
+84,https://www.instagram.com/p/B6_oJMjp4FE/,1347,Monday,January,6,2020,True,0.0,16.0,16.0,6.0,480.0,2.0,Hello? Are You There?,9.3,Hoppy Ale.
 150,https://www.instagram.com/p/B7UOxAWpLY3/,1195,Tuesday,January,14,2020,True,148.0,17.0,19.0,8.0,420.0,2.0,This Better Be Good,9.4,Hoppy Ale.
 144,https://www.instagram.com/p/B7mQr1YJko3/,1208,Tuesday,January,21,2020,True,64.0,17.0,18.0,7.0,480.0,3.0,Humdrum Existence,14.0,Imperial Milk Stout brewed with lactose and boiled overnight before conditioning on Guatemalan coffee from the inimitable @rojosroastery and a pleasant amount of Palo Santo wood.
-124,https://www.instagram.com/p/B74RkQzpknp/,1158,Tuesday,January,28,2020,True,64.0,16.0,18.0,6.0,,2.0,You'll Get Used To It,10.1,Hoppy Ale.
+124,https://www.instagram.com/p/B74RkQzpknp/,1158,Tuesday,January,28,2020,True,64.0,16.0,18.0,7.0,,2.0,You'll Get Used To It,10.1,Hoppy Ale.
 37,https://www.instagram.com/p/B8AAnOspaI1/,1185,Friday,January,31,2020,True,96.0,17.0,18.0,3.0,480.0,2.0,And Not a Penny More,8.2,Hoppy Ale.
-179,https://www.instagram.com/p/B8UKzs1pNOn/,1298,Saturday,February,8,2020,True,82.0,12.0,14.0,7.0,540.0,2.0,Aviophobia,9.9,"Kettle-soured ale brewed with lactose, refermented with massive amounts of mango and strawberry, then conditioned on fresh lemon zest."
+179,https://www.instagram.com/p/B8UKzs1pNOn/,1298,Saturday,February,8,2020,True,82.0,12.0,14.0,8.0,540.0,2.0,Aviophobia,9.9,"Kettle-soured ale brewed with lactose, refermented with massive amounts of mango and strawberry, then conditioned on fresh lemon zest."
 228,https://www.instagram.com/p/B8hgzDOJz5b/,1089,Thursday,February,13,2020,True,106.0,17.0,19.0,5.0,480.0,2.0,I Need It Yesterday,8.5,Hoppy Ale.
-227,https://www.instagram.com/p/B8w8QzzpdFI/,1443,Wednesday,February,19,2020,True,108.0,17.0,18.0,5.0,480.0,2.0,Caught In The Trees,9.7,Hoppy ale brewed with lactose and conditioned on Madagascar vanilla.
-225,https://www.instagram.com/p/B84Om6yJ_2X/,791,Saturday,February,22,2020,True,70.0,13.0,14.0,2.0,420.0,2.0,It Fell On Deaf Ears,9.5,Hoppy Ale.
+227,https://www.instagram.com/p/B8w8QzzpdFI/,1443,Wednesday,February,19,2020,True,108.0,17.0,18.0,6.0,480.0,2.0,Caught In The Trees,9.7,Hoppy ale brewed with lactose and conditioned on Madagascar vanilla.
+225,https://www.instagram.com/p/B84Om6yJ_2X/,791,Saturday,February,22,2020,True,70.0,13.0,14.0,3.0,420.0,2.0,It Fell On Deaf Ears,9.5,Hoppy Ale.
 230,https://www.instagram.com/p/B9Fi2EZJvo7/,1136,Friday,February,28,2020,True,70.0,17.0,18.0,6.0,,2.0,You're Always Right,8.0,Hoppy Ale.
-231,https://www.instagram.com/p/B9m4_Rwpsgd/,1180,Wednesday,March,11,2020,True,48.0,17.0,17.0,11.0,300.0,2.0,Today Is Not The Day,7.4,Hoppy Ale.
+231,https://www.instagram.com/p/B9m4_Rwpsgd/,1180,Wednesday,March,11,2020,True,48.0,17.0,17.0,12.0,300.0,2.0,Today Is Not The Day,7.4,Hoppy Ale.
 232,https://www.instagram.com/p/B97b3kmpyT_/,1407,Thursday,March,19,2020,True,,,,8.0,4.0,,Keep Your Distance,14.5,"Imperial Milk Stout brewed with lactose and conditioned on banana, black walnut, cinnamon and Tahitian vanilla."
 252,https://www.instagram.com/p/B-Ic0IupM4l/,1332,Tuesday,March,24,2020,True,0.5,21.0,21.0,5.0,,,Agoraphobia,6.5,"Kettle-soured ale refermented with passion fruit, guava and tangerine."
-250,https://www.instagram.com/p/B-SYLZgpqEa/,1379,Saturday,March,28,2020,True,0.5,18.0,18.0,3.0,,,The End of Intimacy,7.7,Hoppy Ale.
+250,https://www.instagram.com/p/B-SYLZgpqEa/,1379,Saturday,March,28,2020,True,0.5,18.0,18.0,4.0,,,The End of Intimacy,7.7,Hoppy Ale.
 249,https://www.instagram.com/p/B-abMDEJM0c/,2003,Tuesday,March,31,2020,False,,,,,,,,,
 234,https://www.instagram.com/p/B-fX_lpl44P/,957,Thursday,April,2,2020,True,0.5,0.0,0.0,5.0,,,Butterscotch Budz,14.5,"Imperial Mild Ale brewed with 100% Maris Otter malt, boiled overnight with thousands of butterscotch candies, marshmallows and lactose and then conditioned on even more butterscotch candies, peanut, and Madagascar vanilla."
 233,https://www.instagram.com/p/B-7vRL4pdf0/,1329,Monday,April,13,2020,True,0.5,0.0,0.0,11.0,,,No More Handshakes,8.5,Hoppy ale.
 261,https://www.instagram.com/p/B_L65EspHzR/,1469,Monday,April,20,2020,True,0.5,2.0,2.0,7.0,,,Where Are The Beans?,10.0,Hoppy ale.
-235,https://www.instagram.com/p/B_kupjCJGEl/,1192,Wednesday,April,29,2020,True,0.5,0.0,0.0,8.0,,,Exclusionary Rule,7.25,Lager dry-hopped lightly with Motueka and then conditioned on fresh grapefruit and lime zest as well as sea salt.
-248,https://www.instagram.com/p/CAN5Pe7JO1R/,1223,Friday,May,15,2020,True,0.5,17.0,17.0,25.0,,,Vote of Confidence,8.5,Hoppy Ale.
-251,https://www.instagram.com/p/CAeZhJAJqKp/,1343,Friday,May,22,2020,True,0.5,3.0,3.0,6.0,,,Nosophobia,8.3,Kettle-soured ale refermented with a huge amount of mango and conditioned on Tahitian vanilla.
+235,https://www.instagram.com/p/B_kupjCJGEl/,1192,Wednesday,April,29,2020,True,0.5,0.0,0.0,9.0,,,Exclusionary Rule,7.25,Lager dry-hopped lightly with Motueka and then conditioned on fresh grapefruit and lime zest as well as sea salt.
+248,https://www.instagram.com/p/CAN5Pe7JO1R/,1223,Friday,May,15,2020,True,0.5,17.0,17.0,16.0,,,Vote of Confidence,8.5,Hoppy Ale.
+251,https://www.instagram.com/p/CAeZhJAJqKp/,1343,Friday,May,22,2020,True,0.5,3.0,3.0,7.0,,,Nosophobia,8.3,Kettle-soured ale refermented with a huge amount of mango and conditioned on Tahitian vanilla.
 254,https://www.instagram.com/p/CAwBpCqp5_x/,1180,Thursday,May,28,2020,True,0.5,23.0,23.0,6.0,,,The Haunted Crypts,13.4,Imperial stout conditioned on a gorgeous blend of Colombian and Ethiopian beans from the inimitable @rojosroastery as well as Madagascar vanilla.
 236,https://www.instagram.com/p/CA77eAHJ0xG/,1744,Tuesday,June,2,2020,False,,,,,,,,,
-260,https://www.instagram.com/p/CBBNCbYpIVJ/,1504,Thursday,June,4,2020,True,0.5,15.0,15.0,6.0,2.0,,Spending the Night,9.7,Hoppy Ale.
+260,https://www.instagram.com/p/CBBNCbYpIVJ/,1504,Thursday,June,4,2020,True,0.5,15.0,15.0,7.0,2.0,,Spending the Night,9.7,Hoppy Ale.
 240,https://www.instagram.com/p/CBbVAM6JMjT/,1344,Sunday,June,14,2020,True,0.5,19.0,19.0,10.0,,,Don't Waste Any Time,10.0,Hoppy Ale.
-247,https://www.instagram.com/p/CBtIzdgJZPZ/,1308,Sunday,June,21,2020,True,0.5,17.0,17.0,6.0,,,There Is No Horizon,7.7,Hoppy Ale.
-241,https://www.instagram.com/p/CCJawSUJ8jK/,1317,Thursday,July,2,2020,True,0.5,16.0,16.0,10.0,,,Nice To See You Here,9.1,Hoppy ale.
+247,https://www.instagram.com/p/CBtIzdgJZPZ/,1308,Sunday,June,21,2020,True,0.5,17.0,17.0,7.0,,,There Is No Horizon,7.7,Hoppy Ale.
+241,https://www.instagram.com/p/CCJawSUJ8jK/,1317,Thursday,July,2,2020,True,0.5,16.0,16.0,11.0,,,Nice To See You Here,9.1,Hoppy ale.
 253,https://www.instagram.com/p/CCgu1f9JKcu/,1586,Saturday,July,11,2020,True,0.5,18.0,18.0,9.0,,,Now's Not a Good Time,8.9,Hoppy ale brewed with lactose and conditioned on fresh orange zest and Madagascar vanilla.
 259,https://www.instagram.com/p/CCy80AxJjrD/,1172,Saturday,July,18,2020,True,0.5,20.0,20.0,7.0,,,A Cashless Economy,7.9,"Kettle-soured ale brewed with lactose, refermented with raspberry and cherry, and conditioned on maple, cinnamon, coconut granola."
-255,https://www.instagram.com/p/CC_ZEGWpa4L/,1151,Thursday,July,23,2020,True,0.5,15.0,15.0,4.0,,,Black Is Beautiful,12.7,Imperial stout conditioned on the most beautiful Mexican coffee from @rojosroastery.
+255,https://www.instagram.com/p/CC_ZEGWpa4L/,1151,Thursday,July,23,2020,True,0.5,15.0,15.0,5.0,,,Black Is Beautiful,12.7,Imperial stout conditioned on the most beautiful Mexican coffee from @rojosroastery.
 258,https://www.instagram.com/p/CDZP9byp0CB/,1537,Sunday,August,2,2020,True,0.5,17.0,17.0,10.0,,,Incubation Period,7.9,Hoppy ale.
-245,https://www.instagram.com/p/CDwMD7XpcMs/,1271,Tuesday,August,11,2020,True,0.5,14.0,14.0,8.0,,1.0,Hands-Off Approach,9.0,Hoppy Ale.
+245,https://www.instagram.com/p/CDwMD7XpcMs/,1271,Tuesday,August,11,2020,True,0.5,14.0,14.0,9.0,,1.0,Hands-Off Approach,9.0,Hoppy Ale.
 242,https://www.instagram.com/p/CEKQP56pnaU/,1166,Friday,August,21,2020,True,0.5,17.0,17.0,10.0,,,Who's In Charge Here?,10.2,Hoppy Ale.
 238,https://www.instagram.com/p/CEkCFrdpHNy/,1076,Monday,August,31,2020,True,0.5,18.0,18.0,10.0,,1.0,Leprophobia,6.66,"Kettle-soured ale brewed with lactose and refermented with mango, guava and a touch of Tahitian vanilla."
 243,https://www.instagram.com/p/CE4p67IpW72/,1036,Tuesday,September,8,2020,True,0.5,18.0,18.0,8.0,,,Black Fathom's Fire,7.5,Hoppy ale.
 246,https://www.instagram.com/p/CFNR6KBpRd8/,1169,Wednesday,September,16,2020,True,0.5,18.0,18.0,8.0,,,Malevolent Intent,14.0,"Imperial Stout brewed with lactose and conditioned on peanut butter, marshmallow, Tahitian vanilla and banana."
 239,https://www.instagram.com/p/CFiA8stlp4R/,1084,Thursday,September,24,2020,True,0.5,19.0,19.0,8.0,,,Know Your Audience,6.0,Lager refermented with pineapple and dragon fruit.
-256,https://www.instagram.com/p/CFz4d-GleBz/,920,Thursday,October,1,2020,True,0.5,18.0,18.0,6.0,,,Sesquipedalophobia,7.6,"Kettle-soured ale brewed with lactose and refermented on raspberry, blackberry and Tahitian vanilla."
+256,https://www.instagram.com/p/CFz4d-GleBz/,920,Thursday,October,1,2020,True,0.5,18.0,18.0,7.0,,,Sesquipedalophobia,7.6,"Kettle-soured ale brewed with lactose and refermented on raspberry, blackberry and Tahitian vanilla."
 257,https://www.instagram.com/p/CGDkSsVFvQS/,1257,Wednesday,October,7,2020,True,0.5,20.0,20.0,6.0,,,I Voted,7.2,Hoppy Ale.
-244,https://www.instagram.com/p/CGakrf8FMen/,1474,Friday,October,16,2020,True,0.5,18.0,18.0,8.0,,,Layers Of Darkness,12.5,"Imperial milk stout brewed with lactose and conditioned on the most beautiful Sumatran coffee from @rojosroastery, black walnut and autumnal spices."
-237,https://www.instagram.com/p/CGshDgElgIr/,1247,Friday,October,23,2020,True,0.5,18.0,18.0,6.0,,1.0,Symbolic Gestures,8.5,Hoppy ale.
+244,https://www.instagram.com/p/CGakrf8FMen/,1474,Friday,October,16,2020,True,0.5,18.0,18.0,9.0,,,Layers Of Darkness,12.5,"Imperial milk stout brewed with lactose and conditioned on the most beautiful Sumatran coffee from @rojosroastery, black walnut and autumnal spices."
+237,https://www.instagram.com/p/CGshDgElgIr/,1247,Friday,October,23,2020,True,0.5,18.0,18.0,7.0,,1.0,Symbolic Gestures,8.5,Hoppy ale.
 262,https://www.instagram.com/p/CG-pMB7pY1Q/,931,Friday,October,30,2020,True,0.5,19.0,19.0,7.0,,,It's Mischief Night,10.5,Hoppy ale.
 263,https://www.instagram.com/p/CHV1F58lG9o/,954,Sunday,November,8,2020,True,0.5,19.0,19.0,9.0,,,I Can Relate To That,8.5,Kettle-soured ale brewed with a touch of lactose then refermented with passion fruit and peach.
 264,https://www.instagram.com/p/CHjAMXtl5fT/,1384,Friday,November,13,2020,True,0.5,22.0,22.0,5.0,,,I Was Afraid Of That,9.5,Hoppy ale.
-265,https://www.instagram.com/p/CH54YLApmjz/,791,Sunday,November,22,2020,True,0.5,19.0,19.0,8.0,,,So Weed Is Legal Now?,8.3,Hoppy Ale.
+265,https://www.instagram.com/p/CH54YLApmjz/,791,Sunday,November,22,2020,True,0.5,19.0,19.0,9.0,,,So Weed Is Legal Now?,8.3,Hoppy Ale.
 266,https://www.instagram.com/p/CIQ_k91pt3I/,1181,Tuesday,December,1,2020,True,0.5,18.0,18.0,9.0,,,Official Joose Boy,8.7,"Hoppy ale brewed with lactose and conditioned on coconut, fresh lemon zest and Madagascar vanilla."
 267,https://www.instagram.com/p/CIlhYjgl9Co/,1149,Wednesday,December,9,2020,True,0.5,18.0,18.0,8.0,,,Social Boundaries,8.4,Bicoastal Hybrid Hoppy Ale. Fermented with an iconic West Coast yeast strain and then hopped immoderately with the OG varietals that made us love hoppy beers to begin with.
 268,https://www.instagram.com/p/CI3fphylPca/,1077,Wednesday,December,16,2020,True,0.5,17.0,17.0,7.0,,,Dawn of Possession,13.0,"Imperial stout conditioned on cacao nibs, hot peppers, cinnamon and Tahitian vanilla."
@@ -286,12 +286,12 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 284,https://www.instagram.com/p/CNvqdJSF3Uz/,1068,Friday,April,16,2021,True,0.5,23.0,23.0,9.0,,1.0,Writ of Certiorari,7.0,Lager conditioned on chamomile and fresh satsuma mandarin zest.
 290,https://www.instagram.com/p/COBdXweFkUO/,1640,Friday,April,23,2021,True,0.5,21.0,21.0,7.0,,,Shackles of Sanity,8.2,Hoppy ale.
 291,https://www.instagram.com/p/COLw4GTlyks/,1181,Tuesday,April,27,2021,True,0.5,21.0,21.0,4.0,,,Craven Cottontail,11.0,Imperial milk stout brewed with lactose then conditioned on toasted coconut and cinnamon.
-288,https://www.instagram.com/p/COdyBYkJmnL/,1396,Tuesday,May,4,2021,True,0.5,21.0,21.0,6.0,,,A By Myself Meeting,10.5,Hoppy ale.
-285,https://www.instagram.com/p/COiwL1VJsmA/,1309,Thursday,May,6,2021,True,0.5,19.0,19.0,1.0,,,Quite The Contrary,7.0,Hoppy ale.
+288,https://www.instagram.com/p/COdyBYkJmnL/,1396,Tuesday,May,4,2021,True,0.5,21.0,21.0,7.0,,,A By Myself Meeting,10.5,Hoppy ale.
+285,https://www.instagram.com/p/COiwL1VJsmA/,1309,Thursday,May,6,2021,True,0.5,19.0,19.0,2.0,,,Quite The Contrary,7.0,Hoppy ale.
 286,https://www.instagram.com/p/CO3ii5-lW3e/,1611,Friday,May,14,2021,True,0.5,21.0,21.0,8.0,,,Chopped and Chewed,9.0,Hoppy ale.
-287,https://www.instagram.com/p/CPG-w6zpqY5/,1383,Thursday,May,20,2021,True,0.5,21.0,21.0,5.0,,,The Quest For Youth,9.1,Hoppy ale.
-289,https://www.instagram.com/p/CPgXZzYlrNt/,1197,Sunday,May,30,2021,True,0.5,17.0,17.0,9.0,,,Nothing Elaborate,7.7,"Sour ale brewed with lactose, refermented on tart cherry and conditioned on granola made with maple syrup and Tahitian vanilla."
-294,https://www.instagram.com/p/CPyicuAJhOo/,1337,Sunday,June,6,2021,True,0.5,18.0,18.0,6.0,,,Neanderthal Tombs,7.9,Hoppy ale.
+287,https://www.instagram.com/p/CPG-w6zpqY5/,1383,Thursday,May,20,2021,True,0.5,21.0,21.0,6.0,,,The Quest For Youth,9.1,Hoppy ale.
+289,https://www.instagram.com/p/CPgXZzYlrNt/,1197,Sunday,May,30,2021,True,0.5,17.0,17.0,10.0,,,Nothing Elaborate,7.7,"Sour ale brewed with lactose, refermented on tart cherry and conditioned on granola made with maple syrup and Tahitian vanilla."
+294,https://www.instagram.com/p/CPyicuAJhOo/,1337,Sunday,June,6,2021,True,0.5,18.0,18.0,7.0,,,Neanderthal Tombs,7.9,Hoppy ale.
 295,https://www.instagram.com/p/CQBkKKJJNQX/,1593,Saturday,June,12,2021,True,0.5,15.0,15.0,6.0,,,Gather Your Things,8.0,"Sour ale brewed with lactose, refermented with guava and conditioned on Tahitian vanilla."
 292,https://www.instagram.com/p/CQPFE95JwJD/,1781,Thursday,June,17,2021,True,0.5,21.0,21.0,5.0,,,Clinically Proven,7.5,Hoppy ale.
 296,https://www.instagram.com/p/CQehd-pJKAQ/,1381,Wednesday,June,23,2021,True,0.5,20.0,20.0,6.0,,,I Won’t Be Returning,9.2,Hoppy ale.
@@ -299,119 +299,119 @@ id,URL,likes,post_weekday,post_month,post_day,post_year,release_post,release_dur
 297,https://www.instagram.com/p/CRHuJCvl_on/,1697,Friday,July,9,2021,True,26.0,16.0,17.0,8.0,,,Consuming Impulse,8.0,Hoppy ale.
 298,https://www.instagram.com/p/CRXURUop0Rl/,954,Thursday,July,15,2021,True,0.5,22.0,22.0,6.0,,,Bestial Sacrifice,10.0,"Sweet stout brewed with lactose then conditioned on hazelnut, Tahitian vanilla and cold-steeped coffee from our day one friends at @rojosroastery."
 308,https://www.instagram.com/p/CRmoYB5lLgL/,1281,Wednesday,July,21,2021,True,0.5,21.0,21.0,6.0,,,Nostalgia Is a Scam,8.8,Hoppy ale.
-310,https://www.instagram.com/p/CRwSS09p5nU/,1523,Sunday,July,25,2021,True,84.0,11.0,12.0,3.0,,,Gone and Forgotten,8.2,Hoppy ale.
+310,https://www.instagram.com/p/CRwSS09p5nU/,1523,Sunday,July,25,2021,True,84.0,11.0,12.0,4.0,,,Gone and Forgotten,8.2,Hoppy ale.
 306,https://www.instagram.com/p/CSFjnK5JzCI/,1955,Monday,August,2,2021,True,0.5,21.0,21.0,8.0,,,Diabolical Thirst,13.0,Bourbon barrel aged imperial stout brewed with lactose and conditioned on massive amounts of toasted coconut and Madagascar vanilla beans.
-299,https://www.instagram.com/p/CSctLg5Jw2I/,1674,Wednesday,August,11,2021,True,0.5,21.0,21.0,8.0,,,A Deplorable Epoch,10.5,Hoppy ale.
-303,https://www.instagram.com/p/CSw3ByBFWYE/,1310,Thursday,August,19,2021,True,0.5,16.0,16.0,7.0,,,I’m Happy You’re Here,7.2,Hoppy ale.
+299,https://www.instagram.com/p/CSctLg5Jw2I/,1674,Wednesday,August,11,2021,True,0.5,21.0,21.0,9.0,,,A Deplorable Epoch,10.5,Hoppy ale.
+303,https://www.instagram.com/p/CSw3ByBFWYE/,1310,Thursday,August,19,2021,True,0.5,16.0,16.0,8.0,,,I’m Happy You’re Here,7.2,Hoppy ale.
 313,https://www.instagram.com/p/CS-KxZiJRZB/,1575,Tuesday,August,24,2021,True,76.0,16.0,18.0,5.0,,,Mouth of Abolition,9.1,Hoppy ale.
 301,https://www.instagram.com/p/CTF5F21pUpT/,1376,Friday,August,27,2021,True,0.5,20.0,20.0,3.0,,,The Wrath of Typhon,8.25,Hoppy ale.
 311,https://www.instagram.com/p/CTp8glbJBp8/,1450,Friday,September,10,2021,True,0.5,20.0,21.0,14.0,,,Unending Futility,9.0,Hoppy ale.
-309,https://www.instagram.com/p/CT20S6lp6Uw/,1750,Wednesday,September,15,2021,True,0.5,20.0,20.0,4.0,,,Corporeal Torment,7.7,"Hoppy ale brewed with lactose then conditioned on marshmallows, Tahitian vanilla and fresh lime zest."
-304,https://www.instagram.com/p/CUDdHewJPPq/,1360,Monday,September,20,2021,True,0.5,18.0,18.0,4.0,,,A History of Bad Men,8.0,Sour ale brewed with lactose then refermented with passion fruit and strawberry.
+309,https://www.instagram.com/p/CT20S6lp6Uw/,1750,Wednesday,September,15,2021,True,0.5,20.0,20.0,5.0,,,Corporeal Torment,7.7,"Hoppy ale brewed with lactose then conditioned on marshmallows, Tahitian vanilla and fresh lime zest."
+304,https://www.instagram.com/p/CUDdHewJPPq/,1360,Monday,September,20,2021,True,0.5,18.0,18.0,5.0,,,A History of Bad Men,8.0,Sour ale brewed with lactose then refermented with passion fruit and strawberry.
 314,https://www.instagram.com/p/CUN49LnJQSj/,1222,Friday,September,24,2021,True,0.5,20.0,20.0,4.0,,,Send Me An Estimate,8.3,Hoppy ale.
 300,https://www.instagram.com/p/CUdcpjSFJoA/,1315,Thursday,September,30,2021,True,0.5,21.0,21.0,6.0,,,Undead Debauchery,11.0,"Imperial sweet stout brewed with lactose and conditioned on @rojosroastery coffee, maple syrup, Madagascar vanilla and pumpkin spice."
-307,https://www.instagram.com/p/CU-65RwlRvD/,1393,Wednesday,October,13,2021,True,0.5,21.0,21.0,12.0,,,Ample Opportunity,8.9,Hoppy ale.
-302,https://www.instagram.com/p/CVGWxxsFGCP/,1212,Saturday,October,16,2021,True,0.5,18.0,18.0,2.0,,,Medicinal Leeches,8.0,"Sour ale brewed with lactose, refermented with blueberry then conditioned on hibiscus and fresh orange zest."
+307,https://www.instagram.com/p/CU-65RwlRvD/,1393,Wednesday,October,13,2021,True,0.5,21.0,21.0,13.0,,,Ample Opportunity,8.9,Hoppy ale.
+302,https://www.instagram.com/p/CVGWxxsFGCP/,1212,Saturday,October,16,2021,True,0.5,18.0,18.0,3.0,,,Medicinal Leeches,8.0,"Sour ale brewed with lactose, refermented with blueberry then conditioned on hibiscus and fresh orange zest."
 305,https://www.instagram.com/p/CVlir0SJmx9/,1376,Thursday,October,28,2021,True,0.5,20.0,21.0,12.0,,,Just For My Friends,8.7,Unfiltered West Coast pale ale brewed in collaboration with our good friends @bonnplace.
 312,https://www.instagram.com/p/CVqv938pPcp/,1379,Saturday,October,30,2021,True,0.5,21.0,21.0,2.0,,,What’s In Your Candy?,8.2,"Sour ale brewed with lactose, refermented with guava and conditioned on strawberry gummies."
 315,https://www.instagram.com/p/CVyQLURJhMt/,1648,Tuesday,November,2,2021,False,,,,,,,,,
 316,https://www.instagram.com/p/CV3kP0ipLP8/,1074,Thursday,November,4,2021,True,0.5,20.0,21.0,5.0,,,Stuck In Quicksand,8.8,Hoppy ale.
-317,https://www.instagram.com/p/CWG_k2OJSIu/,1268,Wednesday,November,10,2021,True,120.0,16,18,6.0,,,The Din of Inequity,10.3,Hoppy ale.
-318,https://www.instagram.com/p/CWZJJigp6hK/,1322,Wednesday,November,17,2021,True,0.5,21,21,7.0,,,You Made Your Point,6.0,Hoppy ale.
-319,https://www.instagram.com/p/CWeSr1WpkpK/,1351,Friday,November,19,2021,True,0.5,21,21,2.0,,,Awaken Your Demons,8.75,Hoppy ale.
-320,https://www.instagram.com/p/CW3-pw5J_7e/,881,Monday,November,29,2021,True,120.0,16,18,10,,,Raise A Glass To Pat,8.8,Hoppy ale.
-321,https://www.instagram.com/p/CXEV2BSFYJB/,1479,Saturday,December,4,2021,True,0.5,16,16,5.0,,,I Saw You Lying Dead,8.5,Hoppy ale.
-322,https://www.instagram.com/p/CXPefqRF7-u/,1508,Thursday,December,9,2021,True,120.0,17,19,5.0,,,Secondhand Casket,14.0,"Barleywine ale aged for 1.5 years in freshly dumped bourbon barrels, then conditioned on dulce de leche as well as Ugandan, Mexican and Madagascar vanilla beans. *Contains trace lactose from the dulce de leche*"
-323,https://www.instagram.com/p/CXzORNwpxEV/,1268,Wednesday,December,22,2021,True,60,21,21,13,,,Spewing Purulence,8.9,Hoppy ale.
-324,https://www.instagram.com/p/CX10esxpL7V/,1176,Thursday,December,23,2021,True,0.5,16,16,1.0,,,Sacrificial Dance,9.1,Hoppy ale.
-325,https://www.instagram.com/p/CYUsLzuJTfi/,727,Tuesday,January,4,2022,True,0.5,17,17,12.0,,,Children Of The Urn,8.5,Hoppy ale.
-326,https://www.instagram.com/p/CYr4kIopQUQ/,1130,Thursday,January,13,2022,True,0.5,17,17,9.0,,,Ritual Necromancy,12.0,Imperial stout brewed with lactose and conditioned on a monstrous amount of freshly toasted coconut.
-327,https://www.instagram.com/p/CZcXf5VJWu1/,1220,Tuesday,February,1,2022,True,0.5,12,12,6.0,,,Artfully Restored,9.1,Hoppy ale.
-328,https://www.instagram.com/p/CercczHJhWY/,1013,Saturday,June,11,2022,True,1.0,16,16,2.0,,,Destined To Fester,9.0,Hoppy ale.
-329,https://www.instagram.com/p/CgnEoS6pgtr/,1071,Friday,July,29,2022,True,1.0,17,17,7.0,,,Paid Vacation Days,7.5,Hoppy ale.
-330,https://www.instagram.com/p/CaGB9X5JjnO/,1262,Thursday,February,17,2022,True,1.0,16,16,8.0,,,Russell Is A Dad Now!,10.2,Hoppy ale refermented with lots of honey.
-331,https://www.instagram.com/p/Cd1TFXZJbk-/,1121,Saturday,May,21,2022,True,1.0,16,16,10.0,,,Immersion Therapy,9.2,Hoppy ale.
-332,https://www.instagram.com/p/CgSjSzFpWBS/,947,Thursday,July,21,2022,True,0.5,17,17,6.0,,,Let Justice Be Done,8.0,"Sour ale brewed with lactose, refermented with pineapple and conditioned on marshmallow."
-333,https://www.instagram.com/p/CdZF-JnJwpE/,1114,Tuesday,May,10,2022,True,1.0,17,17,7.0,,,Chaotic Condition,8.5,Hoppy ale.
-334,https://www.instagram.com/p/ClpDTVlp0Gl/,1180,Thursday,December,1,2022,True,1.0,17,17,8.0,,,Together To The End,9.5,Hoppy ale.
-335,https://www.instagram.com/p/CbiBNC2gQ38/,1264,Friday,March,25,2022,True,0.5,11,11,8.0,,,Consoled By Demons,9.0,Hoppy ale.
-336,https://www.instagram.com/p/ClHkdHGJuBw/,1136,Friday,November,18,2022,True,1.0,17,17,1.0,,,I See You Here Often,8.3,Hoppy ale.
-337,https://www.instagram.com/p/ChXhQE8uzNl/,1047,Wednesday,August,17,2022,True,0.5,12,12,6.0,,,The Sun In Your Eyes,7.0,Sour ale brewed with lactose and refermented with strawberry and peach.
-338,https://www.instagram.com/p/Cc8aUlBpS5b/,986,Friday,April,29,2022,True,0.5,13,13,9.0,,,Off With Their Head,8.0,"Sour ale brewed with lactose, refermented with mango and conditioned on Madagascar vanilla."
-339,https://www.instagram.com/p/CjYwLGWJ7fD/,1463,Thursday,October,6,2022,True,1.0,17,17,7.0,,,I Can’t Do Small Talk,8.3,Hoppy ale.
-340,https://www.instagram.com/p/CfZUE4qLTwB/,1108,Wednesday,June,29,2022,True,0.5,12,12,3.0,,,Unholy Devourment,8.0,Hoppy ale.
-341,https://www.instagram.com/p/Cb-9CXwpbxL/,1109,Tuesday,April,5,2022,True,1.0,16,17,5.0,,,Engulfed In Flames,9.7,Hoppy ale.
-342,https://www.instagram.com/p/ChF-20yJYXx/,1308,Wednesday,August,10,2022,True,1.0,17,17,5.0,,,Ruffling Feathers,7.2,Hoppy lager.
-343,https://www.instagram.com/p/CjGujsYpya4/,1236,Thursday,September,29,2022,True,1.0,17,17,5.0,,,Instrument Of Pain,9.7,Hoppy ale.
-344,https://www.instagram.com/p/CfPC24Ur-iW/,1437,Saturday,June,25,2022,True,1.0,12,12,4.0,,,Competitive Grief,9.0,Hoppy ale.
-345,https://www.instagram.com/p/Ch5H7bsJN6T/,1183,Tuesday,August,30,2022,True,0.5,13,13,5.0,,,Verbal But Binding,6.0,"Pilsner conditioned on fresh lime zest, hibiscus and sea salt."
-346,https://www.instagram.com/p/CbLbhpHpwbA/,1424,Wednesday,March,16,2022,True,1.0,16,16,5.0,,,Complete Disorder,8.9,Hoppy ale.
-347,https://www.instagram.com/p/Ckg1bWYph0E/,1538,Thursday,November,3,2022,True,1.0,16,16,6.0,,,I Used To Be Cynical,9.6,Hoppy ale.
-348,https://www.instagram.com/p/Cd_s6jfpDDI/,1247,Wednesday,May,25,2022,True,1.0,17,17,4.0,,,Chum For The Sharks,7.8,Hoppy ale.
-349,https://www.instagram.com/p/Cl9hMUjpex2/,1216,Friday,December,9,2022,True,0.5,15,15,1.0,,,Self-Preservation,8.6,Hoppy ale.
-350,https://www.instagram.com/p/Ca-XNKopg34/,1211,Friday,March,11,2022,True,0.5,13,13,13.0,,,Pain and Suffering,9.25,Hoppy ale.
-351,https://www.instagram.com/p/CejwjE_p9Co/,1013,Wednesday,June,8,2022,True,1.0,17,17,6.0,,,Internal Bleeding,7.5,Hoppy ale.
-352,https://www.instagram.com/p/CmR4xiopRfv/,1181,Saturday,December,17,2022,True,0.5,13,13,7.0,,,Luddite Manifesto,8.2,Hoppy ale.
-353,https://www.instagram.com/p/CdHEBwTp_Y0/,1170,Tuesday,May,3,2022,True,1.0,17,17,4.0,,,Crucified Thieves,8.3,Hoppy ale.
-354,https://www.instagram.com/p/Cf94Ah9pPNR/,1024,Wednesday,July,13,2022,True,1.0,17,17,4.0,,,In Penumbral Gloom,8.4,Hoppy ale.
-355,https://www.instagram.com/p/CeUOMgOJPkO/,907,Thursday,June,2,2022,True,0.5,16,16,7.0,,,Salem Witch Trials,12.0,"Imperial stout brewed with lactose and conditioned on toasted + raw coconut, Madagascar vanilla and dried banana."
-356,https://www.instagram.com/p/CZxaxeMpQQa/,1391,Wednesday,February,9,2022,True,1.0,16,16,8.0,,,Death Certificate,6.9,Hoppy ale.
-357,https://www.instagram.com/p/Cjs7visrE4B/,1031,Friday,October,14,2022,True,0.5,13,13,7.0,,,The Thorn In My Side,8.5,Hoppy ale.
-358,https://www.instagram.com/p/Cmcin4JuMk1/,1223,Wednesday,December,21,2022,True,1.0,16,17,4.0,,,In Good Conscience,9.3,Hoppy ale.
-359,https://www.instagram.com/p/CcWKWUGJcqi/,978,Thursday,April,14,2022,True,0.5,17,17,9.0,,,A Menace On The Wind,9.0,"Porter brewed w/ lactose then conditioned on coffee from our friends at @rojosroastery, maple syrup and cinnamon."
-360,https://www.instagram.com/p/CfCjHF3JETS/,1035,Monday,June,20,2022,True,0.5,16,16,8.0,,,Torn Apart By Birds,10.0,Hoppy ale refermented with lots of wildflower honey.
-361,https://www.instagram.com/p/Cg2i6GPpgCV/,1177,Thursday,August,4,2022,True,1.0,17,17,6.0,,,Palatial In Nature,9.3,Hoppy ale.
-362,https://www.instagram.com/p/CcjAa05JtZ-/,1078,Tuesday,April,19,2022,True,1.0,17,17,4.0,,,Living Free Of Fear,8.3,Hoppy ale.
-363,https://www.instagram.com/p/CfxAGvzJIOR/,1048,Friday,July,8,2022,True,1.0,17,17,9.0,,,Highway To Nowhere,9.5,Hoppy ale.
-364,https://www.instagram.com/p/CY7Q65ip2rG/,1312,Wednesday,January,19,2022,True,0.5,16,16,6.0,,,Nothing Grows Here,7.5,Hoppy ale.
-365,https://www.instagram.com/p/CiBMfr0J5rF/,1133,Friday,September,2,2022,True,1.0,17,17,3.0,,,Canned In Olive Oil,8.2,Hoppy ale.
-366,https://www.instagram.com/p/Caadj1fpmwE/,1113,Friday,February,25,2022,True,0.5,15,15,7.0,,,I Thrive On Neglect,7.8,Hoppy ale.
-367,https://www.instagram.com/p/Cj8zU4WJ_rv/,1439,Thursday,October,20,2022,True,1.0,17,17,6.0,,,Innumerable Forms,8.3,Hoppy ale.
-368,https://www.instagram.com/p/ChqBGKFJus5/,1418,Wednesday,August,24,2022,True,1.0,16,17,7.0,,,Pain Will Define Us,9.0,Hoppy ale conditioned on fresh orange zest and Madagascar vanilla. *No lactose*
-369,https://www.instagram.com/p/ClCa_aSJICe/,1314,Wednesday,November,16,2022,True,1.0,17,17,6.0,,,Probed By Martians,11.0,"Milk stout brewed with lactose and conditioned on coffee from @rojosroastery, hazelnut, black walnut, cinnamon and Palo Santo."
-370,https://www.instagram.com/p/CbvgiD2J6WA/,1395,Wednesday,March,30,2022,True,1.0,17,17,5.0,,,A Thousand Plagues,8.5,Hoppy ale brewed with lactose and conditioned on Madagascar vanilla.
-371,https://www.instagram.com/p/CilQhasJMA1/,1494,Friday,September,16,2022,True,1.0,17,17,3.0,,,Ludicrous Display,9.2,Hoppy ale.
-372,https://www.instagram.com/p/Cky-ErKJWqT/,1331,Thursday,November,10,2022,True,1.0,17,17,7.0,,,Abducted By Aliens,8.5,Hoppy ale brewed in collaboration with our friends at @omnipollo
-373,https://www.instagram.com/p/ClT3sdWJMcZ/,1219,Wednesday,November,23,2022,True,0.5,11,11,4.0,,,Personality Trait,10.0,Hoppy ale.
-374,https://www.instagram.com/p/CidGjzqJDk3/,1016,Tuesday,September,13,2022,True,0.5,13,13,4.0,,,Intrusive Thought,8.3,Hoppy ale.
-375,https://www.instagram.com/p/Ci5UMk1rNEO/,1365,Saturday,September,24,2022,True,1.0,12,12,7.0,,,Garments Of Shadow,8.0,Hoppy ale brewed in collaboration with our great friends at @brujos_brewing 🤟
-376,https://www.instagram.com/p/CkQ-GyRJeXw/,1054,Friday,October,28,2022,True,0.5,13,13,7.0,,,Unholy Apparition,8.8,Baltic Porter lagered for many weeks then conditioned on our favorite coffee from @rojosroastery and Madagascar vanilla.
-377,https://www.instagram.com/p/CgDAKNLpobZ/,927,Friday,July,15,2022,True,0.5,16,16,1.0,,,Quiet Desperation,7.8,Hoppy ale.
-378,https://www.instagram.com/p/CZKXBr5pbr_/,1030,Tuesday,January,25,2022,True,0.5,12,12,5.0,,,Unexpurgated Text,8.5,Lager brewed with apple cider and conditioned on Palo Santo.
-379,https://www.instagram.com/p/CiQQ53ypLjH/,785,Thursday,September,8,2022,True,0.5,13,13,5.0,,,Boredom Is A Choice,8.5,Hoppy ale.
-380,https://www.instagram.com/p/Cl4f1zIpYLw/,1513,Wednesday,December,7,2022,True,1.0,17,17,5.0,,,Portrayal Of Guilt,7.3,Hoppy ale.
-381,https://www.instagram.com/p/CmzuTG0JDKC/,1190,Friday,December,30,2022,True,1.0,17,17,9.0,,,Pushed To The Brink,9.6,Hoppy ale.
-382,https://www.instagram.com/p/CnAaVDupKfk/,1053,Wednesday,January,4,2023,True,0.5,15,15,5.0,,,Gravity Is My Enemy,9.3,Hoppy ale.
-383,https://www.instagram.com/p/CnVKAZQptlo/,1802,Thursday,January,12,2023,True,0.5,16,16,8.0,,,Alternate Plumage,12.5,Imperial stout conditioned on an outrageous amount of both toasted and raw coconut. Sorry if some flakes made it into your bottle. *No lactose!*
-384,https://www.instagram.com/p/CnkIncvpfFv/,1390,Wednesday,January,18,2023,True,0.5,12,12,5.0,,,These Silent Woods,8.6,Hoppy ale.
-385,https://www.instagram.com/p/Cnuy0mSJOdC/,1284,Monday,January,23,2023,True,0.5,16,16,5.0,,,What Wakes The Dead?,9.7,Hoppy ale conditioned on Madagascar vanilla. *No lactose!*
-386,https://www.instagram.com/p/Cn70OyJpJR1/,1401,Friday,January,27,2023,True,1.0,17,17,4.0,,,Abstract Illusion,8.6,Hoppy ale.
-387,https://www.instagram.com/p/CoIsBbwJXX5/,1382,Wednesday,February,1,2023,True,1.0,16,17,4.0,,,Color Me Intrigued,8.4,Hoppy ale.
-388,https://www.instagram.com/p/CoiSwcRJyrl/,1353,Saturday,February,11,2023,True,1.0,15,15,10.0,,,And Then It Was Gone,8.4,Hoppy ale.
-389,https://www.instagram.com/p/CovC1gup_fT/,1043,Thursday,February,16,2023,True,0.5,14,14,5.0,,,How Did You Get Here,8.5,Hoppy ale.
-390,https://www.instagram.com/p/CpBVbRqpD7X/,1275,Thursday,February,23,2023,True,1.0,16,17,7.0,,,Absolute Radiance,10.3,Hoppy ale.
-391,https://www.instagram.com/p/CpJL0VBJqph/,1670,Sunday,February,26,2023,True,0.5,18,18,3.0,,,Lesson In Savagery & Unclaimed Cadaver,13.0,"Imperial milk stout aged in bourbon barrels for over a year then conditioned on mountains of whole Madagascar, Tahitian, Ugandan and Mexican vanilla beans. (White wax, purple label)  Imperial milk stout aged in bourbon barrels with vanilla, then further conditioned on a ludicrous amount of bourbon barrel aged maple syrup and Indonesian cinnamon. (Copper wax, red label)."
-392,https://www.instagram.com/p/CpgPTjTJvFz/,1411,Tuesday,March,7,2023,True,1.0,17,17,9.0,,,Eternal Suffering,9.0,Hoppy ale.
-393,https://www.instagram.com/p/Cp24fxep3f2/,1220,Thursday,March,16,2023,True,0.5,13,13,9.0,,,Chant Of The Unholy,8.6,Hoppy ale.
-394,https://www.instagram.com/p/CqL6CchJVdv/,1315,Friday,March,24,2023,True,1.0,17,17,8.0,,,Help Me Ease My Mind,9.5,Hoppy ale.
-395,https://www.instagram.com/p/Cqdnhx1pMKE/,1265,Friday,March,31,2023,True,0.5,14,14,7.0,,,Gas Station Snacks,10.3,"Hoppy ale conditioned on strawberry candy, strawberry jam and Madagascar vanilla. Brewed in collaboration with @omnipollo. *No lactose!*"
-396,https://www.instagram.com/p/Cqv8_9opAA8/,1234,Friday,April,7,2023,True,1.0,17,17,7.0,,,Flipped the Script,7.7,Hoppy ale.
-397,https://www.instagram.com/p/Cq3rDHppkAd/,1325,Monday,April,10,2023,True,1.0,16,16,2.0,,,Full Moon Witchery,14.0,Imperial stout conditioned on the best coffee from @rojosroastery (duh).
-398,https://www.instagram.com/p/CrUAXRCp8Tq/,1472,Friday,April,21,2023,True,1.0,17,17,11.0,,,Independent Radio,8.8,Hoppy ale.
-399,https://www.instagram.com/p/CrtwJPjpAyN/,1309,Monday,May,1,2023,True,1.0,17,17,9.0,,,Blinded By The Past,8.0,Hoppy ale.
-400,https://www.instagram.com/p/Cr3sr3jJ4pu/,1060,Friday,May,5,2023,True,0.5,13,13,3.0,,,This Is Entrapment,7.0,Lager conditioned on hand-zested lime/ lemon and sea salt.
-401,https://www.instagram.com/p/CsIAxQGt-2K/,1233,Thursday,May,11,2023,True,0.5,21,21,6.0,,,Biblical Violence,14.0,Barleywine conditioned on toasted coconut and cinnamon.
-402,https://www.instagram.com/p/CsUX0EXJMij/,1462,Tuesday,May,16,2023,True,1.0,16,17,4.0,,,This Is A True Story,8.6,Hoppy ale.
-403,https://www.instagram.com/p/Cse3t7kJjOq/,1060,Saturday,May,20,2023,True,0.5,18,18,4.0,,,Struck Out Looking,7.6,Hoppy lager.
-404,https://www.instagram.com/p/CsrjYqrpZ-t/,1284,Thursday,May,25,2023,True,1.0,17,17,4.0,,,How The Hell Are You?,9.2,Hoppy ale.
-405,https://www.instagram.com/p/Cs9ke1RpCq2/,1321,Thursday,June,1,2023,True,1.0,16,17,6.0,,,Litany Of Failures,7.5,Hoppy ale.
-406,https://www.instagram.com/p/CtSLH8Fpv3V/,1348,Friday,June,9,2023,True,1.0,17,17,8.0,,,Back On My Bullshit,9.0,Hoppy ale.
-407,https://www.instagram.com/p/CthNJKOO97F/,1177,Thursday,June,15,2023,True,0.5,13,13,5.0,,,I’m Losing Patience,7.8,Hoppy ale.
-408,https://www.instagram.com/p/Ct1usWBLShR/,1128,Friday,June,23,2023,True,0.5,12,12,7.0,,,Worth Holding On To,9.8,Hoppy ale.
-409,https://www.instagram.com/p/CuP9FMOpHPm/,1343,Monday,July,3,2023,True,1.0,16,16,10.0,,,Vacation From Hell,8.7,Hoppy ale.
-410,https://www.instagram.com/p/CuXOeTDrBX1/,600,Thursday,July,6,2023,True,0.5,12,12,3.0,,,Nucleomituphobia,8.5,"Sour ale brewed with lactose, refermented with insane amounts of mango, then conditioned on pounds of West Papua vanilla."
-411,https://www.instagram.com/p/Cuh-y4XpiPj/,1337,Monday,July,10,2023,True,1.0,16,16,4.0,,,Hideous Infirmity,10.3,Hoppy ale refermented with NJ honey.
-412,https://www.instagram.com/p/Cum5GKbue-P/,997,Wednesday,July,12,2023,True,0.5,14,14,2.0,,,Boundless Domains,8.2,Hoppy ale.
-413,https://www.instagram.com/p/CvLMLjIJCAQ/,1547,Wednesday,July,26,2023,True,1.0,16,17,14.0,,,Useless Appendage,8.3,Hoppy ale.
-414,https://www.instagram.com/p/CvP78IkrxXi/,1101,Friday,July,28,2023,True,0.5,13,13,2.0,,,Botched Execution,8.0,Hoppy ale.
-415,https://www.instagram.com/p/CvsqGG-pvu6/,1194,Tuesday,August,8,2023,True,1.0,16,16,11.0,,,None Of That Is True,6.8,Hoppy ale.
+317,https://www.instagram.com/p/CWG_k2OJSIu/,1268,Wednesday,November,10,2021,True,120.0,16.0,18.0,6.0,,,The Din of Inequity,10.3,Hoppy ale.
+318,https://www.instagram.com/p/CWZJJigp6hK/,1322,Wednesday,November,17,2021,True,0.5,21.0,21.0,7.0,,,You Made Your Point,6.0,Hoppy ale.
+319,https://www.instagram.com/p/CWeSr1WpkpK/,1351,Friday,November,19,2021,True,0.5,21.0,21.0,2.0,,,Awaken Your Demons,8.75,Hoppy ale.
+320,https://www.instagram.com/p/CW3-pw5J_7e/,881,Monday,November,29,2021,True,120.0,16.0,18.0,10.0,,,Raise A Glass To Pat,8.8,Hoppy ale.
+321,https://www.instagram.com/p/CXEV2BSFYJB/,1479,Saturday,December,4,2021,True,0.5,16.0,16.0,5.0,,,I Saw You Lying Dead,8.5,Hoppy ale.
+322,https://www.instagram.com/p/CXPefqRF7-u/,1508,Thursday,December,9,2021,True,120.0,17.0,19.0,5.0,,,Secondhand Casket,14.0,"Barleywine ale aged for 1.5 years in freshly dumped bourbon barrels, then conditioned on dulce de leche as well as Ugandan, Mexican and Madagascar vanilla beans. *Contains trace lactose from the dulce de leche*"
+323,https://www.instagram.com/p/CXzORNwpxEV/,1268,Wednesday,December,22,2021,True,60.0,21.0,21.0,13.0,,,Spewing Purulence,8.9,Hoppy ale.
+324,https://www.instagram.com/p/CX10esxpL7V/,1176,Thursday,December,23,2021,True,0.5,16.0,16.0,1.0,,,Sacrificial Dance,9.1,Hoppy ale.
+325,https://www.instagram.com/p/CYUsLzuJTfi/,727,Tuesday,January,4,2022,True,0.5,17.0,17.0,12.0,,,Children Of The Urn,8.5,Hoppy ale.
+326,https://www.instagram.com/p/CYr4kIopQUQ/,1130,Thursday,January,13,2022,True,0.5,17.0,17.0,9.0,,,Ritual Necromancy,12.0,Imperial stout brewed with lactose and conditioned on a monstrous amount of freshly toasted coconut.
+364,https://www.instagram.com/p/CY7Q65ip2rG/,1312,Wednesday,January,19,2022,True,0.5,16.0,16.0,-170.0,,,Nothing Grows Here,7.5,Hoppy ale.
+378,https://www.instagram.com/p/CZKXBr5pbr_/,1030,Tuesday,January,25,2022,True,0.5,12.0,12.0,-171.0,,,Unexpurgated Text,8.5,Lager brewed with apple cider and conditioned on Palo Santo.
+327,https://www.instagram.com/p/CZcXf5VJWu1/,1220,Tuesday,February,1,2022,True,0.5,12.0,12.0,19.0,,,Artfully Restored,9.1,Hoppy ale.
+356,https://www.instagram.com/p/CZxaxeMpQQa/,1391,Wednesday,February,9,2022,True,1.0,16.0,16.0,-113.0,,,Death Certificate,6.9,Hoppy ale.
+330,https://www.instagram.com/p/CaGB9X5JjnO/,1262,Thursday,February,17,2022,True,1.0,16.0,16.0,-162.0,,,Russell Is A Dad Now!,10.2,Hoppy ale refermented with lots of honey.
+366,https://www.instagram.com/p/Caadj1fpmwE/,1113,Friday,February,25,2022,True,0.5,15.0,15.0,-189.0,,,I Thrive On Neglect,7.8,Hoppy ale.
+350,https://www.instagram.com/p/Ca-XNKopg34/,1211,Friday,March,11,2022,True,0.5,13.0,13.0,-273.0,,,Pain and Suffering,9.25,Hoppy ale.
+346,https://www.instagram.com/p/CbLbhpHpwbA/,1424,Wednesday,March,16,2022,True,1.0,16.0,16.0,-167.0,,,Complete Disorder,8.9,Hoppy ale.
+335,https://www.instagram.com/p/CbiBNC2gQ38/,1264,Friday,March,25,2022,True,0.5,11.0,11.0,-251.0,,,Consoled By Demons,9.0,Hoppy ale.
+370,https://www.instagram.com/p/CbvgiD2J6WA/,1395,Wednesday,March,30,2022,True,1.0,17.0,17.0,-231.0,,,A Thousand Plagues,8.5,Hoppy ale brewed with lactose and conditioned on Madagascar vanilla.
+341,https://www.instagram.com/p/Cb-9CXwpbxL/,1109,Tuesday,April,5,2022,True,1.0,16.0,17.0,-85.0,,,Engulfed In Flames,9.7,Hoppy ale.
+359,https://www.instagram.com/p/CcWKWUGJcqi/,978,Thursday,April,14,2022,True,0.5,17.0,17.0,-251.0,,,A Menace On The Wind,9.0,"Porter brewed w/ lactose then conditioned on coffee from our friends at @rojosroastery, maple syrup and cinnamon."
+362,https://www.instagram.com/p/CcjAa05JtZ-/,1078,Tuesday,April,19,2022,True,1.0,17.0,17.0,-107.0,,,Living Free Of Fear,8.3,Hoppy ale.
+338,https://www.instagram.com/p/Cc8aUlBpS5b/,986,Friday,April,29,2022,True,0.5,13.0,13.0,-110.0,,,Off With Their Head,8.0,"Sour ale brewed with lactose, refermented with mango and conditioned on Madagascar vanilla."
+353,https://www.instagram.com/p/CdHEBwTp_Y0/,1170,Tuesday,May,3,2022,True,1.0,17.0,17.0,-228.0,,,Crucified Thieves,8.3,Hoppy ale.
+333,https://www.instagram.com/p/CdZF-JnJwpE/,1114,Tuesday,May,10,2022,True,1.0,17.0,17.0,-72.0,,,Chaotic Condition,8.5,Hoppy ale.
+331,https://www.instagram.com/p/Cd1TFXZJbk-/,1121,Saturday,May,21,2022,True,1.0,16.0,16.0,93.0,,,Immersion Therapy,9.2,Hoppy ale.
+348,https://www.instagram.com/p/Cd_s6jfpDDI/,1247,Wednesday,May,25,2022,True,1.0,17.0,17.0,-162.0,,,Chum For The Sharks,7.8,Hoppy ale.
+355,https://www.instagram.com/p/CeUOMgOJPkO/,907,Thursday,June,2,2022,True,0.5,16.0,16.0,-41.0,,,Salem Witch Trials,12.0,"Imperial stout brewed with lactose and conditioned on toasted + raw coconut, Madagascar vanilla and dried banana."
+351,https://www.instagram.com/p/CejwjE_p9Co/,1013,Wednesday,June,8,2022,True,1.0,17.0,17.0,89.0,,,Internal Bleeding,7.5,Hoppy ale.
+328,https://www.instagram.com/p/CercczHJhWY/,1013,Saturday,June,11,2022,True,1.0,16.0,16.0,130.0,,,Destined To Fester,9.0,Hoppy ale.
+360,https://www.instagram.com/p/CfCjHF3JETS/,1035,Monday,June,20,2022,True,0.5,16.0,16.0,67.0,,,Torn Apart By Birds,10.0,Hoppy ale refermented with lots of wildflower honey.
+344,https://www.instagram.com/p/CfPC24Ur-iW/,1437,Saturday,June,25,2022,True,1.0,12.0,12.0,-96.0,,,Competitive Grief,9.0,Hoppy ale.
+340,https://www.instagram.com/p/CfZUE4qLTwB/,1108,Wednesday,June,29,2022,True,0.5,12.0,12.0,-99.0,,,Unholy Devourment,8.0,Hoppy ale.
+363,https://www.instagram.com/p/CfxAGvzJIOR/,1048,Friday,July,8,2022,True,1.0,17.0,17.0,80.0,,,Highway To Nowhere,9.5,Hoppy ale.
+354,https://www.instagram.com/p/Cf94Ah9pPNR/,1024,Wednesday,July,13,2022,True,1.0,17.0,17.0,71.0,,,In Penumbral Gloom,8.4,Hoppy ale.
+377,https://www.instagram.com/p/CgDAKNLpobZ/,927,Friday,July,15,2022,True,0.5,16.0,16.0,-105.0,,,Quiet Desperation,7.8,Hoppy ale.
+332,https://www.instagram.com/p/CgSjSzFpWBS/,947,Thursday,July,21,2022,True,0.5,17.0,17.0,61.0,,,Let Justice Be Done,8.0,"Sour ale brewed with lactose, refermented with pineapple and conditioned on marshmallow."
+329,https://www.instagram.com/p/CgnEoS6pgtr/,1071,Friday,July,29,2022,True,1.0,17.0,17.0,48.0,,,Paid Vacation Days,7.5,Hoppy ale.
+361,https://www.instagram.com/p/Cg2i6GPpgCV/,1177,Thursday,August,4,2022,True,1.0,17.0,17.0,45.0,,,Palatial In Nature,9.3,Hoppy ale.
+342,https://www.instagram.com/p/ChF-20yJYXx/,1308,Wednesday,August,10,2022,True,1.0,17.0,17.0,127.0,,,Ruffling Feathers,7.2,Hoppy lager.
+337,https://www.instagram.com/p/ChXhQE8uzNl/,1047,Wednesday,August,17,2022,True,0.5,12.0,12.0,-93.0,,,The Sun In Your Eyes,7.0,Sour ale brewed with lactose and refermented with strawberry and peach.
+368,https://www.instagram.com/p/ChqBGKFJus5/,1418,Wednesday,August,24,2022,True,1.0,16.0,17.0,-57.0,,,Pain Will Define Us,9.0,Hoppy ale conditioned on fresh orange zest and Madagascar vanilla. *No lactose*
+345,https://www.instagram.com/p/Ch5H7bsJN6T/,1183,Tuesday,August,30,2022,True,0.5,13.0,13.0,66.0,,,Verbal But Binding,6.0,"Pilsner conditioned on fresh lime zest, hibiscus and sea salt."
+365,https://www.instagram.com/p/CiBMfr0J5rF/,1133,Friday,September,2,2022,True,1.0,17.0,17.0,226.0,,,Canned In Olive Oil,8.2,Hoppy ale.
+379,https://www.instagram.com/p/CiQQ53ypLjH/,785,Thursday,September,8,2022,True,0.5,13.0,13.0,226.0,,,Boredom Is A Choice,8.5,Hoppy ale.
+374,https://www.instagram.com/p/CidGjzqJDk3/,1016,Tuesday,September,13,2022,True,0.5,13.0,13.0,-71.0,,,Intrusive Thought,8.3,Hoppy ale.
+371,https://www.instagram.com/p/CilQhasJMA1/,1494,Friday,September,16,2022,True,1.0,17.0,17.0,170.0,,,Ludicrous Display,9.2,Hoppy ale.
+375,https://www.instagram.com/p/Ci5UMk1rNEO/,1365,Saturday,September,24,2022,True,1.0,12.0,12.0,11.0,,,Garments Of Shadow,8.0,Hoppy ale brewed in collaboration with our great friends at @brujos_brewing 🤟
+343,https://www.instagram.com/p/CjGujsYpya4/,1236,Thursday,September,29,2022,True,1.0,17.0,17.0,50.0,,,Instrument Of Pain,9.7,Hoppy ale.
+339,https://www.instagram.com/p/CjYwLGWJ7fD/,1463,Thursday,October,6,2022,True,1.0,17.0,17.0,160.0,,,I Can’t Do Small Talk,8.3,Hoppy ale.
+357,https://www.instagram.com/p/Cjs7visrE4B/,1031,Friday,October,14,2022,True,0.5,13.0,13.0,247.0,,,The Thorn In My Side,8.5,Hoppy ale.
+367,https://www.instagram.com/p/Cj8zU4WJ_rv/,1439,Thursday,October,20,2022,True,1.0,17.0,17.0,237.0,,,Innumerable Forms,8.3,Hoppy ale.
+376,https://www.instagram.com/p/CkQ-GyRJeXw/,1054,Friday,October,28,2022,True,0.5,13.0,13.0,34.0,,,Unholy Apparition,8.8,Baltic Porter lagered for many weeks then conditioned on our favorite coffee from @rojosroastery and Madagascar vanilla.
+347,https://www.instagram.com/p/Ckg1bWYph0E/,1538,Thursday,November,3,2022,True,1.0,16.0,16.0,232.0,,,I Used To Be Cynical,9.6,Hoppy ale.
+372,https://www.instagram.com/p/Cky-ErKJWqT/,1331,Thursday,November,10,2022,True,1.0,17.0,17.0,55.0,,,Abducted By Aliens,8.5,Hoppy ale brewed in collaboration with our friends at @omnipollo
+369,https://www.instagram.com/p/ClCa_aSJICe/,1314,Wednesday,November,16,2022,True,1.0,17.0,17.0,84.0,,,Probed By Martians,11.0,"Milk stout brewed with lactose and conditioned on coffee from @rojosroastery, hazelnut, black walnut, cinnamon and Palo Santo."
+336,https://www.instagram.com/p/ClHkdHGJuBw/,1136,Friday,November,18,2022,True,1.0,17.0,17.0,238.0,,,I See You Here Often,8.3,Hoppy ale.
+373,https://www.instagram.com/p/ClT3sdWJMcZ/,1219,Wednesday,November,23,2022,True,0.5,11.0,11.0,13.0,,,Personality Trait,10.0,Hoppy ale.
+334,https://www.instagram.com/p/ClpDTVlp0Gl/,1180,Thursday,December,1,2022,True,1.0,17.0,17.0,205.0,,,Together To The End,9.5,Hoppy ale.
+380,https://www.instagram.com/p/Cl4f1zIpYLw/,1513,Wednesday,December,7,2022,True,1.0,17.0,17.0,90.0,,,Portrayal Of Guilt,7.3,Hoppy ale.
+349,https://www.instagram.com/p/Cl9hMUjpex2/,1216,Friday,December,9,2022,True,0.5,15.0,15.0,198.0,,,Self-Preservation,8.6,Hoppy ale.
+352,https://www.instagram.com/p/CmR4xiopRfv/,1181,Saturday,December,17,2022,True,0.5,13.0,13.0,192.0,,,Luddite Manifesto,8.2,Hoppy ale.
+358,https://www.instagram.com/p/Cmcin4JuMk1/,1223,Wednesday,December,21,2022,True,1.0,16.0,17.0,68.0,,,In Good Conscience,9.3,Hoppy ale.
+381,https://www.instagram.com/p/CmzuTG0JDKC/,1190,Friday,December,30,2022,True,1.0,17.0,17.0,23.0,,,Pushed To The Brink,9.6,Hoppy ale.
+382,https://www.instagram.com/p/CnAaVDupKfk/,1053,Wednesday,January,4,2023,True,0.5,15.0,15.0,5.0,,,Gravity Is My Enemy,9.3,Hoppy ale.
+383,https://www.instagram.com/p/CnVKAZQptlo/,1802,Thursday,January,12,2023,True,0.5,16.0,16.0,8.0,,,Alternate Plumage,12.5,Imperial stout conditioned on an outrageous amount of both toasted and raw coconut. Sorry if some flakes made it into your bottle. *No lactose!*
+384,https://www.instagram.com/p/CnkIncvpfFv/,1390,Wednesday,January,18,2023,True,0.5,12.0,12.0,6.0,,,These Silent Woods,8.6,Hoppy ale.
+385,https://www.instagram.com/p/Cnuy0mSJOdC/,1284,Monday,January,23,2023,True,0.5,16.0,16.0,5.0,,,What Wakes The Dead?,9.7,Hoppy ale conditioned on Madagascar vanilla. *No lactose!*
+386,https://www.instagram.com/p/Cn70OyJpJR1/,1401,Friday,January,27,2023,True,1.0,17.0,17.0,4.0,,,Abstract Illusion,8.6,Hoppy ale.
+387,https://www.instagram.com/p/CoIsBbwJXX5/,1382,Wednesday,February,1,2023,True,1.0,16.0,17.0,5.0,,,Color Me Intrigued,8.4,Hoppy ale.
+388,https://www.instagram.com/p/CoiSwcRJyrl/,1353,Saturday,February,11,2023,True,1.0,15.0,15.0,10.0,,,And Then It Was Gone,8.4,Hoppy ale.
+389,https://www.instagram.com/p/CovC1gup_fT/,1043,Thursday,February,16,2023,True,0.5,14.0,14.0,5.0,,,How Did You Get Here,8.5,Hoppy ale.
+390,https://www.instagram.com/p/CpBVbRqpD7X/,1275,Thursday,February,23,2023,True,1.0,16.0,17.0,7.0,,,Absolute Radiance,10.3,Hoppy ale.
+391,https://www.instagram.com/p/CpJL0VBJqph/,1670,Sunday,February,26,2023,True,0.5,18.0,18.0,3.0,,,Lesson In Savagery & Unclaimed Cadaver,13.0,"Imperial milk stout aged in bourbon barrels for over a year then conditioned on mountains of whole Madagascar, Tahitian, Ugandan and Mexican vanilla beans. (White wax, purple label)  Imperial milk stout aged in bourbon barrels with vanilla, then further conditioned on a ludicrous amount of bourbon barrel aged maple syrup and Indonesian cinnamon. (Copper wax, red label)."
+392,https://www.instagram.com/p/CpgPTjTJvFz/,1411,Tuesday,March,7,2023,True,1.0,17.0,17.0,9.0,,,Eternal Suffering,9.0,Hoppy ale.
+393,https://www.instagram.com/p/Cp24fxep3f2/,1220,Thursday,March,16,2023,True,0.5,13.0,13.0,9.0,,,Chant Of The Unholy,8.6,Hoppy ale.
+394,https://www.instagram.com/p/CqL6CchJVdv/,1315,Friday,March,24,2023,True,1.0,17.0,17.0,8.0,,,Help Me Ease My Mind,9.5,Hoppy ale.
+395,https://www.instagram.com/p/Cqdnhx1pMKE/,1265,Friday,March,31,2023,True,0.5,14.0,14.0,7.0,,,Gas Station Snacks,10.3,"Hoppy ale conditioned on strawberry candy, strawberry jam and Madagascar vanilla. Brewed in collaboration with @omnipollo. *No lactose!*"
+396,https://www.instagram.com/p/Cqv8_9opAA8/,1234,Friday,April,7,2023,True,1.0,17.0,17.0,7.0,,,Flipped the Script,7.7,Hoppy ale.
+397,https://www.instagram.com/p/Cq3rDHppkAd/,1325,Monday,April,10,2023,True,1.0,16.0,16.0,3.0,,,Full Moon Witchery,14.0,Imperial stout conditioned on the best coffee from @rojosroastery (duh).
+398,https://www.instagram.com/p/CrUAXRCp8Tq/,1472,Friday,April,21,2023,True,1.0,17.0,17.0,11.0,,,Independent Radio,8.8,Hoppy ale.
+399,https://www.instagram.com/p/CrtwJPjpAyN/,1309,Monday,May,1,2023,True,1.0,17.0,17.0,10.0,,,Blinded By The Past,8.0,Hoppy ale.
+400,https://www.instagram.com/p/Cr3sr3jJ4pu/,1060,Friday,May,5,2023,True,0.5,13.0,13.0,4.0,,,This Is Entrapment,7.0,Lager conditioned on hand-zested lime/ lemon and sea salt.
+401,https://www.instagram.com/p/CsIAxQGt-2K/,1233,Thursday,May,11,2023,True,0.5,21.0,21.0,6.0,,,Biblical Violence,14.0,Barleywine conditioned on toasted coconut and cinnamon.
+402,https://www.instagram.com/p/CsUX0EXJMij/,1462,Tuesday,May,16,2023,True,1.0,16.0,17.0,5.0,,,This Is A True Story,8.6,Hoppy ale.
+403,https://www.instagram.com/p/Cse3t7kJjOq/,1060,Saturday,May,20,2023,True,0.5,18.0,18.0,4.0,,,Struck Out Looking,7.6,Hoppy lager.
+404,https://www.instagram.com/p/CsrjYqrpZ-t/,1284,Thursday,May,25,2023,True,1.0,17.0,17.0,5.0,,,How The Hell Are You?,9.2,Hoppy ale.
+405,https://www.instagram.com/p/Cs9ke1RpCq2/,1321,Thursday,June,1,2023,True,1.0,16.0,17.0,7.0,,,Litany Of Failures,7.5,Hoppy ale.
+406,https://www.instagram.com/p/CtSLH8Fpv3V/,1348,Friday,June,9,2023,True,1.0,17.0,17.0,8.0,,,Back On My Bullshit,9.0,Hoppy ale.
+407,https://www.instagram.com/p/CthNJKOO97F/,1177,Thursday,June,15,2023,True,0.5,13.0,13.0,6.0,,,I’m Losing Patience,7.8,Hoppy ale.
+408,https://www.instagram.com/p/Ct1usWBLShR/,1128,Friday,June,23,2023,True,0.5,12.0,12.0,8.0,,,Worth Holding On To,9.8,Hoppy ale.
+409,https://www.instagram.com/p/CuP9FMOpHPm/,1343,Monday,July,3,2023,True,1.0,16.0,16.0,10.0,,,Vacation From Hell,8.7,Hoppy ale.
+410,https://www.instagram.com/p/CuXOeTDrBX1/,600,Thursday,July,6,2023,True,0.5,12.0,12.0,3.0,,,Nucleomituphobia,8.5,"Sour ale brewed with lactose, refermented with insane amounts of mango, then conditioned on pounds of West Papua vanilla."
+411,https://www.instagram.com/p/Cuh-y4XpiPj/,1337,Monday,July,10,2023,True,1.0,16.0,16.0,4.0,,,Hideous Infirmity,10.3,Hoppy ale refermented with NJ honey.
+412,https://www.instagram.com/p/Cum5GKbue-P/,997,Wednesday,July,12,2023,True,0.5,14.0,14.0,2.0,,,Boundless Domains,8.2,Hoppy ale.
+413,https://www.instagram.com/p/CvLMLjIJCAQ/,1547,Wednesday,July,26,2023,True,1.0,16.0,17.0,14.0,,,Useless Appendage,8.3,Hoppy ale.
+414,https://www.instagram.com/p/CvP78IkrxXi/,1101,Friday,July,28,2023,True,0.5,13.0,13.0,2.0,,,Botched Execution,8.0,Hoppy ale.
+415,https://www.instagram.com/p/CvsqGG-pvu6/,1194,Tuesday,August,8,2023,True,1.0,16.0,16.0,11.0,,,None Of That Is True,6.8,Hoppy ale.
