@@ -13,9 +13,19 @@ Please feel free to explore what's here so far and view the data/features/visual
 * [Me!](https://github.com/dmnapolitano)
 * [Jeremy Biggs](https://github.com/jbiggsets)
 
+## "Known Unknowns"
+
+There's an upper bound on how good any model can be at predicting when Troon will release beer.  This is due to several "known unknowns", information I'd only have (some level of) access to if I worked at the brewery.  And if I worked at the brewery, I'd probably already know when releases were going to or about to happen, so this project wouldn't need to exist.  "Known unknowns" here include how many beers Troon is brewing at any given time along with the duration of each beer's brewing process.  Furthermore, some may be ready earlier than expected, some later than expected.  We also don't know the schedules of the brewery staff -- although, it does look like there are periods of lengthy (one or two weeks) vacations where the brewery is basically not functioning.  I might be able to predict those... :grin:
+
+Anyway, because of this, we can't really treat any model here as anything more than "just for fun".  Based on what we _can_ know about patterns in Troon releases, here's the _most likely_ days on which they'll occur, so on those days, keep your Instagram app open and your alerts on.  And keep thinking about ways in which we can address both the "known unknowns" and "unknown unknowns" :wink:
+
 ## "Wins" with the Current Model
 
 * 7/10/2023 with a probability of 61% :tada:
+
+### "Interesting" "Wins"
+
+* 8/12/2023: No release predicted (probability of a release of 35%), but, on that day there was a "pick up is tomorrow, 8/13" release, and the predicted probability of a release on the 13th was 60%. :thinking:
 
 ## "Losses" with the Current Model
 
