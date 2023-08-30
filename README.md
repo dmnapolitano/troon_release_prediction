@@ -26,7 +26,3 @@ Anyway, because of this, we can't really treat any model here as anything more t
 ### "Interesting" "Wins"
 
 * 8/12/2023: No release predicted (probability of a release of 35%), but, on that day there was a "pick up is tomorrow, 8/13" release, and the predicted probability of a release on the 13th was 60%. :thinking:
-
-## "Losses" with the Current Model
-
-* 7/12/2022 with a probabilty of 22% :confused:
