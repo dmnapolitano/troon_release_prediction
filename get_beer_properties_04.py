@@ -59,7 +59,7 @@ input_df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64"}
 
 df = pandas.read_csv("troon_instagram_post_beer_attributes.csv", dtype={"id" : "Int64"})
 known_characteristics = {tuple(r["attribute"].split(" ")) : r["count"] for (i, r) in
-                         df.groupby(["attribute"]).agg({"count" : sum}).reset_index().iterrows()}
+                         df.groupby(["attribute"]).agg({"count" : "sum"}).reset_index().iterrows()}
 
 to_consider = []
 for (i, row) in input_df[~input_df.index.isin(df["id"])].iterrows():
