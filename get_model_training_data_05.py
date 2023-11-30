@@ -64,12 +64,30 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
 
     df["binary_target"] = df["prob_of_release"].apply(lambda x : x >= 0.5).astype(int)
 
-    df = get_features(df.copy(), nj_holidays)
+    df = _get_features(df.copy(), nj_holidays)
 
-    return df
+    train_df = df[0:int(len(df) * 0.90)].copy()
+    test_df = df[~df.index.isin(train_df.index)].copy()
+    print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
+
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post", "binary_target"]]
+
+    last_release_date = test_df[test_df["prob_of_release"] == 1][-1:].iloc[0]["index"]
+    next_month = pandas.DataFrame([{"index" : t} for t in 
+                                   pandas.date_range(start=last_release_date, freq="1D", periods=31)])
+    next_month = next_month[1:].copy()
+    next_month["days_since_previous_release"] = range(1, len(next_month) + 1)
+    next_month["previous_release_post"] = [1] + [0] * 29
+    next_month = _get_features(next_month, nj_holidays)
+    
+    for f in features:
+        if f not in next_month.columns:
+            next_month[f] = 0
+
+    return (df, train_df, test_df, features, next_month)
 
 
-def get_features(df, nj_holidays):
+def _get_features(df, nj_holidays):
     # in addition to days_since_previous_release
     
     df["month_holidays"] = df["index"].apply(
