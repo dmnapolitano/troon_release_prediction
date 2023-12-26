@@ -65,6 +65,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df["binary_target"] = df["prob_of_release"].apply(lambda x : x >= 0.5).astype(int)
 
     df = _get_features(df.copy(), nj_holidays)
+    df = df[df["prob_of_release"].notnull()].copy()
 
     train_df = df[0:int(len(df) * 0.90)].copy()
     test_df = df[~df.index.isin(train_df.index)].copy()
