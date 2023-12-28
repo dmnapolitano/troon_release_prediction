@@ -106,3 +106,15 @@ def _get_features(df, nj_holidays):
         del df["release_post"]
     
     return df
+
+
+def weighted_absolute_percentage_error(Y_expected, Y_pred):
+    if isinstance(Y_expected, list):
+        Y_expected = np.array(Y_expected)
+    if isinstance(Y_pred, list):
+        Y_pred = np.array(Y_pred)
+
+    absolute_errors = np.abs(Y_expected - Y_pred)
+    error_sum = np.sum(absolute_errors)
+
+    return error_sum / np.sum(Y_expected)
