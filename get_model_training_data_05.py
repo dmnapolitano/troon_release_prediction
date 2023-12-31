@@ -1,8 +1,14 @@
 from datetime import datetime
+import warnings
 
 import pandas
 import numpy as np
 import holidays
+import statsmodels.api as sm
+from statsmodels.othermod.betareg import BetaModel
+from statsmodels.tools.sm_exceptions import HessianInversionWarning, ConvergenceWarning
+from sklearn.base import BaseEstimator, RegressorMixin
+from sklearn.utils.validation import check_is_fitted, check_array
 
 
 def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
@@ -118,3 +124,49 @@ def weighted_absolute_percentage_error(Y_expected, Y_pred):
     error_sum = np.sum(absolute_errors)
 
     return error_sum / np.sum(Y_expected)
+
+
+class BetaRegression(BaseEstimator, RegressorMixin):
+    def __init__(self, fit_intercept=True):
+        self.fit_intercept = fit_intercept
+
+
+    def fit(self, X, y):
+        X_temp, y = self._validate_data(
+            X, y, accept_sparse=False, y_numeric=True, multi_output=True
+        )
+        X = pandas.DataFrame(X_temp, columns=X.columns, index=X.index)
+
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=HessianInversionWarning)
+            warnings.simplefilter("ignore", category=ConvergenceWarning)
+            if self.fit_intercept:
+                self.beta_ = BetaModel(y, sm.add_constant(X, has_constant="add"))
+            else:
+                self.beta_ = BetaModel(y, X)
+            self.model_ = self.beta_.fit()
+
+        coefs = self.model_.params.copy()
+        if self.fit_intercept:
+            self.intercept_ = coefs["const"]
+            del coefs["const"]
+        del coefs["precision"]
+        self.feature_names_in_ = list(coefs.index)
+        self.coef_ = coefs.values
+        self.n_features_in_ = len(coefs)
+
+
+    def predict(self, X):
+        check_is_fitted(self, "model_")
+
+        # Input validation
+        X = check_array(X)
+        
+        if self.fit_intercept:
+            X = sm.add_constant(X, has_constant="add")
+
+        return self.model_.predict(X)
+
+
+    def get_params(self, deep=False):
+        return {"fit_intercept" : self.fit_intercept}
