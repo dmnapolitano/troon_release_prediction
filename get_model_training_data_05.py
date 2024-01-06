@@ -65,11 +65,6 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
                              (df["days_since_previous_release"] + df["days_until_next_release"]))
     del df["days_until_next_release"]
 
-    # print this?
-    # (len(df[df["prob_of_release"] < 0.5]), len(df[df["prob_of_release"] >= 0.5]))
-
-    df["binary_target"] = df["prob_of_release"].apply(lambda x : x >= 0.5).astype(int)
-
     df = _get_features(df.copy(), nj_holidays)
     df = df[df["prob_of_release"].notnull()].copy()
 
@@ -77,7 +72,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post", "binary_target"]]
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post"]]
 
     last_release_date = test_df[test_df["prob_of_release"] == 1][-1:].iloc[0]["index"]
     next_month = pandas.DataFrame([{"index" : t} for t in 
