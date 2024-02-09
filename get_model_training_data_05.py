@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 import warnings
 
 import pandas
@@ -57,8 +57,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     del df["closest_release_date"]
 
     df["future_release_date"] = df["index"].apply(lambda x : min([d for d in release_dates if d >= x]))
-    df["days_until_next_release"] = (
-        df["future_release_date"] - df["index"]).values.astype("timedelta64[D]").astype(float)
+    df["days_until_next_release"] = (df["future_release_date"] - df["index"]).values.astype("timedelta64[D]").astype(float)
     del df["future_release_date"]
 
     df["prob_of_release"] = (df["days_since_previous_release"] /
@@ -81,6 +80,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     next_month["days_since_previous_release"] = range(1, len(next_month) + 1)
     next_month["previous_release_post"] = [1] + [0] * 29
     next_month = _get_features(next_month, nj_holidays)
+    next_month = next_month[next_month["index"] >= pandas.Timestamp(date.today())].copy()
     
     for f in features:
         if f not in next_month.columns:
