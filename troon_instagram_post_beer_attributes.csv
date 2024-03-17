@@ -1863,3 +1863,54 @@ id,attribute,count
 445,hoppy,1
 445,ale,1
 445,hoppy ale,1
+446,ale,1
+446,hoppy,1
+446,hoppy ale,1
+447,sour,1
+447,sour ale,1
+447,lactose,1
+447,refermented,1
+447,raspberry,1
+447,blueberry,1
+447,blackberry,1
+447,boysenberry,1
+448,barleywine,1
+448,aged,1
+448,lairds,1
+448,apple brandy,1
+448,barrels,1
+448,vanilla,1
+448,coconut,1
+448,toasted,1
+448,toasted coconut,1
+448,conditioned,1
+449,barleywine,1
+449,aged,1
+449,lairds,1
+449,apple brandy,1
+449,conditioned,1
+449,vanilla,1
+449,toasted,1
+449,coconut,1
+449,toasted coconut,1
+449,thai,1
+449,thai banana,1
+449,banana,1
+449,cinnamon,1
+450,hoppy,1
+450,hoppy ale,1
+450,ale,1
+450,refermented,1
+450,peach,1
+450,conditioned,1
+450,coconut,1
+451,doppelbock,1
+451,conditioned,1
+451,palo santo,1
+451,papuan,1
+451,vanilla beans,1
+451,vanilla,1
+451,papuan vanilla beans,1
+452,ale,1
+452,hoppy ale,1
+452,hoppy,1
