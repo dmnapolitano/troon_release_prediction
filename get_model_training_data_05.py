@@ -24,6 +24,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     
     df = df[df["release_post"] == True].copy()
     df = df[df["days_since_previous_release"] != 0].copy()
+    df["release_post"] = df["release_post"].astype("Int64")
 
     years = set(df["year"])
     nj_holidays = holidays.UnitedStates(state="NJ", years=years)
@@ -45,7 +46,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = df.sort_values(by=["date"]).set_index("date")
     daily = pandas.date_range(df.index.min(), df.index.max(), freq="D")
     df = df.reindex(daily, method=None)
-    df["release_post"] = df["release_post"].fillna(False)
+    df["release_post"] = df["release_post"].fillna(0).astype(bool)
 
     df = df.reset_index()
     release_dates = list(df[df["release_post"] == True]["index"])
@@ -102,8 +103,7 @@ def _get_features(df, nj_holidays):
     df = pandas.get_dummies(df, columns=["month"], prefix="M")
     
     if "previous_release_post" not in df.columns:
-        df["previous_release_post"] = df["release_post"].shift().fillna(False)
-        df["previous_release_post"] = df["previous_release_post"].apply(int)
+        df["previous_release_post"] = df["release_post"].astype("Int64").shift().fillna(0).astype(int)
         del df["release_post"]
     
     return df
@@ -165,3 +165,10 @@ class BetaRegression(BaseEstimator, RegressorMixin):
 
     def get_params(self, deep=False):
         return {"fit_intercept" : self.fit_intercept}
+
+
+if __name__ == "__main__":
+    (df, train_df, test_df, features, next_month) = get_features_and_data()
+    print(features)
+    print()
+    print(df)
