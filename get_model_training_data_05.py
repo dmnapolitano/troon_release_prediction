@@ -72,7 +72,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post"]]
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post", "month"]]
 
     last_release_date = test_df[test_df["prob_of_release"] == 1][-1:].iloc[0]["index"]
     next_month = pandas.DataFrame([{"index" : t} for t in 
@@ -81,7 +81,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     next_month["days_since_previous_release"] = range(1, len(next_month) + 1)
     next_month["previous_release_post"] = [1] + [0] * 29
     next_month = _get_features(next_month, nj_holidays)
-    next_month = next_month[next_month["index"] >= pandas.Timestamp(date.today())].copy()
+    # next_month = next_month[next_month["index"] >= pandas.Timestamp(date.today())].copy()
     
     for f in features:
         if f not in next_month.columns:
@@ -100,7 +100,7 @@ def _get_features(df, nj_holidays):
     df["month"] = df["index"].apply(lambda x : x.strftime("%b"))
     
     df = pandas.get_dummies(df, columns=["weekday"], prefix="WD")
-    df = pandas.get_dummies(df, columns=["month"], prefix="M")
+    # df = pandas.get_dummies(df, columns=["month"], prefix="M")
     
     if "previous_release_post" not in df.columns:
         df["previous_release_post"] = df["release_post"].astype("Int64").shift().fillna(0).astype(int)
