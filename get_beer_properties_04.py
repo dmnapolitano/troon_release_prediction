@@ -52,7 +52,9 @@ more_stopwords = ['amounts', 'especial', 'pink', 'weekend', 'amount', 'busiest',
                   'primarily', 'batch', 'massive', 'oiliest', 'day', 'one', 'friends', 'monstrous',
                   'many', 'friends', 'great', 'sorry', 'bottle', 'made', 'wax', 'label',
                   'red', 'purple', 'white', 'mountains', 'copper', 'best', 'hand', 'drink', 'maximum',
-                  'intensity', 'favorite', 'melange', 'pounds', 'amazing', 'crew', 'hundreds']
+                  'intensity', 'favorite', 'melange', 'pounds', 'amazing', 'crew', 'hundreds',
+                  'people', 'packaged', '750ml', 'bottles', 'w']
+
 
 input_file = "troon_instagram_clean_post_data.csv"
 input_df = pandas.read_csv(input_file, index_col="id", dtype={"likes" : "Int64"})
