@@ -167,6 +167,7 @@ def go(input_file, output_file, update_existing_data=False):
                                                                 re.search(r'\bcans\s+are\s+gone\b', x, re.I) or
                                                                 re.search(r'\bclosing\s+up\s+shop\b', x, re.I))
                                                            else False))
+    df["release_preorder"] = df["post_text"].str.contains("square.site")
     
     # TODO: Troon posts don't seem to contain the time at which they sold out anymore :(
     # df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
