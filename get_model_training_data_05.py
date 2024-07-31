@@ -172,3 +172,5 @@ if __name__ == "__main__":
     print(features)
     print()
     print(df)
+    print()
+    print(next_month)
