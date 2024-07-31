@@ -167,7 +167,6 @@ def go(input_file, output_file, update_existing_data=False):
                                                                 re.search(r'\bcans\s+are\s+gone\b', x, re.I) or
                                                                 re.search(r'\bclosing\s+up\s+shop\b', x, re.I))
                                                            else False))
-    df["release_preorder"] = df["post_text"].str.contains("square.site")
     
     # TODO: Troon posts don't seem to contain the time at which they sold out anymore :(
     # df["times"] = df.apply(lambda x : (get_release_times(x["post_text"]) if x["release_post"] else nan), axis=1)
@@ -213,12 +212,13 @@ def go(input_file, output_file, update_existing_data=False):
     del df["post_tokens"]
 
     df["beer_info"] = df["post_text"].apply(get_name_desc_and_abv)
-    del df["post_text"]
     df["beer_name"] = df["beer_info"].apply(lambda x : x[0])
     df["beer_abv"] = df["beer_info"].apply(lambda x : float(x[1].replace("%", ""))
                                            if type(x[1]) is str else x[1])
     df["beer_description"] = df["beer_info"].apply(lambda x : x[2])
     del df["beer_info"]
+    df["release_preorder"] = df["post_text"].str.contains("square.site")
+    del df["post_text"]
 
     df["release_post"] = df.apply(lambda x : (True if x["release_post"] or
                                               type(x["beer_name"]) is str else False), axis=1)
