@@ -65,14 +65,15 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
                              (df["days_since_previous_release"] + df["days_until_next_release"]))
     del df["days_until_next_release"]
 
-    df = _get_features(df.copy(), nj_holidays)
     df = df[df["prob_of_release"].notnull()].copy()
 
     train_df = df[0:int(len(df) * 0.90)].copy()
+    train_df = _get_features(train_df.copy(), nj_holidays)
+    df = _get_features(df.copy(), nj_holidays)
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post", "month"]]
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post", "month", "weekday", "year"]]
 
     last_release_date = test_df[test_df["prob_of_release"] == 1][-1:].iloc[0]["index"]
     next_month = pandas.DataFrame([{"index" : t} for t in 
@@ -81,7 +82,8 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     next_month["days_since_previous_release"] = range(1, len(next_month) + 1)
     next_month["previous_release_post"] = [1] + [0] * 29
     next_month = _get_features(next_month, nj_holidays)
-    # next_month = next_month[next_month["index"] >= pandas.Timestamp(date.today())].copy()
+    next_month = next_month.merge(df[["weekday", "year", "weekday_weight"]].drop_duplicates(),
+                                  on=["weekday", "year"], how="left")
     
     for f in features:
         if f not in next_month.columns:
@@ -97,14 +99,25 @@ def _get_features(df, nj_holidays):
         lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
     
     df["weekday"] = df["index"].apply(lambda x : x.strftime("%A"))
-    df["month"] = df["index"].apply(lambda x : x.strftime("%b"))
+    # df["month"] = df["index"].apply(lambda x : x.strftime("%b"))
+    df["year"] = df["index"].dt.year
     
-    df = pandas.get_dummies(df, columns=["weekday"], prefix="WD")
+    # df = pandas.get_dummies(df, columns=["weekday"], prefix="WD")
     # df = pandas.get_dummies(df, columns=["month"], prefix="M")
     
     if "previous_release_post" not in df.columns:
         df["previous_release_post"] = df["release_post"].astype("Int64").shift().fillna(0).astype(int)
         del df["release_post"]
+
+    if "prob_of_release" in df.columns:
+        wd_df = df[df["prob_of_release"] == 1].groupby(["weekday", "year"]).size().reset_index()
+        all_days = wd_df.groupby(["weekday"]).agg({0 : "sum"}).rename(columns={0 : "total_weekday"}).reset_index()
+        all_years = wd_df.groupby(["year"]).agg({0 : "sum"}).rename(columns={0 : "total_year"}).reset_index()
+        wd_df = wd_df.merge(all_days, on=["weekday"], how="left").merge(all_years, on=["year"], how="left")
+        wd_df["weekday_weight"] = (wd_df[0] / wd_df["total_year"]) * np.sqrt(wd_df["total_weekday"])
+        wd_df = wd_df.drop(columns=["total_weekday", "total_year", 0])
+        df = df.merge(wd_df, on=["weekday", "year"], how="left")
+        df["weekday_weight"] = df["weekday_weight"].fillna(0)
     
     return df
 
