@@ -111,11 +111,13 @@ def _get_features(df, nj_holidays):
 
     if "prob_of_release" in df.columns:
         wd_df = df[df["prob_of_release"] == 1].groupby(["weekday", "year"]).size().reset_index()
-        all_days = wd_df.groupby(["weekday"]).agg({0 : "sum"}).rename(columns={0 : "total_weekday"}).reset_index()
+        # all_days = wd_df.groupby(["weekday"]).agg({0 : "sum"}).rename(columns={0 : "total_weekday"}).reset_index()
         all_years = wd_df.groupby(["year"]).agg({0 : "sum"}).rename(columns={0 : "total_year"}).reset_index()
-        wd_df = wd_df.merge(all_days, on=["weekday"], how="left").merge(all_years, on=["year"], how="left")
-        wd_df["weekday_weight"] = (wd_df[0] / wd_df["total_year"]) * np.sqrt(wd_df["total_weekday"])
-        wd_df = wd_df.drop(columns=["total_weekday", "total_year", 0])
+        # wd_df = wd_df.merge(all_days, on=["weekday"], how="left").merge(all_years, on=["year"], how="left")
+        wd_df = wd_df.merge(all_years, on=["year"], how="left")
+        wd_df["weekday_weight"] = (wd_df[0] / wd_df["total_year"]) #* np.sqrt(wd_df["total_weekday"])
+        # wd_df = wd_df.drop(columns=["total_weekday", "total_year", 0])
+        wd_df = wd_df.drop(columns=["total_year", 0])
         df = df.merge(wd_df, on=["weekday", "year"], how="left")
         df["weekday_weight"] = df["weekday_weight"].fillna(0)
     
