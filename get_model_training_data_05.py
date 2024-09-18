@@ -16,15 +16,13 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = df.set_index("id")
     df = df[["post_month", "post_day", "post_year", "days_since_previous_release", "release_post"]].copy()
     df["month"] = df["post_month"].apply(lambda x : datetime.strptime(x, '%B').month)
-    df = df.rename(columns={"post_year" : "year", "post_day" : "day"})
+    df = df.rename(columns={"post_year" : "year", "post_day" : "day", "release_post" : "release"})
     df["date"] = pandas.to_datetime(df[["year", "month", "day"]])
-    del df["post_month"]
-    del df["day"]
-    del df["month"]
+    df = df.drop(columns=["post_month", "day", "month"])
     
-    df = df[df["release_post"] == True].copy()
+    df = df[df["release"] == True].copy()
     df = df[df["days_since_previous_release"] != 0].copy()
-    df["release_post"] = df["release_post"].astype("Int64")
+    df["release"] = df["release"].astype("Int64")
 
     years = set(df["year"])
     nj_holidays = holidays.UnitedStates(state="NJ", years=years)
@@ -46,10 +44,10 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = df.sort_values(by=["date"]).set_index("date")
     daily = pandas.date_range(df.index.min(), df.index.max(), freq="D")
     df = df.reindex(daily, method=None)
-    df["release_post"] = df["release_post"].fillna(0).astype(bool)
+    df["release"] = df["release"].fillna(0).astype(bool)
 
     df = df.reset_index()
-    release_dates = list(df[df["release_post"] == True]["index"])
+    release_dates = list(df[df["release"] == True]["index"])
     df["closest_release_date"] = df["index"].apply(lambda x : max([d for d in release_dates if d <= x]))
 
     df["backfill"] = (df["index"] - df["closest_release_date"]).values.astype("timedelta64[D]").astype(float)
@@ -73,14 +71,14 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release_post", "month", "weekday", "year"]]
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release", "month", "weekday", "year"]]
 
     last_release_date = test_df[test_df["prob_of_release"] == 1][-1:].iloc[0]["index"]
     next_month = pandas.DataFrame([{"index" : t} for t in 
                                    pandas.date_range(start=last_release_date, freq="1D", periods=31)])
     next_month = next_month[1:].copy()
     next_month["days_since_previous_release"] = range(1, len(next_month) + 1)
-    next_month["previous_release_post"] = [1] + [0] * 29
+    next_month["previous_release"] = [1] + [0] * 29
     next_month = _get_features(next_month, nj_holidays)
     next_month = next_month.merge(df[["weekday", "year", "weekday_weight"]].drop_duplicates(),
                                   on=["weekday", "year"], how="left")
@@ -105,9 +103,9 @@ def _get_features(df, nj_holidays):
     # df = pandas.get_dummies(df, columns=["weekday"], prefix="WD")
     # df = pandas.get_dummies(df, columns=["month"], prefix="M")
     
-    if "previous_release_post" not in df.columns:
-        df["previous_release_post"] = df["release_post"].astype("Int64").shift().fillna(0).astype(int)
-        del df["release_post"]
+    if "previous_release" not in df.columns:
+        df["previous_release"] = df["release"].astype("Int64").shift().fillna(0).astype(int)
+        # del df["release"]
 
     if "prob_of_release" in df.columns:
         wd_df = df[df["prob_of_release"] == 1].groupby(["weekday", "year"]).size().reset_index()
