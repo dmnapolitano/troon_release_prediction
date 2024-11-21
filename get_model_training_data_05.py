@@ -23,7 +23,6 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = df.drop_duplicates(subset=["date"])
     
     df = df[df["release"] == True].copy()
-    # df = df[df["days_since_previous_release"] != 0].copy()
     df["release"] = df["release"].astype("Int64")
 
     years = set(df["year"])
@@ -60,14 +59,14 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     del df["backfill"]
     del df["closest_release_date"]
 
-    df["future_release_date"] = df["index"].apply(lambda x : min([d for d in release_dates if d >= x]))
+    df["future_release_dates"] = df["index"].apply(lambda x : [d for d in release_dates if d > x])
+    df["future_release_date"] = df["future_release_dates"].apply(lambda x : min(x) if len(x) > 0 else max(release_dates))
+    del df["future_release_dates"]
     df["days_until_next_release"] = (df["future_release_date"] - df["index"]).values.astype("timedelta64[D]").astype(float)
     del df["future_release_date"]
 
     df["prob_of_release"] = (df["days_since_previous_release"] /
                              (df["days_since_previous_release"] + df["days_until_next_release"]))
-    del df["days_until_next_release"]
-
     df = df[df["prob_of_release"].notnull()].copy()
 
     df = _get_features(df.copy(), nj_holidays)
@@ -76,7 +75,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release", "month", "weekday", "year"]]
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release", "month", "weekday", "year", "days_until_next_release"]]
 
     last_release_date = test_df[test_df["release"] == 1][-1:].iloc[0]["index"]
     next_two_weeks = pandas.DataFrame([{"index" : t} for t in 
@@ -99,18 +98,14 @@ def _get_features(df, nj_holidays):
         lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
     
     df["weekday"] = df["index"].apply(lambda x : x.strftime("%A"))
-    # df["month"] = df["index"].apply(lambda x : x.strftime("%b"))
     df["year"] = df["index"].dt.year
-    
-    df = pandas.get_dummies(df, columns=["weekday"], prefix="WD", drop_first=True, dtype=int)
-    # df = pandas.get_dummies(df, columns=["month"], prefix="M")
+
+    df["copy"] = df["weekday"].copy()
+    df = pandas.get_dummies(df, columns=["copy"], prefix="WD", drop_first=True, dtype=int)
     
     if "previous_release" not in df.columns:
         df["previous_release"] = df["release"].astype("Int64").shift().fillna(0).astype(int)
 
-    # df["previous_days_since_previous_release"] = df["days_since_previous_release"].shift().fillna(0).astype(int)
-    df["previous_days_since_previous_release"] = df["days_since_previous_release"].apply(lambda x : 0 if x == 0 else x - 1)
-    
     return df
 
 
