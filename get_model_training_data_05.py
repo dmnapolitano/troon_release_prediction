@@ -14,20 +14,24 @@ from sklearn.utils.validation import check_is_fitted, check_array
 def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = pandas.read_csv(data_csv)
     df = df.set_index("id")
+    df = df[df["days_since_previous_release"].notnull()].copy()
     df = df[["post_month", "post_day", "post_year", "days_since_previous_release", "release_post"]].copy()
     df["month"] = df["post_month"].apply(lambda x : datetime.strptime(x, '%B').month)
     df = df.rename(columns={"post_year" : "year", "post_day" : "day", "release_post" : "release"})
     df["date"] = pandas.to_datetime(df[["year", "month", "day"]])
     df = df.drop(columns=["post_month", "day", "month"])
+    df = df.drop_duplicates(subset=["date"])
     
     df = df[df["release"] == True].copy()
-    df = df[df["days_since_previous_release"] != 0].copy()
+    # df = df[df["days_since_previous_release"] != 0].copy()
     df["release"] = df["release"].astype("Int64")
 
     years = set(df["year"])
     nj_holidays = holidays.UnitedStates(state="NJ", years=years)
     nj_holidays.append({"{}-03-17".format(y) : "St. Patrick's Day" for y in years})
     nj_holidays.append({"{}-02-14".format(y) : "Valentine's Day" for y in years})
+    nj_holidays.append({"{}-12-24".format(y) : "Christmas Eve" for y in years})
+    nj_holidays.append({"{}-12-31".format(y) : "New Year's Eve" for y in years})
     del df["year"]
 
     # Super Bowls count as holidays as far as beer is concerned lol
@@ -40,14 +44,15 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     nj_holidays["2022-02-13"] = "Super Bowl LVI"
     nj_holidays["2023-02-12"] = "Super Bowl LVII"
     nj_holidays["2024-02-11"] = "Super Bowl LVIII"
+    nj_holidays["2025-02-09"] = "Super Bowl LIX"
 
     df = df.sort_values(by=["date"]).set_index("date")
     daily = pandas.date_range(df.index.min(), df.index.max(), freq="D")
     df = df.reindex(daily, method=None)
-    df["release"] = df["release"].fillna(0).astype(bool)
+    df["release"] = df["release"].fillna(0)
 
     df = df.reset_index()
-    release_dates = list(df[df["release"] == True]["index"])
+    release_dates = list(df[df["release"] == 1]["index"])
     df["closest_release_date"] = df["index"].apply(lambda x : max([d for d in release_dates if d <= x]))
 
     df["backfill"] = (df["index"] - df["closest_release_date"]).values.astype("timedelta64[D]").astype(float)
@@ -65,29 +70,26 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
 
     df = df[df["prob_of_release"].notnull()].copy()
 
-    train_df = df[0:int(len(df) * 0.90)].copy()
-    train_df = _get_features(train_df.copy(), nj_holidays)
     df = _get_features(df.copy(), nj_holidays)
+
+    train_df = df[df["year"] < 2024].copy()
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
     features = [c for c in df.columns if c not in ["index", "prob_of_release", "release", "month", "weekday", "year"]]
 
-    last_release_date = test_df[test_df["prob_of_release"] == 1][-1:].iloc[0]["index"]
-    next_month = pandas.DataFrame([{"index" : t} for t in 
-                                   pandas.date_range(start=last_release_date, freq="1D", periods=31)])
-    next_month = next_month[1:].copy()
-    next_month["days_since_previous_release"] = range(1, len(next_month) + 1)
-    next_month["previous_release"] = [1] + [0] * 29
-    next_month = _get_features(next_month, nj_holidays)
-    next_month = next_month.merge(df[["weekday", "year", "weekday_weight"]].drop_duplicates(),
-                                  on=["weekday", "year"], how="left")
+    last_release_date = test_df[test_df["release"] == 1][-1:].iloc[0]["index"]
+    next_two_weeks = pandas.DataFrame([{"index" : t} for t in 
+                                       pandas.date_range(start=date.today(), freq="1D", periods=14)])
+    next_two_weeks["days_since_previous_release"] = (next_two_weeks["index"] - last_release_date).dt.days
+    next_two_weeks["previous_release"] = next_two_weeks["days_since_previous_release"].apply(lambda x : 1 if x <= 1 else 0)
+    next_two_weeks = _get_features(next_two_weeks, nj_holidays)
     
     for f in features:
-        if f not in next_month.columns:
-            next_month[f] = 0
+        if f not in next_two_weeks.columns:
+            next_two_weeks[f] = 0
 
-    return (df, train_df, test_df, features, next_month)
+    return (df, train_df, test_df, features, next_two_weeks)
 
 
 def _get_features(df, nj_holidays):
@@ -100,24 +102,14 @@ def _get_features(df, nj_holidays):
     # df["month"] = df["index"].apply(lambda x : x.strftime("%b"))
     df["year"] = df["index"].dt.year
     
-    # df = pandas.get_dummies(df, columns=["weekday"], prefix="WD")
+    df = pandas.get_dummies(df, columns=["weekday"], prefix="WD", drop_first=True, dtype=int)
     # df = pandas.get_dummies(df, columns=["month"], prefix="M")
     
     if "previous_release" not in df.columns:
         df["previous_release"] = df["release"].astype("Int64").shift().fillna(0).astype(int)
-        # del df["release"]
 
-    if "prob_of_release" in df.columns:
-        wd_df = df[df["prob_of_release"] == 1].groupby(["weekday", "year"]).size().reset_index()
-        # all_days = wd_df.groupby(["weekday"]).agg({0 : "sum"}).rename(columns={0 : "total_weekday"}).reset_index()
-        all_years = wd_df.groupby(["year"]).agg({0 : "sum"}).rename(columns={0 : "total_year"}).reset_index()
-        # wd_df = wd_df.merge(all_days, on=["weekday"], how="left").merge(all_years, on=["year"], how="left")
-        wd_df = wd_df.merge(all_years, on=["year"], how="left")
-        wd_df["weekday_weight"] = (wd_df[0] / wd_df["total_year"]) #* np.sqrt(wd_df["total_weekday"])
-        # wd_df = wd_df.drop(columns=["total_weekday", "total_year", 0])
-        wd_df = wd_df.drop(columns=["total_year", 0])
-        df = df.merge(wd_df, on=["weekday", "year"], how="left")
-        df["weekday_weight"] = df["weekday_weight"].fillna(0)
+    # df["previous_days_since_previous_release"] = df["days_since_previous_release"].shift().fillna(0).astype(int)
+    df["previous_days_since_previous_release"] = df["days_since_previous_release"].apply(lambda x : 0 if x == 0 else x - 1)
     
     return df
 
