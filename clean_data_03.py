@@ -142,7 +142,7 @@ def go(input_file, output_file, update_existing_data=False):
         if len(df) == 0:
             return
 
-    last_modified = datetime.utcfromtimestamp(float(getmtime(input_file)))
+    last_modified = datetime.fromtimestamp(float(getmtime(input_file)), datetime.UTC)
     last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
 
     if "post_date" in df.columns:
