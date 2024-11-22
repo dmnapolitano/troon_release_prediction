@@ -1,5 +1,5 @@
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, UTC
 from os.path import getmtime
 from calendar import month_name
 import argparse
@@ -142,7 +142,7 @@ def go(input_file, output_file, update_existing_data=False):
         if len(df) == 0:
             return
 
-    last_modified = datetime.fromtimestamp(float(getmtime(input_file)), datetime.UTC)
+    last_modified = datetime.fromtimestamp(float(getmtime(input_file)), UTC)
     last_modified = last_modified.replace(hour=0, minute=0, second=0, microsecond=0)
 
     if "post_date" in df.columns:
