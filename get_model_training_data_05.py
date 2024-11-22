@@ -15,7 +15,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = pandas.read_csv(data_csv)
     df = df.set_index("id")
     df = df[df["days_since_previous_release"].notnull()].copy()
-    df = df[["post_month", "post_day", "post_year", "days_since_previous_release", "release_post"]].copy()
+    df = df[["post_month", "post_day", "post_year", "days_since_previous_release", "release_post", "release_preorder"]].copy()
     df["month"] = df["post_month"].apply(lambda x : datetime.strptime(x, '%B').month)
     df = df.rename(columns={"post_year" : "year", "post_day" : "day", "release_post" : "release"})
     df["date"] = pandas.to_datetime(df[["year", "month", "day"]])
@@ -49,6 +49,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     daily = pandas.date_range(df.index.min(), df.index.max(), freq="D")
     df = df.reindex(daily, method=None)
     df["release"] = df["release"].fillna(0)
+    df["release_preorder"] = df["release_preorder"].fillna(False)
 
     df = df.reset_index()
     release_dates = list(df[df["release"] == 1]["index"])
@@ -82,6 +83,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
                                        pandas.date_range(start=date.today(), freq="1D", periods=14)])
     next_two_weeks["days_since_previous_release"] = (next_two_weeks["index"] - last_release_date).dt.days
     next_two_weeks["previous_release"] = next_two_weeks["days_since_previous_release"].apply(lambda x : 1 if x <= 1 else 0)
+    next_two_weeks["previous_release_preorder"] = test_df[test_df["release"] == 1][-1:].iloc[0]["release_preorder"]
     next_two_weeks = _get_features(next_two_weeks, nj_holidays)
     
     for f in features:
@@ -105,6 +107,9 @@ def _get_features(df, nj_holidays):
     
     if "previous_release" not in df.columns:
         df["previous_release"] = df["release"].astype("Int64").shift().fillna(0).astype(int)
+
+    if "previous_release_preorder" not in df.columns:
+        df["previous_release_preorder"] = df["release_preorder"].shift().fillna(False).astype(int)
 
     return df
 
