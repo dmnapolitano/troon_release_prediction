@@ -96,8 +96,12 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
 def _get_features(df, nj_holidays):
     # in addition to days_since_previous_release
     
-    df["month_holidays"] = df["index"].apply(
-        lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
+    # df["month_holidays"] = df["index"].apply(
+    #     lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
+
+    df["next_holiday"] = df["index"].apply(lambda x : min([h for h in nj_holidays if h >= x.date()]))
+    df["days_until_next_holiday"] = pandas.to_timedelta(df["next_holiday"] - df["index"].dt.date).dt.days
+    del df["next_holiday"]
     
     df["weekday"] = df["index"].apply(lambda x : x.strftime("%A"))
     df["year"] = df["index"].dt.year
