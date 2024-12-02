@@ -60,6 +60,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     del df["backfill"]
     del df["closest_release_date"]
 
+    # probability target variable
     df["future_release_dates"] = df["index"].apply(lambda x : [d for d in release_dates if d > x])
     df["future_release_date"] = df["future_release_dates"].apply(lambda x : min(x) if len(x) > 0 else max(release_dates))
     del df["future_release_dates"]
@@ -69,14 +70,23 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df["prob_of_release"] = (df["days_since_previous_release"] /
                              (df["days_since_previous_release"] + df["days_until_next_release"]))
     df = df[df["prob_of_release"].notnull()].copy()
+    df["prob_of_release"] = df.apply(lambda x : 1 if x["release"] == 1 else x["prob_of_release"], axis=1)
+    ###
 
-    df = _get_features(df.copy(), nj_holidays)
+    df["year"] = df["index"].dt.year
+    count_df = df[df["release"] == 1].groupby(["year", "days_since_previous_release"]).size().reset_index()
+    count_df = count_df.merge(df[df["release"] == 1].groupby(["year"]).size().reset_index().rename(columns={0 : "total"}),
+                              on=["year"], how="left")
+    count_df["release_prob"] = count_df[0] / count_df["total"]
+    count_df = count_df.drop(columns=[0, "total"])
+
+    df = _get_features(df.copy(), nj_holidays, count_df)
 
     train_df = df[df["year"] < 2024].copy()
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release", "month", "weekday", "year", "days_until_next_release"]]
+    features = [c for c in df.columns if c not in ["index", "prob_of_release", "release", "month", "weekday", "year", "days_until_next_release", "release_preorder"]]
 
     last_release_date = test_df[test_df["release"] == 1][-1:].iloc[0]["index"]
     next_two_weeks = pandas.DataFrame([{"index" : t} for t in 
@@ -84,7 +94,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     next_two_weeks["days_since_previous_release"] = (next_two_weeks["index"] - last_release_date).dt.days
     next_two_weeks["previous_release"] = next_two_weeks["days_since_previous_release"].apply(lambda x : 1 if x <= 1 else 0)
     next_two_weeks["previous_release_preorder"] = test_df[test_df["release"] == 1][-1:].iloc[0]["release_preorder"]
-    next_two_weeks = _get_features(next_two_weeks, nj_holidays)
+    next_two_weeks = _get_features(next_two_weeks, nj_holidays, count_df)
     
     for f in features:
         if f not in next_two_weeks.columns:
@@ -93,7 +103,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     return (df, train_df, test_df, features, next_two_weeks)
 
 
-def _get_features(df, nj_holidays):
+def _get_features(df, nj_holidays, count_df):
     # in addition to days_since_previous_release
     
     # df["month_holidays"] = df["index"].apply(
@@ -104,7 +114,8 @@ def _get_features(df, nj_holidays):
     del df["next_holiday"]
     
     df["weekday"] = df["index"].apply(lambda x : x.strftime("%A"))
-    df["year"] = df["index"].dt.year
+    if "year" not in df.columns:
+        df["year"] = df["index"].dt.year
 
     df["copy"] = df["weekday"].copy()
     df = pandas.get_dummies(df, columns=["copy"], prefix="WD", drop_first=True, dtype=int)
@@ -114,6 +125,9 @@ def _get_features(df, nj_holidays):
 
     if "previous_release_preorder" not in df.columns:
         df["previous_release_preorder"] = df["release_preorder"].shift().fillna(False).astype(int)
+
+    df = df.merge(count_df, on=["year", "days_since_previous_release"], how="left")
+    df["release_prob"] = df["release_prob"].fillna(0)
 
     return df
 
