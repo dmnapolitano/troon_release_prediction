@@ -2112,3 +2112,10 @@ id,attribute,count
 500,hoppy,1
 500,ale,1
 500,hoppy ale,1
+501,hoppy,1
+501,hoppy ale,1
+501,ale,1
+501,fermented,1
+501,experimental,1
+501,yeast,1
+501,experimental yeast,1
