@@ -81,8 +81,9 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     count_df = count_df.drop(columns=[0, "total"])
 
     df = _get_features(df.copy(), nj_holidays, count_df)
+    df = df[df["year"] >= 2023].copy()
 
-    train_df = df[df["year"] < 2024].copy()
+    train_df = df[df["index"] < "2024-12-01"].copy()
     test_df = df[~df.index.isin(train_df.index)].copy()
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
