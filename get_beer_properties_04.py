@@ -54,7 +54,7 @@ more_stopwords = ['amounts', 'especial', 'pink', 'weekend', 'amount', 'busiest',
                   'red', 'purple', 'white', 'mountains', 'copper', 'best', 'hand', 'drink', 'maximum',
                   'intensity', 'favorite', 'melange', 'pounds', 'amazing', 'crew', 'hundreds',
                   'people', 'packaged', '750ml', 'bottles', 'w', 'loveliest', 'friend', 'steve', 'great',
-                  'albany', 'alpha']
+                  'albany', 'alpha', 'bud', 'vince', '@dssolvr', 'contain', 'best', '@theveilbrewing']
 
 
 input_file = "troon_instagram_clean_post_data.csv"
