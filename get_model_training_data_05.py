@@ -11,7 +11,55 @@ from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.utils.validation import check_is_fitted, check_array
 
 
+def get_holidays(years):
+    nj_holidays = holidays.UnitedStates(state="NJ", years=years)
+    nj_holidays.append({"{}-03-17".format(y) : "St. Patrick's Day" for y in years})
+    nj_holidays.append({"{}-02-14".format(y) : "Valentine's Day" for y in years})
+    nj_holidays.append({"{}-12-24".format(y) : "Christmas Eve" for y in years})
+    nj_holidays.append({"{}-12-31".format(y) : "New Year's Eve" for y in years})
+
+    # Super Bowls count as holidays as far as beer is concerned lol
+    nj_holidays["2016-02-07"] = "Super Bowl 50"
+    nj_holidays["2017-02-05"] = "Super Bowl LI"
+    nj_holidays["2018-02-04"] = "Super Bowl LII"
+    nj_holidays["2019-02-03"] = "Super Bowl LIII"
+    nj_holidays["2020-02-02"] = "Super Bowl LIV"
+    nj_holidays["2021-02-07"] = "Super Bowl LV"
+    nj_holidays["2022-02-13"] = "Super Bowl LVI"
+    nj_holidays["2023-02-12"] = "Super Bowl LVII"
+    nj_holidays["2024-02-11"] = "Super Bowl LVIII"
+    nj_holidays["2025-02-09"] = "Super Bowl LIX"
+
+    return nj_holidays
+
+
 def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
+    def _get_features(df, nj_holidays, count_df):
+        # in addition to days_since_previous_release
+        
+        df["next_holiday"] = df["index"].apply(lambda x : min([h for h in nj_holidays if h >= x.date()]))
+        df["days_until_next_holiday"] = pandas.to_timedelta(df["next_holiday"] - df["index"].dt.date).dt.days
+        del df["next_holiday"]
+        
+        df["weekday"] = df["index"].apply(lambda x : x.strftime("%A"))
+        if "year" not in df.columns:
+            df["year"] = df["index"].dt.year
+            
+        df["copy"] = df["weekday"].copy()
+        df = pandas.get_dummies(df, columns=["copy"], prefix="WD", drop_first=True, dtype=int)
+    
+        if "previous_release" not in df.columns:
+            df["previous_release"] = df["release"].astype("Int64").shift().fillna(0).astype(int)
+
+        if "previous_release_preorder" not in df.columns:
+            df["previous_release_preorder"] = df["release_preorder"].shift().fillna(False).astype(int)
+
+        df = df.merge(count_df, on=["year", "days_since_previous_release"], how="left")
+        df["release_prob"] = df["release_prob"].fillna(0)
+        
+        return df
+    
+    
     df = pandas.read_csv(data_csv)
     df = df.set_index("id")
     df = df[df["days_since_previous_release"].notnull()].copy()
@@ -25,25 +73,8 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     df = df[df["release"] == True].copy()
     df["release"] = df["release"].astype("Int64")
 
-    years = set(df["year"])
-    nj_holidays = holidays.UnitedStates(state="NJ", years=years)
-    nj_holidays.append({"{}-03-17".format(y) : "St. Patrick's Day" for y in years})
-    nj_holidays.append({"{}-02-14".format(y) : "Valentine's Day" for y in years})
-    nj_holidays.append({"{}-12-24".format(y) : "Christmas Eve" for y in years})
-    nj_holidays.append({"{}-12-31".format(y) : "New Year's Eve" for y in years})
+    nj_holidays = get_holidays(set(df["year"]))
     del df["year"]
-
-    # Super Bowls count as holidays as far as beer is concerned lol
-    nj_holidays["2016-02-07"] = "Super Bowl 50"
-    nj_holidays["2017-02-05"] = "Super Bowl LI"
-    nj_holidays["2018-02-04"] = "Super Bowl LII"
-    nj_holidays["2019-02-03"] = "Super Bowl LIII"
-    nj_holidays["2020-02-02"] = "Super Bowl LIV"
-    nj_holidays["2021-02-07"] = "Super Bowl LV"
-    nj_holidays["2022-02-13"] = "Super Bowl LVI"
-    nj_holidays["2023-02-12"] = "Super Bowl LVII"
-    nj_holidays["2024-02-11"] = "Super Bowl LVIII"
-    nj_holidays["2025-02-09"] = "Super Bowl LIX"
 
     df = df.sort_values(by=["date"]).set_index("date")
     daily = pandas.date_range(df.index.min(), df.index.max(), freq="D")
@@ -104,33 +135,58 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     return (df, train_df, test_df, features, next_two_weeks)
 
 
-def _get_features(df, nj_holidays, count_df):
-    # in addition to days_since_previous_release
+def get_features_and_data_monthly(data_csv="troon_instagram_clean_post_data.csv"):
+    # possible ideas for features:
+    # average number of releases per weekday per month (lagged)
+    # number of pre-orders in the previous month
     
-    # df["month_holidays"] = df["index"].apply(
-    #     lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
-
-    df["next_holiday"] = df["index"].apply(lambda x : min([h for h in nj_holidays if h >= x.date()]))
-    df["days_until_next_holiday"] = pandas.to_timedelta(df["next_holiday"] - df["index"].dt.date).dt.days
-    del df["next_holiday"]
+    df = pandas.read_csv(data_csv)
+    df = df.set_index("id")
+    df = df[df["days_since_previous_release"].notnull()].copy()
+    df = df[["post_month", "post_day", "post_year", "days_since_previous_release", "release_post", "release_preorder"]].copy()
+    df["month"] = df["post_month"].apply(lambda x : datetime.strptime(x, '%B').month)
+    df = df.rename(columns={"post_year" : "year", "post_day" : "day", "release_post" : "release"})
+    df["date"] = pandas.to_datetime(df[["year", "month", "day"]])
+    df = df.drop(columns=["post_month", "day", "month"])
+    df = df.drop_duplicates(subset=["date"])
     
-    df["weekday"] = df["index"].apply(lambda x : x.strftime("%A"))
-    if "year" not in df.columns:
-        df["year"] = df["index"].dt.year
+    df = df[df["release"] == True].copy()
+    df["release"] = df["release"].astype("Int64")
+    # df["release_preorder"] = df["release_preorder"].astype("Int64") # TODO
 
-    df["copy"] = df["weekday"].copy()
-    df = pandas.get_dummies(df, columns=["copy"], prefix="WD", drop_first=True, dtype=int)
+    nj_holidays = get_holidays(set(df["year"]))
+    del df["year"]
+
+    df = df.sort_values(by=["date"]).set_index("date")
+    daily = pandas.date_range(df.index.min(), df.index.max(), freq="D")
+    df = df.reindex(daily, method=None)
+    df = df.reset_index()
+    df["month_year"] = df["index"].dt.to_period("M")
+
+    df = df.groupby(["month_year"]).agg(
+        {"days_since_previous_release" : "mean", "release" : "sum"}) #, "release_preorder" : "sum"}) # TODO
+    df = df.reset_index()
+    df = df.rename(columns={"days_since_previous_release" : "avg_days_since_previous_release", "release" : "n_releases"})
+
+    current_month = pandas.to_datetime(date.today()).to_period("M")
+
+    if not (df["month_year"] == current_month).any():
+        df = pandas.concat([df, pandas.DataFrame([{"month_year" : current_month}])], ignore_index=True)
     
-    if "previous_release" not in df.columns:
-        df["previous_release"] = df["release"].astype("Int64").shift().fillna(0).astype(int)
+    df["month_holidays"] = df["month_year"].apply(
+        lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
+    df["prior_avg_days_since_previous_release"] = df["avg_days_since_previous_release"].shift().fillna(0)
 
-    if "previous_release_preorder" not in df.columns:
-        df["previous_release_preorder"] = df["release_preorder"].shift().fillna(False).astype(int)
+    next_df = df[df["month_year"] == current_month].copy()
+    test_df = df[df["month_year"] != current_month][-10:].copy()
+    train_df = df[(~df.index.isin(test_df.index)) & (~df.index.isin(next_df.index))].copy()
 
-    df = df.merge(count_df, on=["year", "days_since_previous_release"], how="left")
-    df["release_prob"] = df["release_prob"].fillna(0)
+    print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
 
-    return df
+    features = ["prior_avg_days_since_previous_release", "month_holidays"]
+    # target = "n_releases"
+
+    return (df, train_df, test_df, features, next_df)
 
 
 def weighted_absolute_percentage_error(Y_expected, Y_pred):
@@ -192,7 +248,8 @@ class BetaRegression(BaseEstimator, RegressorMixin):
 
 
 if __name__ == "__main__":
-    (df, train_df, test_df, features, next_month) = get_features_and_data()
+    # (df, train_df, test_df, features, next_month) = get_features_and_data()
+    (df, train_df, test_df, features, next_month) = get_features_and_data_monthly()
     print(features)
     print()
     print(df)
