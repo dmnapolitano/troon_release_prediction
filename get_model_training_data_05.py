@@ -135,7 +135,7 @@ def get_features_and_data(data_csv="troon_instagram_clean_post_data.csv"):
     return (df, train_df, test_df, features, next_two_weeks)
 
 
-def get_features_and_data_monthly(data_csv="troon_instagram_clean_post_data.csv"):
+def get_features_and_data_monthly(data_csv="troon_instagram_clean_post_data.csv", lags=1):
     # possible ideas for features:
     # average number of releases per weekday per month (lagged)
     # number of pre-orders in the previous month
@@ -175,16 +175,24 @@ def get_features_and_data_monthly(data_csv="troon_instagram_clean_post_data.csv"
     
     df["month_holidays"] = df["month_year"].apply(
         lambda x : len([h for h in nj_holidays if h.month == x.month and h.year == x.year]))
+    df["month_holidays"] = df["month_holidays"].astype(int)
     df["prior_avg_days_since_previous_release"] = df["avg_days_since_previous_release"].shift().fillna(0)
+
+    features = ["prior_avg_days_since_previous_release", "month_holidays"]
+    # target = "n_releases"
+
+    if lags > 0:
+        df["lag1"] = df["n_releases"].shift().fillna(0).astype(int)        
+        features.append("lag1")
+        for l in range(1, lags):
+            df[f"lag{l + 1}"] = df[f"lag{l}"].shift().fillna(0).astype(int)
+            features.append(f"lag{l + 1}")
 
     next_df = df[df["month_year"] == current_month].copy()
     test_df = df[df["month_year"] != current_month][-10:].copy()
     train_df = df[(~df.index.isin(test_df.index)) & (~df.index.isin(next_df.index))].copy()
 
     print(f"training examples = {len(train_df)}, testing examples = {len(test_df)}")
-
-    features = ["prior_avg_days_since_previous_release", "month_holidays"]
-    # target = "n_releases"
 
     return (df, train_df, test_df, features, next_df)
 
