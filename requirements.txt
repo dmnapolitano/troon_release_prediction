@@ -1,0 +1,10 @@
+fbprophet
+holiday
+matplotlib
+nltk
+pandas
+playwright
+spacy
+seaborn
+scikit-learn
+statsmodels
